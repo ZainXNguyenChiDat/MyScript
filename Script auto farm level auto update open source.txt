@@ -14,7 +14,7 @@ _G.Settings = {
 
 		[Mob Aura]
 
-		["Distance Mob Aura"] = 1000, -- {Max : 5000} 
+		["Distance Mob Aura"] = 1000,  {Max : 5000} 
 		["Mob Aura"] = false,
 
 		[World 1]
@@ -95,18 +95,18 @@ _G.Settings = {
 	Configs = {
 		["Double Quest"] = false,
 		["Bypass TP"] = false,
-		["Select Team"] = {"Pirate"}, --{Pirate,Marine}
+		["Select Team"] = {"Pirate"}, {Pirate,Marine}
 
 
 		["Fast Attack"] = true,
-		["Fast Attack Type"] = {"Fast"}, --{Normal,Fast,Slow}
+		["Fast Attack Type"] = {"Fast"}, {Normal,Fast,Slow}
 
 		["Select Weapon"] = {},
 
 
 		[Misc Configs]
 		["Auto Haki"] = true,
-		["Distance Auto Farm"] = 20, --{Max : 50}
+		["Distance Auto Farm"] = 20, {Max : 50}
 		["Camera Shaker"] = false,
 
 		[Skill Configs]
@@ -126,13 +126,13 @@ _G.Settings = {
 		["Enabled Auto Stats"] = false,
 		["Auto Stats Kaitun"] = false,
 
-		["Select Stats"] = {"Melee"}, --{Max Stats,Melee,Defense,Sword,Devil Fruit,Gun}
-		["Point Select"] = 3, --{Recommended , Max : 9}
+		["Select Stats"] = {"Melee"}, {Max Stats,Melee,Defense,Sword,Devil Fruit,Gun}
+		["Point Select"] = 3, {Recommended , Max : 9}
 
 		[Auto Redeem Code]
 
 		["Enabled Auto Redeem Code"] = false,
-		["Select Level Redeem Code"] = 1, --{Max : 2400}
+		["Select Level Redeem Code"] = 1, {Max : 2400}
 	},
 
 	Misc = {
@@ -148,7 +148,7 @@ _G.Settings = {
 		["Fly"] = false,
 		["Fly Speed"] = 1,
 
-		--[Server]
+		[Server]
 		["Auto Rejoin"] = true,
 	},
 	Teleport = {
@@ -159,7 +159,7 @@ _G.Settings = {
 		["Auto Buy Random Fruits"] = false,
 		["Auto Store Fruits"] = false,
 
-		["Select Devil Fruits"] = {}, -- {"Bomb-Bomb","Spike-Spike","Chop-Chop","Spring-Spring","Kilo-Kilo","Spin-Spin","Kilo-Kilo","Spin-Spin","Bird: Falcon","Smoke-Smoke","Flame-Flame","Ice-Ice","Sand-Sand","Dark-Dark","Revive-Revive","Diamond-Diamond","Light-Light","Love-Love","Rubber-Rubber","Barrier-Barrier","Magma-Magma","Door-Door","Quake-Quake","Human-Human: Buddha","String-String","Bird-Bird: Phoenix","Rumble-Rumble","Paw-Paw","Gravity-Gravity","Dough-Dough","Shadow-Shadow","Venom-Venom","Control-Control","Soul-Soul","Dragon-Dragon"}
+		["Select Devil Fruits"] = {},  {"Bomb-Bomb","Spike-Spike","Chop-Chop","Spring-Spring","Kilo-Kilo","Spin-Spin","Kilo-Kilo","Spin-Spin","Bird: Falcon","Smoke-Smoke","Flame-Flame","Ice-Ice","Sand-Sand","Dark-Dark","Revive-Revive","Diamond-Diamond","Light-Light","Love-Love","Rubber-Rubber","Barrier-Barrier","Magma-Magma","Door-Door","Quake-Quake","Human-Human: Buddha","String-String","Bird-Bird: Phoenix","Rumble-Rumble","Paw-Paw","Gravity-Gravity","Dough-Dough","Shadow-Shadow","Venom-Venom","Control-Control","Soul-Soul","Dragon-Dragon"}
 		["Auto Buy Devil Fruits Sniper"] = false,
 	},
 
@@ -170,7 +170,7 @@ _G.Settings = {
 		["Auto Awakened"] = false,
 		["Auto Next Place"] = false,
 
-		["Select Raids"] = {}, -- {"Flame","Ice","Quake","Light","Dark","String","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix","Dough"},
+		["Select Raids"] = {},  {"Flame","Ice","Quake","Light","Dark","String","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix","Dough"},
 	},
 
 	Combat = {
@@ -186,10 +186,10 @@ _G.Settings = {
 		['White Screen'] = false,
 	},
 	ConfigsUI = {
-		ColorUI = Color3.fromRGB(255, 0, 127), --{Color UI}
+		ColorUI = Color3.fromRGB(255, 0, 127), {Color UI}
 	}
 }
--- [require module]
+ [require module]
 
 local CombatFramework = require(game:GetService("Players").LocalPlayer.PlayerScripts:WaitForChild("CombatFramework"))
 local CombatFrameworkR = getupvalues(CombatFramework)[2]
@@ -339,7 +339,7 @@ LoadSettings()
 
 
 
------------- // AutoUpdate \\ ------------
+ // AutoUpdate \\ 
 spawn(function()
 while wait() do
 	if _G.AutoFarmLevelReal then
@@ -405,7 +405,7 @@ local function QuestCheck()
 		}
 	end
 	
-	--game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
+	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
 	local GuideModule = require(game:GetService("ReplicatedStorage").GuideModule)
 	local Quests = require(game:GetService("ReplicatedStorage").Quests)
 	for i,v in pairs(GuideModule["Data"]["NPCList"]) do
@@ -427,7 +427,7 @@ local function QuestCheck()
 			end
 		end
 	end
-	if Lvl >= 375 and Lvl <= 399 then -- Fishman Warrior
+	if Lvl >= 375 and Lvl <= 399 then  Fishman Warrior
 		MobCFrame = CFrame.new(61122.5625, 18.4716396, 1568.16504, 0.893533468, 3.95251609e-09, 0.448996574, -2.34327455e-08, 1, 3.78297464e-08, -0.448996574, -4.43233645e-08, 0.893533468)
 		if _G.StartFarm and (MobCFrame.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
@@ -435,7 +435,7 @@ local function QuestCheck()
 		end
 	end
 	
-	if Lvl >= 400 and Lvl <= 449 then -- Fishman Commando
+	if Lvl >= 400 and Lvl <= 449 then  Fishman Commando
 		MobCFrame = CFrame.new(61122.5625, 18.4716396, 1568.16504, 0.893533468, 3.95251609e-09, 0.448996574, -2.34327455e-08, 1, 3.78297464e-08, -0.448996574, -4.43233645e-08, 0.893533468)
 		if _G.StartFarm and (MobCFrame.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
@@ -806,7 +806,7 @@ if QuestC.Visible == true then
 						
 						local Tab5 = Main.create("อื่น ๆ")
 						
-						-------------[Tab1]-------------
+						-[Tab1]-
 						
 						local Page1 = Tab1.xovapage(1)
 						
@@ -824,25 +824,25 @@ if QuestC.Visible == true then
 						
 						local Page7 = Tab1.xovapage(2)
 						
-						-------------[Tab2]-------------
+						-[Tab2]-
 						
 						local Page9 = Tab2.xovapage(1)
 						
 						local Page15 = Tab2.xovapage(2)
 						
-						-------------[Tab3]-------------
+						-[Tab3]-
 						
 						local Page10 = Tab3.xovapage(1)
 						
 						local Page11 = Tab3.xovapage(2)
 						
-						-------------[Tab4]-------------
+						-[Tab4]-
 						
 						local Page12 = Tab4.xovapage(1)
 						
 						local Page13 = Tab4.xovapage(2)
 						
-						-------------[Tab5]-------------
+						-[Tab5]-
 						
 						local Page14 = Tab5.xovapage(1)
 						
