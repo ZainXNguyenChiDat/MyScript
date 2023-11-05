@@ -12,19 +12,19 @@ _G.Settings = {
 		["Auto Farm Level"] = false,
 		["Fast Auto Farm Level"] = false,
 
-		--[Mob Aura]
+		[Mob Aura]
 
 		["Distance Mob Aura"] = 1000, -- {Max : 5000} 
 		["Mob Aura"] = false,
 
-		--[World 1]
+		[World 1]
 		["Auto New World"] = false,
 		["Auto Saber"] = false,
 		["Auto Pole"] = false,
 
 		["Auto Buy Ablility"] = false,
 
-		--[World 2]
+		[World 2]
 		["Auto Third Sea"] = false,
 		["Auto Factory"] = false,
 		["Auto Factory Hop"] = false,
@@ -39,7 +39,7 @@ _G.Settings = {
 		["Auto Buy Legendary Sword"] = false,
 		["Auto Buy Enchanment Haki"] = false,
 
-		--[World 3]
+		[World 3]
 		["Auto Holy Torch"] = false,
 		["Auto Buddy Swords"] = false,
 		["Auto Farm Boss Hallow"] = false,
@@ -58,7 +58,7 @@ _G.Settings = {
 		["Auto Dough V2"] = false,
 		["Auto Random Bone"] = false,
 
-		--[For God Human]
+		[For God Human]
 
 		["Auto Fish Tail Sea 1"] = false,
 		["Auto Fish Tail Sea 3"] = false,
@@ -104,32 +104,32 @@ _G.Settings = {
 		["Select Weapon"] = {},
 
 
-		--[Misc Configs]
+		[Misc Configs]
 		["Auto Haki"] = true,
 		["Distance Auto Farm"] = 20, --{Max : 50}
 		["Camera Shaker"] = false,
 
-		--[Skill Configs]
+		[Skill Configs]
 		["Skill Z"] = true,
 		["Skill X"] = true,
 		["Skill C"] = true,
 		["Skill V"] = true,
 
-		--[Mob Configs]
+		[Mob Configs]
 		["Show Hitbox"] = false,
 		["Bring Mob"] = true,
 		["Disabled Damage"] = false,
 
 	},
 	Stat = {
-		--[Auto Stats]
+		[Auto Stats]
 		["Enabled Auto Stats"] = false,
 		["Auto Stats Kaitun"] = false,
 
 		["Select Stats"] = {"Melee"}, --{Max Stats,Melee,Defense,Sword,Devil Fruit,Gun}
 		["Point Select"] = 3, --{Recommended , Max : 9}
 
-		--[Auto Redeem Code]
+		[Auto Redeem Code]
 
 		["Enabled Auto Redeem Code"] = false,
 		["Select Level Redeem Code"] = 1, --{Max : 2400}
@@ -925,7 +925,7 @@ if _G.Settings.Configs["Auto Haki"] then
 end
 end
 end)
--- [Table Weapon]
+ [Table Weapon]
 Weapon = {
 	"Melee",
 	"Sword",
