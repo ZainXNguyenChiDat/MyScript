@@ -206,7 +206,7 @@ Tabs.Travel:AddButton({
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
     end
 })
-if World3 then
+
 local SelectIsland1 = Tabs.Travel:AddDropdown("Select Island", {
     Value = {
         "Mansion",
