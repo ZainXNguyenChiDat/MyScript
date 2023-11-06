@@ -300,10 +300,11 @@ Tabs.Travel:AddButton({
     end
 })
 --------------------------------
-Tabs.Others:AddToggle("MyToggle", {Title = "Auto Rejoin", Default = false })
+local Toggle = Tabs.Others:AddToggle("MyToggle", {Title = "Auto Rejoin", Default = false })
 
 Toggle:OnChanged(function()
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/baechooYT/Just_Stop/main/autorj-forautoexec.lua"), true))()
+
     print("Toggle changed:", Options.MyToggle.Value)
 
 end)
