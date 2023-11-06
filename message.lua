@@ -19,6 +19,7 @@ local Tabs = {
     Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
     Race = Window:AddTab({ Title = "Race V4", Icon = "heart" }),
     Travel = Window:AddTab({ Title = "Travel", Icon = "map-pin" }),
+    Others = Window:AddTab({ Title = "Others", Icon = "hexagon" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
 }
 local Options = Fluent.Options
@@ -33,7 +34,69 @@ local mouse = game.Players.LocalPlayer:GetMouse()
   end)
  end
 
- 
+ function hop()
+    local PlaceID = game.PlaceId
+    local AllIDs = {}
+    local foundAnything = ""
+    local actualHour = os.date("!*t").hour
+    local Deleted = false
+    function TPReturner()
+        local Site;
+        if foundAnything == "" then
+            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+        else
+            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+        end
+        local ID = ""
+        if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+            foundAnything = Site.nextPageCursor
+        end
+        local num = 0;
+        for i,v in pairs(Site.data) do
+            local Possible = true
+            ID = tostring(v.id)
+            if tonumber(v.maxPlayers) > tonumber(v.playing) then
+                for _,Existing in pairs(AllIDs) do
+                    if num ~= 0 then
+                        if ID == tostring(Existing) then
+                            Possible = false
+                        end
+                    else
+                        if tonumber(actualHour) ~= tonumber(Existing) then
+                            local delFile = pcall(function()
+                                -- delfile("NotSameServers.json")
+                                AllIDs = {}
+                                table.insert(AllIDs, actualHour)
+                            end)
+                        end
+                    end
+                    num = num + 1
+                end
+                if Possible == true then
+                    table.insert(AllIDs, ID)
+                    wait()
+                    pcall(function()
+                        -- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                        wait()
+                        game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                    end)
+                    wait(4)
+                end
+            end
+        end
+    end
+    function Teleport()
+        while wait() do
+            pcall(function()
+                TPReturner()
+                if foundAnything ~= "" then
+                    TPReturner()
+                end
+            end)
+        end
+    end
+    Teleport()
+end
  function AutoHaki()
 	if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
@@ -54,6 +117,7 @@ function topos(Pos)
     end
 end
 
+--------------------------------
 Tabs.Race:AddButton({
     Title = "Teleport To Timple Of Time",
     Description = "Help you Teleport To Timple Of Time",
@@ -61,7 +125,6 @@ Tabs.Race:AddButton({
         Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
     end
 })
-
 Tabs.Race:AddButton({
     Title = "Teleport To Lever Pull",
     Callback = function()
@@ -178,8 +241,6 @@ Tabs.Shop:AddButton({
 })
 
 --------------------------------
-
-
 Tabs.Travel:AddButton({
     Title = "Teleport Old World",
     Callback = function()
@@ -196,6 +257,31 @@ Tabs.Travel:AddButton({
     Title = "Teleport Third Sea",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+    end
+})
+--------------------------------
+
+local Toggle = Tabs.Others:AddToggle("Auto Rejoin", {Title = "Toggle", Default = false })
+
+Toggle:OnChanged(function()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/baechooYT/Just_Stop/main/autorj-forautoexec.lua"), true))()    
+end)
+
+Options.Toggle:SetValue(false)
+
+Tabs.Others:AddButton({
+    Title = "Rejoin",
+    Callback = function()
+        local ts = game:GetService("TeleportService")
+		local p = game:GetService("Players").LocalPlayer
+		ts:Teleport(game.PlaceId, p)
+    end
+})
+
+Tabs.Others:AddButton({
+    Title = "Hop Server",
+    Callback = function()
+        hop()
     end
 })
 
