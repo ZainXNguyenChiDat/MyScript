@@ -23,8 +23,6 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
-
-
 local mouse = game.Players.LocalPlayer:GetMouse()
  local uis = game:GetService("UserInputService")
  
@@ -54,14 +52,6 @@ function topos(Pos)
         tween:Cancel()
         _G.Clip = false
     end
-end
-
-if game.PlaceId == 2753915549 then
-	World1 = true
-elseif game.PlaceId == 4442272183 then
-	World2 = true
-elseif game.PlaceId == 7449423635 then
-	World3 = true
 end
 
 Tabs.Race:AddButton({
@@ -207,13 +197,6 @@ Tabs.Travel:AddButton({
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
     end
-})
-if World2 then
-    Tabs.Travel:AddButton({
-        Title = "Teleport Third Four",
-        Callback = function()
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
-        end
 })
 
 SaveManager:SetLibrary(Fluent)
