@@ -40,20 +40,6 @@ elseif game.PlaceId == 7449423635 then
 	World3 = true
 end
 
- function AutoHaki()
-	if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-	end
-end
-function EquipWeapon(ToolSe)
-	if not _G.NotAutoEquip then
-		if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
-			Tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
-			wait(.1)
-			game.Players.LocalPlayer.Character.Humanoid:EquipTool(Tool)
-		end
-	end
-end
 
 function topos(Pos)
     Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
