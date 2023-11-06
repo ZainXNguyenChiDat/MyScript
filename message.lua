@@ -14,10 +14,9 @@ local Window = Fluent:CreateWindow({
 
 
 local Tabs = {
-    Main1 = Window:AddTab({ Title = "General", Icon = "globe" }),
+    Main = Window:AddTab({ Title = "Main", Icon = "activity" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
-    Travel = Window:AddTab({ Title = "Travel", Icon = "activity" }),
-    Main = Window:AddTab({ Title = "Race V4", Icon = "activity" }),
+    RaceV4 = Window:AddTab({ Title = "Race V4", Icon = "activity" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 local Options = Fluent.Options
@@ -32,15 +31,11 @@ local mouse = game.Players.LocalPlayer:GetMouse()
   end)
  end
 
- if game.PlaceId == 2753915549 then
-	World1 = true
-elseif game.PlaceId == 4442272183 then
-	World2 = true
-elseif game.PlaceId == 7449423635 then
-	World3 = true
+ function AutoHaki()
+	if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+	end
 end
-
-
 function topos(Pos)
     Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end
@@ -56,28 +51,6 @@ function topos(Pos)
     end
 end
 
-function StopTween(target)
-	if not target then
-		_G.StopTween = true
-		wait()
-		topos(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
-		wait()
-		if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
-			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip"):Destroy()
-		end
-		_G.StopTween = false
-		_G.Clip = false
-	end
-end
-
-function UseCode(Text)
-	game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Text)
-end
-if World1 or World2 then
-    Tabs.Main:Text("Only Available At Sea 3")
-end
-
-if World3 then
 Tabs.Main:AddButton({
     Title = "Teleport To Timple Of Time",
     Description = "Help you Teleport To Timple Of Time",
@@ -135,7 +108,69 @@ Tabs.Main:AddButton({
     end
 })
 
+Tabs.Shop:AddButton({
+    Title = "Buy Black Leg",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
+    end
+})
+Tabs.Shop:AddButton({
+    Title = "Buy Electro",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
+    end
+})
+Tabs.Shop:AddButton({
+    Title = "Buy Fishman Karate",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
+    end
+})
+Tabs.Shop:AddButton({
+    Title = "Buy Dragon Claw",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1")
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","2")
+    end
+})
+Tabs.Shop:AddButton({
+    Title = "Buy Super Human",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
+    end
+})
+Tabs.Shop:AddButton({
+    Title = "Buy Death Step",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
+    end
+})
+Tabs.Shop:AddButton({
+    Title = "Buy Sharkman Karate",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true)
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
 
+    end
+})
+Tabs.Shop:AddButton({
+    Title = "Buy Electric Claw",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
+    end
+})
+Tabs.Shop:AddButton({
+    Title = "Buy Dragon Talon",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
+    end
+})
+Tabs.Shop:AddButton({
+    Title = "Buy GodHuman",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
+    end
+})()
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
