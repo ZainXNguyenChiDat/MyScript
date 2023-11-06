@@ -13,10 +13,11 @@ local Window = Fluent:CreateWindow({
 })
 
 
+
 local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "activity" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
-    RaceV4 = Window:AddTab({ Title = "Race V4", Icon = "activity" }),
+    Race = Window:AddTab({ Title = "Race V4", Icon = "activity" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
 }
 local Options = Fluent.Options
@@ -51,7 +52,7 @@ function topos(Pos)
     end
 end
 
-Tabs.RaceV4:AddButton({
+Tabs.Race:AddButton({
     Title = "Teleport To Timple Of Time",
     Description = "Help you Teleport To Timple Of Time",
     Callback = function()
@@ -59,48 +60,48 @@ Tabs.RaceV4:AddButton({
     end
 })
 
-Tabs.RaceV4:AddButton({
+Tabs.Race:AddButton({
     Title = "Teleport To Lever Pull",
     Callback = function()
         topos(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
     end
 })
-Tabs.RaceV4:AddButton({
+Tabs.Race:AddButton({
     Title = "Teleport Cyborg Door",
     Description = "Must Be in Temple Of Time",
     Callback = function()
         topos(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
     end
 })
-Tabs.RaceV4:AddButton({
+Tabs.Race:AddButton({
     Title = "Teleport Fish Door",
     Description = "Must Be in Temple Of Time",
     Callback = function()
         topos(CFrame.new(28224.056640625, 14889.4267578125, -210.5872039794922))
     end
 })
-Tabs.RaceV4:AddButton({
+Tabs.Race:AddButton({
     Title = "Teleport Ghoul Door",
     Description = "Must Be in Temple Of Time",
     Callback = function()
         topos(CFrame.new(28672.720703125, 14889.1279296875, 454.5961608886719))
     end
 })
-Tabs.RaceV4:AddButton({
+Tabs.Race:AddButton({
     Title = "Teleport Human Door",
     Description = "Must Be in Temple Of Time",
     Callback = function()
         topos(CFrame.new(29237.294921875, 14889.4267578125, -206.94955444335938))
     end
 })
-Tabs.RaceV4:AddButton({
+Tabs.Race:AddButton({
     Title = "Teleport Mink Door",
     Description = "Must Be in Temple Of Time",
     Callback = function()
         topos(CFrame.new(29020.66015625, 14889.4267578125, -379.2682800292969))
     end
 })
-Tabs.RaceV4:AddButton({
+Tabs.Race:AddButton({
     Title = "Teleport Sky Door",
     Description = "Must Be in Temple Of Time",
     Callback = function()
@@ -170,7 +171,7 @@ Tabs.Shop:AddButton({
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
     end
-})()
+})
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
@@ -189,7 +190,7 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
 
 Fluent:Notify({
-    Title = "Fluent",
+    Title = "ChiDatHub",
     Content = "The script has been loaded.",
     Duration = 8
 })
