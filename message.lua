@@ -128,7 +128,7 @@ spawn(function()
 	while wait(2) do
 		pcall(function()
 			if _G.Auto_Ken then
-				game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Buso",true)
+                AutoHaki()
 				wait(7)
 			end
 		end)
