@@ -295,14 +295,13 @@ Tabs.Others:AddButton({
     end
 })
 
+Tabs.Others:AddButton({
+    Title = "Hop Server",
+    Callback = function()
+        hop()
+    end
+})
 
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
-
-Toggle:OnChanged(function()
-    print("Toggle changed:", Options.MyToggle.Value)
-end)
-
-Options.MyToggle:SetValue(false)
 
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
