@@ -134,7 +134,7 @@ Options.MyToggle:SetValue(true)
 
 local Toggle1 = Tabs.Main:AddToggle("MyToggle", {Title = "Farm Attack", Default = false })
 
-Toggle:OnChanged(function()
+Toggle:OnChanged(function(value)
     _G.FastAttack = value
 end)
 
