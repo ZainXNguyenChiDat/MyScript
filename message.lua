@@ -122,14 +122,7 @@ function topos(Pos)
 end
 
 ----------------------
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
-Toggle:OnChanged(function()
-    print("Toggle changed:", Options.MyToggle.Value)
-     AutoHaki()
-end)
-
-Options.MyToggle:SetValue(false)
 
 --------------------------------
 Tabs.Race:AddButton({
