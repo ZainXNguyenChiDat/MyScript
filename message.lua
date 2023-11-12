@@ -99,13 +99,10 @@ local mouse = game.Players.LocalPlayer:GetMouse()
     Teleport()
 end
  function AutoHaki()
-    spawn(function()
-        while wait() do
-            if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-            end
-        end
-    end)
+	if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+	end
+end
 function topos(Pos)
     Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end
@@ -120,9 +117,6 @@ function topos(Pos)
         _G.Clip = false
     end
 end
-
-----------------------
-
 
 --------------------------------
 Tabs.Race:AddButton({
