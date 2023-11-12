@@ -98,7 +98,15 @@ local mouse = game.Players.LocalPlayer:GetMouse()
     end
     Teleport()
 end
-
+ function AutoHaki()
+    spawn(function()
+        while wait() do
+            if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+            end
+        end
+    end)
+end
 function topos(Pos)
     Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end
@@ -119,17 +127,43 @@ end
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Haki", Default = false })
 
 Toggle:OnChanged(function()
-    spawn(function()
-        while wait() do
-            if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-            end
-        end
-    end)
-end
+    AutoHaki()
+end)
+
+Options.MyToggle:SetValue(true)
+
+local Toggle1 = Tabs.Main:AddToggle("MyToggle", {Title = "Farm Attack", Default = false })
+
+Toggle:OnChanged(function()
+    _G.FastAttack = value
 end)
 
 Options.MyToggle:SetValue(false)
+
+xShadowFastAttackx = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+
+xShadowx = debug.getupvalues(xShadowFastAttackx)[2]
+
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.FastAttack then
+            if typeof(xShadowx) == "table" then
+                pcall(function()
+                    xShadowx.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
+                    xShadowx.activeController.timeToNextAttack = 0
+                    xShadowx.activeController.hitboxMagnitude = 200
+                    xShadowx.activeController.active = false
+                    xShadowx.activeController.timeToNextBlock = 0
+                    xShadowx.activeController.focusStart = 0
+                    xShadowx.activeController.increment = 4
+                    xShadowx.activeController.blocking = false
+                    xShadowx.activeController.attacking = false
+                    xShadowx.activeController.humanoid.AutoRotate = 50
+                end)
+            end
+        end
+    end)
+end)
 
 ----------------------------------------
 Tabs.Race:AddButton({
