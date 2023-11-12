@@ -120,7 +120,7 @@ end
 ---
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
-Toggle:OnChanged(function(vu)
+Toggle:OnChanged(,_G.Auto_Ken,function(vu)
     _G.Auto_Ken = vu
     print("Toggle changed:", Options.MyToggle.Value)
 end)
@@ -128,7 +128,7 @@ spawn(function()
 	while wait(2) do
 		pcall(function()
 			if _G.Auto_Ken then
-				game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken",true)
+				game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Buso",true)
 				wait(7)
 			end
 		end)
