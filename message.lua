@@ -124,9 +124,10 @@ end
 
 --------------------------------
 
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Haki", Default = false })
 
 Toggle:OnChanged(function()
+    AutoHaki()
     print("Toggle changed:", Options.MyToggle.Value)
 end)
 
