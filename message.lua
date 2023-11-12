@@ -99,13 +99,10 @@ local mouse = game.Players.LocalPlayer:GetMouse()
     Teleport()
 end
  function AutoHaki()
-    spawn(function()
-        while wait() do
-            if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-            end
-        end
-    end)
+	if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+	end
+end
 function topos(Pos)
     Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end
@@ -121,22 +118,7 @@ function topos(Pos)
     end
 end
 
-
-
-
 --------------------------------
-
-
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
-
-Toggle:OnChanged(function()
-    AutoHaki()
-    print("Toggle changed:", Options.MyToggle.Value)
-end)
-
-Options.MyToggle:SetValue(false)
-
-
 Tabs.Race:AddButton({
     Title = "Teleport To Timple Of Time",
     Description = "Help you Teleport To Timple Of Time",
