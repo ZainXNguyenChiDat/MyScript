@@ -120,10 +120,20 @@ end
 ---
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
-Toggle:OnChanged(function()
-    AutoHaki()
+Toggle:OnChanged(function(vu)
+    _G.Auto_Ken = vu
+    print("Toggle changed:", Options.MyToggle.Value)
 end)
-
+spawn(function()
+	while wait(2) do
+		pcall(function()
+			if _G.Auto_Ken then
+				game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken",true)
+				wait(7)
+			end
+		end)
+	end
+end)
 
 Options.MyToggle:SetValue(false)
 
