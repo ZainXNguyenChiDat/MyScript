@@ -120,7 +120,7 @@ end
 ---
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
-Toggle:OnChanged(,_G.Auto_Ken,function(vu)
+Toggle:OnChanged(function()
     AutoHaki()
 end)
 
