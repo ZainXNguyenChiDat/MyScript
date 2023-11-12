@@ -165,6 +165,41 @@ spawn(function()
     end)
 end)
 
+local Toggle2 = Tabs.Main:AddToggle("MyToggle", {Title = "Farm Near Mode", Default = false })
+
+Toggle:OnChanged(function()
+    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+        if v.Name and v:FindFirstChild("Humanoid") then
+        if v.Humanoid.Health > 0 then
+        repeat game:GetService("RunService").Heartbeat:wait()
+        EquipWeapon(_G.Select_Weapon)
+        if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+        local args = {
+         [1] = "Buso"
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        end
+        PosMon = v.HumanoidRootPart.CFrame
+       v.HumanoidRootPart.CanCollide = false
+       v.Humanoid.WalkSpeed = 0
+       v.Head.CanCollide = false
+       v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+       StartMagnet = false
+       topos(v.HumanoidRootPart.CFrame * MethodFarm)
+       game:GetService'VirtualUser':CaptureController()
+       game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+        StartMagnet = true
+        PosMon = v.HumanoidRootPart.CFrame
+        until not _G.Auto_Farm_Level or not v.Parent or v.Humanoid.Health == 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
+        end
+              end
+          end
+      end
+      end
+      end
+      end)
+Options.MyToggle:SetValue(false)
+
 ----------------------------------------
 Tabs.Race:AddButton({
     Title = "Teleport To Timple Of Time",
