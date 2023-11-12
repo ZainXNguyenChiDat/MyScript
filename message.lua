@@ -127,14 +127,14 @@ end
 --------------------------------
 
 
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Haki", Default = false })
 
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+Toggle:OnChanged(function()
+    AutoHaki()
+    print("Toggle changed:", Options.MyToggle.Value)
+end)
 
-    Toggle:OnChanged(function()
-        print("Toggle changed:", Options.MyToggle.Value)
-    end)
-
-    Options.MyToggle:SetValue(false)
+Options.MyToggle:SetValue(false)
 
 
 Tabs.Race:AddButton({
@@ -294,6 +294,15 @@ Tabs.Others:AddButton({
         hop()
     end
 })
+
+
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+
+Toggle:OnChanged(function()
+    print("Toggle changed:", Options.MyToggle.Value)
+end)
+
+Options.MyToggle:SetValue(false)
 
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
