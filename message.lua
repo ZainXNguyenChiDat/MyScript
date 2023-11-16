@@ -1,4 +1,3 @@
-
 if getgenv().ScriptExecute then return print('Script Already Execute') end
 local start_check_time = tick()
 getgenv().ScriptExecute = true
@@ -23,8 +22,6 @@ if islclosure(getgenv().tostring) then game.Players.LocalPlayer:Kick("MMB 2") wh
 getgenv().clonefunction = nil
 getgenv().clonefunc = nil
 local Notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/x9PSwiftz/Panda/main/Notification.lua"))() 
-local instance = {obj = {}}
-local object = instance.obj
 local HubName = "Sadnessdontsuy"
 function instance.new(class, properties)
     local inst = Instance.new(class)
