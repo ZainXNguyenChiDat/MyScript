@@ -13,7 +13,7 @@ end)
 btns:Seperator()
 
 btns:Button("Get max level", function()
-DiscordLib:Notification("Notification", "Max level!", "Okay!")
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
 end)
 
 local tgls = serv:Channel("Toggles")
