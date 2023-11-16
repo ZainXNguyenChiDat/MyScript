@@ -20,17 +20,13 @@ local tgls = serv:Channel("Toggles")
 
 tgls:Toggle("Auto Haki",false, function(bool)
     spawn(function()
-        while task.wait() do
-            pcall(function()
-                function AutoHaki()
-                    if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-                    end
-                end
-            end)
+        while wait() do
+            if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+            end
         end
     end)
-end)
+end
 
 local sldrs = serv:Channel("Sliders")
 
