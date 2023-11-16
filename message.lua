@@ -1035,11 +1035,11 @@ local function wl(key)
             end
             return ""
         end
-        DefaultTab = Window:NewTab({Title = "Default", Icon = getRandomIcon()})
+        DefaultTab = Window:NewTab({Title = "Default", Icon = "layers-3" })
         FarmTab = Window:NewTab({Title = "Farm", Icon = "code-2" }) 
         ServerTab = Window:NewTab({Title = "Sever Infomation", Icon = "info" })
         V4Tab = Window:NewTab({Title = "Race V4", Icon = "activity" })
-        PlRTAB = Window:NewTab({Title = "Local Player", Icon = getRandomIcon()}) 
+        PlRTAB = Window:NewTab({Title = "Local Player", Icon = "moon" }) 
         WeaponTab = Window:NewTab({Title = "Weapon", Icon = getRandomIcon()}) 
         ShopTab = Window:NewTab({Title = "Shop",Icon = "shopping-cart" })
         RaidTab = Window:NewTab({Title = "Fruits & Raid", Icon = getRandomIcon()})
