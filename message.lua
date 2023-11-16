@@ -1,36 +1,3 @@
-if getgenv().ScriptExecute then return print('Script Already Execute') end
-local start_check_time = tick()
-getgenv().ScriptExecute = true
-repeat task.wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer  
-if game.CoreGui:FindFirstChild("Mo Mo Be") then
-    game.CoreGui:FindFirstChild("Mo Mo Be"):Destroy()
-end  
-spawn(function()
-    keyuicheck = tick()
-    repeat task.wait() 
-        if tick()-keyuicheck >= 15 then 
-            game:GetService("TeleportService"):TeleportToPlaceInstance(
-                game.PlaceId,
-                game.JobId,
-                game.Players.LocalPlayer
-            ) 
-        end
-    until game.CoreGui:FindFirstChild("Mo Mo Be") 
-end)
-if islclosure(getgenv().setfenv) then game.Players.LocalPlayer:Kick("MMB 1") while true do end end -- ANTI SETFENV TAMPERING
-if islclosure(getgenv().tostring) then game.Players.LocalPlayer:Kick("MMB 2") while true do end end -- ANTI TOSTRING TAMPERING
-getgenv().clonefunction = nil
-getgenv().clonefunc = nil
-local Notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/x9PSwiftz/Panda/main/Notification.lua"))() 
-local HubName = "Sadnessdontsuy"
-function instance.new(class, properties)
-    local inst = Instance.new(class)
-    for property, value in next, properties do
-        inst[property] = value
-    end
-    table.insert(instance.obj, inst)
-    return inst
-end
         local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
         repeat
             task.wait()
