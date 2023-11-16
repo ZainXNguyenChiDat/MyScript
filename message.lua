@@ -34,7 +34,7 @@ function instance.new(class, properties)
     table.insert(instance.obj, inst)
     return inst
 end
-object.TsuoHub = instance.new("ScreenGui", {
+object.sadnessHub = instance.new("ScreenGui", {
     Name = "Mo Mo Be";
     Parent = game.CoreGui;
     ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
@@ -46,7 +46,7 @@ object.Main = instance.new("Frame", {
     BorderColor3 = Color3.fromRGB(0, 0, 0);
     BorderSizePixel = 0;
     Name = "Main";
-    Parent = object.TsuoHub;
+    Parent = object.sadnessHub;
     Position = UDim2.new(0.492770165, 0, 0.5, 0);
     Size = UDim2.new(0, 380, 0, 200);
 })
@@ -100,8 +100,8 @@ object.TextBox = instance.new("TextBox", {
     ClearTextOnFocus = false;
 })
 pcall(function()
-    if true and isfile('tsuo.bin') and not getgenv().Key then
-        object.TextBox.Text = readfile("tsuo.bin")
+    if true and isfile('sadness.bin') and not getgenv().Key then
+        object.TextBox.Text = readfile("sadness.bin")
     elseif getgenv().Key then 
         object.TextBox.Text = tostring(getgenv().Key)
     end
@@ -228,16 +228,16 @@ end
 
 local function SaveKey()
     local s, e = pcall(function()
-        if not isfile('tsuo.bin') then
-            writefile('tsuo.bin', GetKeyText())
+        if not isfile('sadness.bin') then
+            writefile('sadness.bin', GetKeyText())
         end
     end)
 end
 
 local function RemoveKey()
     local s, e = pcall(function()
-        if isfile('tsuo.bin') then
-            delfile('tsuo.bin')
+        if isfile('sadness.bin') then
+            delfile('sadness.bin')
         end
     end)
 end
@@ -245,8 +245,8 @@ end
 local function ReadKey()
     local KEY;
     local s, e = pcall(function()
-        if isfile('tsuo.bin') then
-            KEY = readfile('tsuo.bin')
+        if isfile('sadness.bin') then
+            KEY = readfile('sadness.bin')
         elseif getgenv().Key and typeof(getgenv().Key) == "string" then 
             KEY = getgenv().Key
         end
@@ -254,7 +254,7 @@ local function ReadKey()
     return KEY
 end
 
-local URL = 'https://tsuo-script.xyz/'
+local URL = 'https://sadness-script.xyz/'
 local publicKEY1 = 3521
 local publicKEY2 = 16748
 local base64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
@@ -931,7 +931,7 @@ local function wl(key)
             function newmm:NewDropdown(title, cf)
                 DefaultConfigDropdown = {
                     Title = "Drodown",
-                    Values = {"MMB", "TSUO"},
+                    Values = {"MMB", "sadness"},
                     Multi = false,
                     Default = nil
                 }
@@ -9509,14 +9509,14 @@ local function wl(key)
         Fluent:Notify(
             {
                 Title = "Sadnessdontsuy",
-                Content = "The script has been loaded successful.",
+                Content = "The script has been loaded sucessfullys.",
                 Duration = 15
             }
         )
             else
         RemoveKey()
-        Notify.New('key expired / does not exist', 5)
-    	print('key expired / does not exist')
+        Notify.New('Key expired / does not exist', 5)
+    	print('Key expired / does not exist')
         sign_match = nil
         securekeyprivate = nil
         response = nil
