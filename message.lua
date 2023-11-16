@@ -8478,10 +8478,10 @@ local function wl(key)
                                             NoClip = false
                                             AimbotDiThangNgu = false
                                             AimBotSkillPosition = nil
-                                            LockCFrame = false
+                                            LockCFrame = nil
                                             BringMobChoosen = nil
                                             BringMobCFrame = nil
-                                            LockCFrame = false
+                                            LockCFrame = nil
                                         end
                                     end
                                 end
