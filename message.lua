@@ -8478,10 +8478,10 @@ local function wl(key)
                                             NoClip = false
                                             AimbotDiThangNgu = false
                                             AimBotSkillPosition = nil
-                                            LockCFrame = nil
+                                            LockCFrame = false
                                             BringMobChoosen = nil
                                             BringMobCFrame = nil
-                                            LockCFrame = nil
+                                            LockCFrame = false
                                         end
                                     end
                                 end
@@ -8658,7 +8658,7 @@ local function wl(key)
         
         -------- Creating functions element ------------
         do
-            DefaultTab:AddSection("toi nho tho")
+            DefaultTab:AddSection("Sadnessdontsuy")
             DefaultTab:NewButton({
                 Title = "Fly Boat",
                 Callback = function()
