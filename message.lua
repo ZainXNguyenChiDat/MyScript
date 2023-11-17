@@ -61,7 +61,7 @@ if islclosure(loadstring) then
 end
 --- Hub Values ---
 Hub = {}
-Hub.Name = "Tsuo Hub"
+Hub.Name = "Sadnessdontsuy"
 Hub.Game = "Blox Fruits"
 ---- Settings -----
 HttpService = game:GetService("HttpService")
@@ -497,7 +497,7 @@ spawn(
         end
         DefaultTab = Window:NewTab({Title = "Default", Icon = getRandomIcon()})
         FarmTab = Window:NewTab({Title = "Farm", Icon = getRandomIcon()}) 
-        ServerTab = Window:NewTab({Title = "Server & Info", Icon = getRandomIcon()})
+        ServerTab = Window:NewTab({Title = "Server Infomation", Icon = getRandomIcon()})
         V4Tab = Window:NewTab({Title = "Race", Icon = getRandomIcon()})
         PlRTAB = Window:NewTab({Title = "Local Player", Icon = getRandomIcon()}) 
         WeaponTab = Window:NewTab({Title = "Weapon", Icon = getRandomIcon()}) 
@@ -506,7 +506,7 @@ spawn(
         if not Sea1 then 
             SeaBeastTab = Window:NewTab({Title = "Sea Beast",Icon = getRandomIcon()})
         end 
-        SettingTab = Window:NewTab({Title = "Setting",Icon = getRandomIcon()})
+        SettingTab = Window:NewTab({Title = "Setting",Icon = "settings" })
         function CreateUiNotify(cf)
             newtitle = cf.Title or "Sadnessdontsuy"
             newcontent = cf.Content or "Nothing"
@@ -8327,8 +8327,8 @@ spawn(
             })
         
         
-            FarmTab:AddSection("Attack functions")
-            FarmTab:NewDropdown(
+            --FarmTab:AddSection("Attack functions")
+            Settings:NewDropdown(
                 "Fast Attack Delay",
                 {
                     Title = "Fast Attack Delay",
@@ -8339,13 +8339,13 @@ spawn(
                     }
                 }
             )
-            FarmTab:NewToggle(
+            Settings:NewToggle(
                 "Fast Attack Aura",
                 {
                     Title = "Attack Aura"
                 }
             )
-            FarmTab:AddSection("Default Farm")
+            --FarmTab:AddSection("Default Farm")
             SelectWeapon_Dropdown =FarmTab:NewDropdown(
                 "Weapon Type",
                 {
@@ -8355,7 +8355,7 @@ spawn(
             )
             FarmTab:NewParagraph(
                 {
-                    Title = "Farm Note",
+                    Title = "Note",
                     Content = "If you choose 2 Option like Level and Cake Prince then when level max it will farm Cake Prince or smthing like that lol"
                 }
             )
@@ -8390,14 +8390,14 @@ spawn(
                     "Kill Player Quest",
                     {
                         Title = "Kill Player Quest",
-                        Description = "Claim Kill Player Quest For Super-High Exp"
+                        Description = "Get Kill Player Quest For Super-High Exp"
                     }
                 )
             elseif Sea3 then
                 ClaimExtraQuest_Toggle = FarmTab:NewToggle(
                     "Claim Bone & Cake Prince Quest",
                     {
-                        Title = "Claim Bone & Cake Prince Quests"
+                        Title = "Get Bone & Cake Prince Quests"
                     }
                 )
             end
@@ -8412,11 +8412,11 @@ spawn(
                 Description = "% Health of mob that script start use skill on it.",
                 Min = 10,
                 Max = 100, 
-                Default = 50
+                Default = 30
             })
             FarmTab:NewToggle("Mastery Farm",{
                 Title = "Mastery Farm Option",
-                Description = "Mastery farm for the most mob farm."
+                Description = "Mastery farm for the most mob farm and please select skill spam in settings with farm mastery"
             })
             FarmTab:NewToggle("Only V4",{
                 Title = "Only When V4 Activited",
@@ -8450,7 +8450,7 @@ spawn(
                     Title = "Hop For Bosses"
                 }
             )
-            FarmTab:AddSection("Elite/Rip India/Yama/Tushita/Dough King Functions")
+            --FarmTab:AddSection("Elite/Rip India/Yama/Tushita/Dough King Functions")
             FarmTab:NewToggle("Auto Elite",{
                 Title = "Auto Elite Hunter",
                 Description = "Auto Elite Hunter When It Spawned."
@@ -8463,16 +8463,16 @@ spawn(
                 Title = "Auto Rip Indra",
                 Description = "Auto summon rip indra and kill that nigga when have god chalice and automatic enable haki buttons."
             })
-            FarmTab:NewToggle("Auto Tushita",{
+            Weapon:NewToggle("Auto Tushita",{
                 Title = "Auto Tushita",
                 Description = "Auto do Tushita Puzzle and get Tushita.\nAuto Kill Rip India will ignore this."
             })
-            FarmTab:NewToggle("Auto Tushita Hop",{
+            Weapon:NewToggle("Auto Tushita Hop",{
                 Title = "Auto Tushita Hop",
                 Description = "Ignore what u doing. Just hopping for rip india and do Tushita Puzzle."
             }) 
-            FarmTab:NewToggle("Auto Yama",{
-                Title = "Yama",
+            Weapon:NewToggle("Auto Yama",{
+                Title = "Auto Yama",
                 Description = "Auto unlock yama while check elite killed > 30."
             })
             FarmTab:NewToggle("Auto Dough King",{
@@ -8521,9 +8521,9 @@ spawn(
                     end
                 })
                 V4Tab:AddSection("Temple of Time Puzzle")
-                TrialStage1_Toggle = V4Tab:NewToggle("Auto Trial Stage 1",{
-                    Title = "Auto Trial Stage 1",
-                    Description = "Auto do Trial Stage 1 All Race."
+                TrialStage1_Toggle = V4Tab:NewToggle("Auto Trial",{
+                    Title = "Auto Trial",
+                    Description = "Auto do Trial  All Race."
                 })
                 AutoChooseGear_Toggle = V4Tab:NewToggle("Auto Choose Gear",{
                     Title = "Auto Choose Gear",
@@ -8644,7 +8644,7 @@ spawn(
                 end
             end  
             if WeaponTab then 
-                WeaponTab:AddSection("Item Puzzle")
+                --WeaponTab:AddSection("Item Puzzle")
                 if Sea2 or Sea3 then
                     WeaponTab:NewToggle("Auto Soul Guitar",{
                         Title = "Auto Soul Guitar",
