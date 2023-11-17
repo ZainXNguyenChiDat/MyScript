@@ -208,8 +208,8 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
         local Window =
             Fluent:CreateWindow(
             {
-                Title = "Tsuo Hub Update 20",
-                SubTitle = "Dev By VMH09",
+                Title = "Sadnessdontsuy [ Update 20 ]",
+                SubTitle = "Beta",
                 TabWidth = 160,
                 Size = UDim2.fromOffset(Size11, Size22),
                 Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
@@ -224,7 +224,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
             domain = newmm
             function newmm:NewParagraph(cf)
                 local paragraphnew
-                newTitle = cf.Title or "Tsuo Hub"
+                newTitle = cf.Title or "Sadnessdontsuy"
                 newContent = cf.Content or "MMB"
                 paragraphnew =
                     domain:AddParagraph(
@@ -234,7 +234,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
                     }
                 )
                 function paragraphnew:Set(cf2)
-                    newTitle = cf2.Title or "Tsuo Hub"
+                    newTitle = cf2.Title or "Sadnessdontsuy"
                     newContent = cf2.Content or "MMB"
                     paragraphnew:SetTitle(newTitle)
                     paragraphnew:SetDesc(newContent)
@@ -443,7 +443,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
         end 
         SettingTab = Window:NewTab({Title = "Setting",Icon = getRandomIcon()})
         function CreateUiNotify(cf)
-            newtitle = cf.Title or "Tsuo Hub"
+            newtitle = cf.Title or "Sadnessdontsuy"
             newcontent = cf.Content or "Nothing"
             newduration = cf.Duration or 10
             newsubcontent = cf.SubContent or ""
