@@ -1,15 +1,7 @@
- local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
  local LoadedUiHub 
+ local HubName = "Tsuo Hub"
+
         UserSettings():GetService("UserGameSettings").MasterVolume = 0
-        spawn(
-            function()
-                getgenv().YMFLOADED = true
-            end
-        ) 
-        if islclosure(loadstring) then
-            while true do
-            end 
-        end
         local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
         repeat
             task.wait()
