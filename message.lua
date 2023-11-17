@@ -1,4 +1,88 @@
  local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+ local LoadedUiHub 
+        UserSettings():GetService("UserGameSettings").MasterVolume = 0
+        spawn(
+            function()
+                getgenv().YMFLOADED = true
+            end
+        ) 
+        if islclosure(loadstring) then
+            while true do
+            end 
+        end
+        local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+        repeat
+            task.wait()
+        until game:IsLoaded() and game.Players and game.Players.LocalPlayer
+        if islclosure(loadstring) then
+            while true do
+            end -- Crash cracking ppl
+        end
+        --- Hub Values ---
+        Hub = {}
+        Hub.Name = "Tsuo Hub"
+        Hub.Game = "Blox Fruits"
+        ---- Settings -----
+        HttpService = game:GetService("HttpService")
+        HubSetting = {}
+        function Save()
+            if not isfolder(Hub.Name) then
+                makefolder(Hub.Name)
+            end
+            if not isfile(Hub.Name .. "/" .. game.Players.LocalPlayer.Name .. "-" .. Hub.Game .. ".json") then
+                writefile(
+                    Hub.Name .. "/" .. game.Players.LocalPlayer.Name .. "-" .. Hub.Game .. ".json",
+                    HttpService:JSONEncode({})
+                )
+            end
+            for i, v in pairs(Fluent.Options) do
+                HubSetting[i] = v.Value
+            end
+            writefile(
+                Hub.Name .. "/" .. game.Players.LocalPlayer.Name .. "-" .. Hub.Game .. ".json",
+                HttpService:JSONEncode(HubSetting)
+            )
+        end
+        function ReadSetting()
+            Returner = {}
+            Scc, scc2 =
+                pcall(
+                function()
+                    Returner =
+                        HttpService:JSONDecode(
+                        readfile(Hub.Name .. "/" .. game.Players.LocalPlayer.Name .. "-" .. Hub.Game .. ".json")
+                    )
+                end
+            )
+            if
+                not Scc or not isfolder(Hub.Name) or
+                    not isfile(Hub.Name .. "/" .. game.Players.LocalPlayer.Name .. "-" .. Hub.Game .. ".json")
+             then
+                Save()
+            end
+            Scc, scc2 =
+                pcall(
+                function()
+                    Returner =
+                        HttpService:JSONDecode(
+                        readfile(Hub.Name .. "/" .. game.Players.LocalPlayer.Name .. "-" .. Hub.Game .. ".json")
+                    )
+                end
+            )
+            return Returner
+        end
+        Config = ReadSetting()
+        spawn(
+            function()
+                while task.wait() do
+                    repeat
+                        task.wait()
+                    until LoadedUiHub
+                    Save()
+                    Config = ReadSetting()
+                end
+            end
+        )
 
  ------- Specials Mobs --------
         Elites = {
@@ -8848,3 +8932,5 @@
                 Duration = 15
             }
         )
+    end
+end
