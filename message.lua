@@ -8901,10 +8901,8 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
         -- Final Load --
         LoadedUiHub = true
         Window:SelectTab(1)
-        Fluent:Notify(
-            {
-                Title = "Sadnessdontsuy",
-                Content = "The script has been loaded successful.",
-                Duration = 15
-            }
-        )
+        Fluent:Notify({
+            Title = "Sadnessdontsuy",
+            Content = "The script has been loaded.",
+            Duration = 8
+        })
