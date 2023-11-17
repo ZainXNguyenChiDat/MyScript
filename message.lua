@@ -61,7 +61,7 @@ if islclosure(loadstring) then
 end
 --- Hub Values ---
 Hub = {}
-Hub.Name = "Sadnessdontsuy"
+Hub.Name = "Tsuo Hub"
 Hub.Game = "Blox Fruits"
 ---- Settings -----
 HttpService = game:GetService("HttpService")
@@ -497,7 +497,7 @@ spawn(
         end
         DefaultTab = Window:NewTab({Title = "Default", Icon = getRandomIcon()})
         FarmTab = Window:NewTab({Title = "Farm", Icon = getRandomIcon()}) 
-        ServerTab = Window:NewTab({Title = "Server Infomation", Icon = getRandomIcon()})
+        ServerTab = Window:NewTab({Title = "Server & Info", Icon = getRandomIcon()})
         V4Tab = Window:NewTab({Title = "Race", Icon = getRandomIcon()})
         PlRTAB = Window:NewTab({Title = "Local Player", Icon = getRandomIcon()}) 
         WeaponTab = Window:NewTab({Title = "Weapon", Icon = getRandomIcon()}) 
@@ -506,7 +506,7 @@ spawn(
         if not Sea1 then 
             SeaBeastTab = Window:NewTab({Title = "Sea Beast",Icon = getRandomIcon()})
         end 
-        SettingTab = Window:NewTab({Title = "Setting",Icon = "settings" })
+        SettingTab = Window:NewTab({Title = "Setting",Icon = getRandomIcon()})
         function CreateUiNotify(cf)
             newtitle = cf.Title or "Sadnessdontsuy"
             newcontent = cf.Content or "Nothing"
