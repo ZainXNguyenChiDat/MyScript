@@ -146,7 +146,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
             end
         end 
         IsMobile = CheckMobile()
-        Size11,Size22 = 600,460
+        Size11,Size22 = 360,460
         if IsMobile then 
             Size11,Size22 = 500,290
             local ClickButton = Instance.new("ScreenGui")
