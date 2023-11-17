@@ -8450,7 +8450,7 @@ spawn(
                     Title = "Hop For Bosses"
                 }
             )
-            --FarmTab:AddSection("Elite/Rip India/Yama/Tushita/Dough King Functions")
+            FarmTab:AddSection("Elite/Rip India/Yama/Tushita/Dough King Functions")
             FarmTab:NewToggle("Auto Elite",{
                 Title = "Auto Elite Hunter",
                 Description = "Auto Elite Hunter When It Spawned."
@@ -8463,15 +8463,15 @@ spawn(
                 Title = "Auto Rip Indra",
                 Description = "Auto summon rip indra and kill that nigga when have god chalice and automatic enable haki buttons."
             })
-            Weapon:NewToggle("Auto Tushita",{
+            FarmTab:NewToggle("Auto Tushita",{
                 Title = "Auto Tushita",
                 Description = "Auto do Tushita Puzzle and get Tushita.\nAuto Kill Rip India will ignore this."
             })
-            Weapon:NewToggle("Auto Tushita Hop",{
+            FarmTab:NewToggle("Auto Tushita Hop",{
                 Title = "Auto Tushita Hop",
                 Description = "Ignore what u doing. Just hopping for rip india and do Tushita Puzzle."
             }) 
-            Weapon:NewToggle("Auto Yama",{
+            FarmTab:NewToggle("Auto Yama",{
                 Title = "Yama",
                 Description = "Auto unlock yama while check elite killed > 30."
             })
