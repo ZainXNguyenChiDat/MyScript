@@ -8327,8 +8327,8 @@ spawn(
             })
         
         
-            --FarmTab:AddSection("Attack functions")
-            Settings:NewDropdown(
+            FarmTab:AddSection("Attack functions")
+            FarmTab:NewDropdown(
                 "Fast Attack Delay",
                 {
                     Title = "Fast Attack Delay",
@@ -8339,13 +8339,13 @@ spawn(
                     }
                 }
             )
-            Settings:NewToggle(
+            FarmTab:NewToggle(
                 "Fast Attack Aura",
                 {
                     Title = "Attack Aura"
                 }
             )
-            --FarmTab:AddSection("Default Farm")
+            FarmTab:AddSection("Default Farm")
             SelectWeapon_Dropdown =FarmTab:NewDropdown(
                 "Weapon Type",
                 {
@@ -8355,7 +8355,7 @@ spawn(
             )
             FarmTab:NewParagraph(
                 {
-                    Title = "Note",
+                    Title = "Farm Note",
                     Content = "If you choose 2 Option like Level and Cake Prince then when level max it will farm Cake Prince or smthing like that lol"
                 }
             )
@@ -8390,14 +8390,14 @@ spawn(
                     "Kill Player Quest",
                     {
                         Title = "Kill Player Quest",
-                        Description = "Get Kill Player Quest For Super-High Exp"
+                        Description = "Claim Kill Player Quest For Super-High Exp"
                     }
                 )
             elseif Sea3 then
                 ClaimExtraQuest_Toggle = FarmTab:NewToggle(
                     "Claim Bone & Cake Prince Quest",
                     {
-                        Title = "Get Bone & Cake Prince Quests"
+                        Title = "Claim Bone & Cake Prince Quests"
                     }
                 )
             end
@@ -8412,11 +8412,11 @@ spawn(
                 Description = "% Health of mob that script start use skill on it.",
                 Min = 10,
                 Max = 100, 
-                Default = 30
+                Default = 50
             })
             FarmTab:NewToggle("Mastery Farm",{
                 Title = "Mastery Farm Option",
-                Description = "Mastery farm for the most mob farm and please select skill spam in settings with farm mastery"
+                Description = "Mastery farm for the most mob farm."
             })
             FarmTab:NewToggle("Only V4",{
                 Title = "Only When V4 Activited",
@@ -8472,7 +8472,7 @@ spawn(
                 Description = "Ignore what u doing. Just hopping for rip india and do Tushita Puzzle."
             }) 
             Weapon:NewToggle("Auto Yama",{
-                Title = "Auto Yama",
+                Title = "Yama",
                 Description = "Auto unlock yama while check elite killed > 30."
             })
             FarmTab:NewToggle("Auto Dough King",{
@@ -8521,9 +8521,9 @@ spawn(
                     end
                 })
                 V4Tab:AddSection("Temple of Time Puzzle")
-                TrialStage1_Toggle = V4Tab:NewToggle("Auto Trial",{
-                    Title = "Auto Trial",
-                    Description = "Auto do Trial  All Race."
+                TrialStage1_Toggle = V4Tab:NewToggle("Auto Trial Stage 1",{
+                    Title = "Auto Trial Stage 1",
+                    Description = "Auto do Trial Stage 1 All Race."
                 })
                 AutoChooseGear_Toggle = V4Tab:NewToggle("Auto Choose Gear",{
                     Title = "Auto Choose Gear",
@@ -8644,7 +8644,7 @@ spawn(
                 end
             end  
             if WeaponTab then 
-                --WeaponTab:AddSection("Item Puzzle")
+                WeaponTab:AddSection("Item Puzzle")
                 if Sea2 or Sea3 then
                     WeaponTab:NewToggle("Auto Soul Guitar",{
                         Title = "Auto Soul Guitar",
