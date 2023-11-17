@@ -8052,8 +8052,8 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
         )
         
         -------- Creating functions element ------------
-        do
-            DefaultTab:AddSection("toi nho tho")
+        
+            DefaultTab:AddSection("X")
             DefaultTab:NewButton({
                 Title = "Fly Boat",
                 Callback = function()
