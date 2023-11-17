@@ -1,5 +1,5 @@
 if getgenv().ScriptExecute then return print('Script Already Execute') end
-local start_check_time = tick()
+--local start_check_time = tick()
 getgenv().ScriptExecute = true
 repeat task.wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer  
 if game.CoreGui:FindFirstChild("Mo Mo Be") then
@@ -210,7 +210,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
             {
                 Title = "Tsuo Hub Update 20",
                 SubTitle = "Dev By VMH09",
-                TabWidth = 360,
+                TabWidth = 160,
                 Size = UDim2.fromOffset(Size11, Size22),
                 Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
                 Theme = "Darker",
