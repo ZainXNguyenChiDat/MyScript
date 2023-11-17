@@ -1,3 +1,56 @@
+if getgenv().ScriptExecute then return print('Script Already Execute') end
+local start_check_time = tick()
+getgenv().ScriptExecute = true
+repeat task.wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer  
+if game.CoreGui:FindFirstChild("Mo Mo Be") then
+    game.CoreGui:FindFirstChild("Mo Mo Be"):Destroy()
+end  
+spawn(function()
+    keyuicheck = tick()
+    repeat task.wait() 
+        if tick()-keyuicheck >= 15 then 
+            game:GetService("TeleportService"):TeleportToPlaceInstance(
+                game.PlaceId,
+                game.JobId,
+                game.Players.LocalPlayer
+            ) 
+        end
+    until game.CoreGui:FindFirstChild("Mo Mo Be") 
+end)
+if islclosure(getgenv().setfenv) then game.Players.LocalPlayer:Kick("MMB 1") while true do end end -- ANTI SETFENV TAMPERING
+if islclosure(getgenv().tostring) then game.Players.LocalPlayer:Kick("MMB 2") while true do end end -- ANTI TOSTRING TAMPERING
+getgenv().clonefunction = nil
+getgenv().clonefunc = nil
+local HttpService = game:GetService("HttpService")
+local decode_response
+local s, e = pcall(function()
+    decode_response = HttpService:JSONDecode(data_req.Body)
+end)
+
+local function update_seed()
+    for i, v in pairs(game:GetService('Players'):GetChildren()) do
+        RndSeed = (RndSeed + #v.Name + v.UserId + v.UserId) % 10000000
+        pcall(function()
+            RndSeed = (RndSeed + mathfloor((v.Head.Position.X * 1000) % 10000 + 2) * mathfloor((v.Head.Position.Y * 1000 + 2) % 100000)) % 10000000
+        end)
+    end
+end
+local LoadedUiHub 
+UserSettings():GetService("UserGameSettings").MasterVolume = 0
+spawn(
+    function()
+        getgenv().YMFLOADED = true
+    end
+) 
+repeat
+    task.wait()
+until game:IsLoaded() and game.Players and game.Players.LocalPlayer
+if islclosure(loadstring) then
+    while true do
+    end -- Crash cracking ppl
+end
+
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
         repeat
             task.wait()
