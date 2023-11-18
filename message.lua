@@ -225,18 +225,18 @@ local Window =
             end
             return ""
         end
-        DefaultTab = Window:NewTab({Title = "Default", Icon = getRandomIcon()})
-        FarmTab = Window:NewTab({Title = "Farm", Icon = getRandomIcon()}) 
-        ServerTab = Window:NewTab({Title = "Server & Info", Icon = getRandomIcon()})
-        V4Tab = Window:NewTab({Title = "Race", Icon = getRandomIcon()})
-        PlRTAB = Window:NewTab({Title = "Local Player", Icon = getRandomIcon()}) 
-        WeaponTab = Window:NewTab({Title = "Weapon", Icon = getRandomIcon()}) 
-        ShopTab = Window:NewTab({Title = "Shop",Icon = getRandomIcon()})
-        RaidTab = Window:NewTab({Title = "Fruits & Raid", Icon = getRandomIcon()})
+        DefaultTab = Window:NewTab({Title = "Default", Icon = "box" }),
+        FarmTab = Window:NewTab({Title = "Farm", Icon = "box" }),
+        ServerTab = Window:NewTab({Title = "Server & Info", Icon = "box" }),
+        V4Tab = Window:NewTab({Title = "Race", Icon = "box" }),
+        PlRTAB = Window:NewTab({Title = "Local Player", Icon = "box" }),
+        WeaponTab = Window:NewTab({Title = "Weapon", Icon = "box" }),
+        ShopTab = Window:NewTab({Title = "Shop",Icon = "box" }),
+        RaidTab = Window:NewTab({Title = "Fruits & Raid", Icon = "box" }),
         if not Sea1 then 
-            SeaBeastTab = Window:NewTab({Title = "Sea Beast",Icon = getRandomIcon()})
+            SeaBeastTab = Window:NewTab({Title = "Sea Beast",Icon = "box" }),
         end 
-        SettingTab = Window:NewTab({Title = "Setting",Icon = getRandomIcon()})
+        SettingTab = Window:NewTab({Title = "Setting",Icon = "box" })
         function CreateUiNotify(cf)
             newtitle = cf.Title or "Sadnessdontsuy"
             newcontent = cf.Content or "Nothing"
