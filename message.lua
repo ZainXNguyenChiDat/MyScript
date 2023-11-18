@@ -8328,7 +8328,7 @@ spawn(
         
         
             FarmTab:AddSection("Attack functions")
-            SettingTab:NewDropdown(
+            FarmTab:NewDropdown(
                 "Fast Attack Delay",
                 {
                     Title = "Fast Attack Delay",
@@ -8339,7 +8339,7 @@ spawn(
                     }
                 }
             )
-            SettingTab:NewToggle(
+            FarmTab:NewToggle(
                 "Fast Attack Aura",
                 {
                     Title = "Attack Aura"
@@ -8463,15 +8463,15 @@ spawn(
                 Title = "Auto Rip Indra",
                 Description = "Auto summon rip indra and kill that nigga when have god chalice and automatic enable haki buttons."
             })
-            WeaponTab:NewToggle("Auto Tushita",{
+            FarmTab:NewToggle("Auto Tushita",{
                 Title = "Auto Tushita",
                 Description = "Auto do Tushita Puzzle and get Tushita.\nAuto Kill Rip India will ignore this."
             })
-            WeaponTab:NewToggle("Auto Tushita Hop",{
+            FarmTab:NewToggle("Auto Tushita Hop",{
                 Title = "Auto Tushita Hop",
                 Description = "Ignore what u doing. Just hopping for rip india and do Tushita Puzzle."
             }) 
-            WeaponTab:NewToggle("Auto Yama",{
+            FarmTab:NewToggle("Auto Yama",{
                 Title = "Yama",
                 Description = "Auto unlock yama while check elite killed > 30."
             })
