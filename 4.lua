@@ -7875,7 +7875,6 @@ spawn(
                                                 v:FindFirstChild("HumanoidRootPart") and
                                                 v:FindFirstChild("Humanoid") and
                                                 v.Humanoid.Health > 0
-                                                LockCFrame = true
                                          then
                                             repeat
                                                 KillMob(v)
@@ -7883,8 +7882,6 @@ spawn(
                                                 not v:FindFirstChild("Humanoid") or
                                                 not v:FindFirstChild("HumanoidRootPart") or
                                                 v.Humanoid.Health <= 0
-                                                LockCFrame = true
-
                                         end
                                     end
                                 end
@@ -7981,7 +7978,6 @@ spawn(
                                     else
                                         EnableBuso()
                                         EquipWeapon()
-                                        LockCFrame = true
                                         if
                                             GetDistance(CFrame.new(-1990.672607421875, 4532.99951171875, -14973.6748046875)) >
                                                 3000
