@@ -1,6 +1,4 @@
-if getgenv().ScriptExecute then return print('Script Already Execute') end
-local start_check_time = tick()
-getgenv().ScriptExecute = true
+
 repeat task.wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer  
 if game.CoreGui:FindFirstChild("Mo Mo Be") then
     game.CoreGui:FindFirstChild("Mo Mo Be"):Destroy()
@@ -17,10 +15,6 @@ end
 --         end
 --     until game.CoreGui:FindFirstChild("Mo Mo Be") 
 -- end)
-if islclosure(getgenv().setfenv) then game.Players.LocalPlayer:Kick("MMB 1") while true do end end -- ANTI SETFENV TAMPERING
-if islclosure(getgenv().tostring) then game.Players.LocalPlayer:Kick("MMB 2") while true do end end -- ANTI TOSTRING TAMPERING
-getgenv().clonefunction = nil
-getgenv().clonefunc = nil
 local HttpService = game:GetService("HttpService")
 local decode_response
 local s, e = pcall(function()
