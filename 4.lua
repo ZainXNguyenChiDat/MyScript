@@ -8523,6 +8523,9 @@ spawn(
                 AutoLockmoon_toggle = V4Tab:NewToggle("Auto Look Moon",{
                     Title = "Auto Look Moon",
                     Description = "Auto Focus Moon For You",
+                    Callback=  function() 
+                        MoveCamtoMoon()
+                    end
                 })
                 V4Tab:AddSection("Temple of Time Puzzle")
                 TrialStage1_Toggle = V4Tab:NewToggle("Auto Trial",{
@@ -8905,7 +8908,6 @@ spawn(
                         DoubleQuest = DoubleQuest_Toggle,
                         ActiveRace = AutoActiveRace_Toggle,
                         BuyGear = AutoBuyGear_Toggle,
-                        MoveCamtoMoon = AutoLockmoon_toggle,
                     }
                     SellerNhiConfig.Trial:Set(true)
                     SellerNhiConfig.Farm:Set(false)
