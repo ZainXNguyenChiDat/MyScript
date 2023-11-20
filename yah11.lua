@@ -6118,9 +6118,7 @@ spawn(
                                  then
                                     pcall(
                                         function()
-                                             if
                                               LockCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                                            then 
                                             Tweento(LockCFrame)
                                             Tweento(TpCFrame)
                                         end
