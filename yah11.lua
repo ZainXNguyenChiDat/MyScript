@@ -6110,12 +6110,6 @@ spawn(
             function()
                 while wait() do
                     if AutoTp and TpCFrame then
-                        pcall(
-                            function()
-                                if
-                                    (TpCFrame.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >
-                                        300                                  
-                                 then
                                     pcall(
                                         function()
                                               LockCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
