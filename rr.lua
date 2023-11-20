@@ -229,7 +229,7 @@ HubSetting = {}
         function CountZombie(x)
             local Counter = 0
             for i, v in pairs(game.workspace.Enemies:GetChildren()) do
-                if RemoveLevelTitle(v.Name) == "Living Zombie" and v.Humanoid.Health > 0 then
+                if RemoveLevelName(v.Name) == "Living Zombie" and v.Humanoid.Health > 0 then
                     if
                         not x or
                             (v.HumanoidRootPart.Position - Vector3.new(-10171.7607421875, 138.62667846679688, 6008.0654296875)).magnitude <
@@ -244,7 +244,7 @@ HubSetting = {}
         function CountZombieInWorkspace()
             Counter = 0
             for i, v in pairs(game.workspace.Enemies:GetChildren()) do
-                if RemoveLevelTitle(v.Name) == "Living Zombie" and v.Humanoid.Health > 0 then
+                if RemoveLevelName(v.Name) == "Living Zombie" and v.Humanoid.Health > 0 then
                     Counter = Counter + 1
                 end
             end
@@ -255,7 +255,7 @@ HubSetting = {}
                 function()
                     for i, v in pairs(game.workspace.Enemies:GetChildren()) do
                         if
-                        RemoveLevelTitle(v.Name) == "Living Zombie" and v:FindFirstChild("Humanoid") and
+                        RemoveLevelName(v.Name) == "Living Zombie" and v:FindFirstChild("Humanoid") and
                                 v:FindFirstChild("HumanoidRootPart")
                          then
                             if
@@ -422,7 +422,7 @@ HubSetting = {}
                             if CountZombie() == 6 then
                                 for i, v in pairs(game.workspace.Enemies:GetChildren()) do
                                     if
-                                        RemoveLevelTitle(v.Name) == "Living Zombie" and v:FindFirstChild("HumanoidRootPart") and
+                                        RemoveLevelName(v.Name) == "Living Zombie" and v:FindFirstChild("HumanoidRootPart") and
                                             v:FindFirstChild("Humanoid") and
                                             v.Humanoid.Health > 0
                                      then
@@ -735,7 +735,7 @@ HubSetting = {}
             end
             for i, v in next, game.workspace.Enemies:GetChildren() do
                 if
-                    RemoveLevelTitle(v.Name) == CheckNearestMobSpawnHaze() and v:IsA("Model") and
+                    RemoveLevelName(v.Name) == CheckNearestMobSpawnHaze() and v:IsA("Model") and
                         v:FindFirstChild("HumanoidRootPart") and --and v:FindFirstChild("HazeESP")
                         v:FindFirstChild("Humanoid") and
                         v.Humanoid.Health > 0
@@ -749,7 +749,7 @@ HubSetting = {}
             allhaze = {}
             for i, v in next, game:GetService("Players").LocalPlayer.QuestHaze:GetChildren() do
                 if v.Value > 0 then
-                    table.insert(allhaze, RemoveLevelTitle(v.Name))
+                    table.insert(allhaze, RemoveLevelName(v.Name))
                 end
             end
             nameg = ""
@@ -1318,7 +1318,7 @@ HubSetting = {}
                 "Fish Crew Member"
             }
             for i,v in pairs(game.workspace.Enemies:GetChildren()) do 
-                if table.find(NMob,RemoveLevelTitle(v.Name)) and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then 
+                if table.find(NMob,RemoveLevelName(v.Name)) and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then 
                     return v 
                 end
             end
@@ -1561,7 +1561,7 @@ HubSetting = {}
             for i, v in pairs(getnilinstances()) do
                 if
                     v:IsA("Model") and v:FindFirstChild("Head") and v.Head:FindFirstChild("QuestBBG") and
-                        v.Head.QuestBBG.Title.Text == "MISC."
+                        v.Head.QuestBBG.Name.Text == "MISC."
                  then
                     AllNPCS[v.Name] = v.Head.CFrame * CFrame.new(0, -2, 2)
                 end
@@ -1934,7 +1934,7 @@ HubSetting = {}
                             if v:IsA("Frame") then
                                 if
                                     Config["Use Skills"][v.Name] and v.Name ~= "Template" and
-                                        v.Title.TextColor3 == Color3.new(1, 1, 1) and
+                                        v.Name.TextColor3 == Color3.new(1, 1, 1) and
                                         v.Cooldown.Size == UDim2.new(0, 0, 1, -1) or
                                         v.Cooldown.Size == UDim2.new(1, 0, 1, -1)
                                  then
@@ -2136,7 +2136,7 @@ HubSetting = {}
                 game:GetService("StarterGui"):SetCore(
                     "SendNotification",
                     {
-                        Title = "You hadnt point", -- Required
+                        Name = "You hadnt point", -- Required
                         Text = "You hadnt point to choose", -- Required
                         Duration = 30
                     }
@@ -2307,7 +2307,7 @@ HubSetting = {}
         ) 
         function IsSwanPirate()
             for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
-                if RemoveLevelTitle(v.Name) == "Swan Pirate" and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                if RemoveLevelName(v.Name) == "Swan Pirate" and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     return true
                 end
             end
@@ -2382,14 +2382,14 @@ HubSetting = {}
             return game:GetService("Players").LocalPlayer.Data.Race.Value .. " V1"
         end 
         function CheckBoss(bossname)
-            bossname = RemoveLevelTitle(bossname)
+            bossname = RemoveLevelName(bossname)
             for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-                if RemoveLevelTitle(v.Name) == bossname and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                if RemoveLevelName(v.Name) == bossname and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     return v
                 end
             end 
             for i, v in pairs(game.workspace.Enemies:GetChildren()) do
-                if RemoveLevelTitle(v.Name) == bossname and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                if RemoveLevelName(v.Name) == bossname and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
                     return v
                 end
             end
@@ -2620,7 +2620,7 @@ HubSetting = {}
             ]:GetChildren() do
                 if v:IsA("Frame") and Config["Use Skills"][v.Name] then
                     if
-                        v.Name ~= "Template" and v.Title.TextColor3 == Color3.new(1, 1, 1) and
+                        v.Name ~= "Template" and v.Name.TextColor3 == Color3.new(1, 1, 1) and
                             v.Cooldown.Size == UDim2.new(0, 0, 1, -1) or
                             v.Cooldown.Size == UDim2.new(1, 0, 1, -1)
                      then
@@ -2653,7 +2653,7 @@ HubSetting = {}
             for i, v in next, game:GetService("Players").LocalPlayer.PlayerGui.Main.Skills[NameSword()]:GetChildren() do
                 if v:IsA("Frame") and Config["Use Skills"][v.Name] then
                     if
-                        v.Name ~= "Template" and v.Title.TextColor3 == Color3.new(1, 1, 1) and
+                        v.Name ~= "Template" and v.Name.TextColor3 == Color3.new(1, 1, 1) and
                             v.Cooldown.Size == UDim2.new(0, 0, 1, -1) or
                             v.Cooldown.Size == UDim2.new(1, 0, 1, -1)
                      then
@@ -2673,7 +2673,7 @@ HubSetting = {}
             for i, v in next, game:GetService("Players").LocalPlayer.PlayerGui.Main.Skills[NameGun()]:GetChildren() do
                 if v:IsA("Frame") and Config["Use Skills"][v.Name] then
                     if
-                        v.Name ~= "Template" and v.Title.TextColor3 == Color3.new(1, 1, 1) and
+                        v.Name ~= "Template" and v.Name.TextColor3 == Color3.new(1, 1, 1) and
                             v.Cooldown.Size == UDim2.new(0, 0, 1, -1) or
                             v.Cooldown.Size == UDim2.new(1, 0, 1, -1)
                      then
@@ -2690,7 +2690,7 @@ HubSetting = {}
             for i, v in next, game:GetService("Players").LocalPlayer.PlayerGui.Main.Skills[NameMelee()]:GetChildren() do
                 if v:IsA("Frame") and Config["Use Skills"][v.Name] then
                     if
-                        v.Name ~= "Template" and v.Title.TextColor3 == Color3.new(1, 1, 1) and
+                        v.Name ~= "Template" and v.Name.TextColor3 == Color3.new(1, 1, 1) and
                             v.Cooldown.Size == UDim2.new(0, 0, 1, -1) or
                             v.Cooldown.Size == UDim2.new(1, 0, 1, -1)
                      then
@@ -3301,7 +3301,7 @@ HubSetting = {}
             end
         end
         function CheckQuestBoss(bossname)
-            b = RemoveLevelTitle(bossname)
+            b = RemoveLevelName(bossname)
             for i, v in next, require(game:GetService("ReplicatedStorage").Quests) do
                 for i1, v1 in next, v do
                     for i2, v2 in next, v1.Task do
@@ -3334,15 +3334,15 @@ HubSetting = {}
         )
         function KillMobNotInWorkSpace(mobname)
             print("Kill mob in workspace")
-            mobname = RemoveLevelTitle(mobname)
+            mobname = RemoveLevelName(mobname)
             mobreal = ""
             for i, v in pairs(game.workspace.Enemies:GetChildren()) do
-                if RemoveLevelTitle(mobname) == RemoveLevelTitle(v.Name) then
+                if RemoveLevelName(mobname) == RemoveLevelName(v.Name) then
                     mobreal = v.Name
                 end
             end
             for i, v in pairs(game.ReplicatedStorage:GetChildren()) do
-                if RemoveLevelTitle(mobname) == RemoveLevelTitle(v.Name) then
+                if RemoveLevelName(mobname) == RemoveLevelName(v.Name) then
                     mobreal = v.Name
                 end
             end
@@ -3366,10 +3366,10 @@ HubSetting = {}
                 "rip_indra [Lv. 1500] [Boss]"
             }
             for i,v in pairs(blackboss) do 
-                blackboss[i] = RemoveLevelTitle(v)
+                blackboss[i] = RemoveLevelName(v)
             end
             islongma = function(v) 
-                return RemoveLevelTitle(v) == RemoveLevelTitle("Longma [Lv. 2000] [Boss]")
+                return RemoveLevelName(v) == RemoveLevelName("Longma [Lv. 2000] [Boss]")
             end
             for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
                 if
@@ -3461,7 +3461,7 @@ HubSetting = {}
         local CreateFoldermmb = Instance.new("Folder")
         CreateFoldermmb.Parent = game.Workspace
         CreateFoldermmb.Name = "MobSpawns"
-        function RemoveLevelTitle(v)
+        function RemoveLevelName(v)
             return tostring(tostring(v):gsub(" %pLv. %d+%p", ""):gsub(" %pRaid Boss%p", ""):gsub(" %pBoss%p", ""))
         end 
         task.spawn(
@@ -3469,7 +3469,7 @@ HubSetting = {}
                 while task.wait() do 
                     pcall(function()
                         for i,v in pairs(game.workspace.MobSpawns:GetChildren()) do  
-                            v.Name = RemoveLevelTitle(v.Name)
+                            v.Name = RemoveLevelName(v.Name)
                         end
                     end)
                     task.wait(50)
@@ -3492,7 +3492,7 @@ HubSetting = {}
                 end
             end
             for i, v in pairs(getnilinstances()) do
-                if table.find(tablefoldermmb, RemoveLevelTitle(v.Name)) then
+                if table.find(tablefoldermmb, RemoveLevelName(v.Name)) then
                     table.insert(MobDepTraiTable, v)
                 end
             end
@@ -3520,11 +3520,11 @@ HubSetting = {}
         ReloadFolderMob()
         function CheckMob(tbmob, wijwerg)
             for i, v in pairs(tbmob) do
-                tbmob[i] = RemoveLevelTitle(v)
+                tbmob[i] = RemoveLevelName(v)
             end
             for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
                 if
-                    table.find(tbmob, RemoveLevelTitle(v.Name)) and v:FindFirstChild("Humanoid") and
+                    table.find(tbmob, RemoveLevelName(v.Name)) and v:FindFirstChild("Humanoid") and
                         v:FindFirstChild("HumanoidRootPart") and
                         v.Humanoid.Health > 0
                  then
@@ -3534,7 +3534,7 @@ HubSetting = {}
             if wijwerg then
                 for i, v in pairs(game.ReplicatedStorage:GetChildren()) do
                     if
-                        table.find(tbmob, RemoveLevelTitle(v.Name)) and v:FindFirstChild("Humanoid") and
+                        table.find(tbmob, RemoveLevelName(v.Name)) and v:FindFirstChild("Humanoid") and
                             v:FindFirstChild("HumanoidRootPart") and
                             v.Humanoid.Health > 0
                      then
@@ -3591,7 +3591,7 @@ HubSetting = {}
         function CheckKick(v)
             if v.Name == "ErrorPrompt" then
                 if v.Visible then
-                    if v.TitleFrame.ErrorTitle.Text ~= "Teleport Failed" then
+                    if v.NameFrame.ErrorName.Text ~= "Teleport Failed" then
                         game:GetService("TeleportService"):TeleportToPlaceInstance(
                             game.PlaceId,
                             game.JobId,
@@ -3602,7 +3602,7 @@ HubSetting = {}
                 v:GetPropertyChangedSignal("Visible"):Connect(
                     function()
                         if v.Visible then
-                            if v.TitleFrame.ErrorTitle.Text ~= "Teleport Failed" then
+                            if v.NameFrame.ErrorName.Text ~= "Teleport Failed" then
                                 game:GetService("TeleportService"):TeleportToPlaceInstance(
                                     game.PlaceId,
                                     game.JobId,
@@ -3837,7 +3837,7 @@ HubSetting = {}
             "Cake Prince [Lv. 2300] [Raid Boss]"
         }
         for i,v in pairs(CakePrinceBosses) do 
-            CakePrinceBosses[i] = RemoveLevelTitle(v)
+            CakePrinceBosses[i] = RemoveLevelName(v)
         end
         function getCakePrince()
             for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
@@ -4038,8 +4038,8 @@ HubSetting = {}
             if v:FindFirstChild("lockmmb") then
                 return
             end 
-            namemob1 = RemoveLevelTitle(namemob1)
-            v.Name = RemoveLevelTitle(v.Name)
+            namemob1 = RemoveLevelName(namemob1)
+            v.Name = RemoveLevelName(v.Name)
             if namemob1 and v.Name ~= namemob1 then
                 return
             end
@@ -4142,7 +4142,7 @@ HubSetting = {}
                 if string.find(Nasga.Name, "Boss") or table.find(Elites, Nasga.Name) then
                     if not string.find(Nasga.Name, "Boss") then
                         for i, v in pairs(Elites) do
-                            if RemoveLevelTitle(v) == RemoveLevelTitle(Nasga.Name) then
+                            if RemoveLevelName(v) == RemoveLevelName(Nasga.Name) then
                                 KillingBoss = true
                                 CreateGameNotify("Elite Boss", 30)
                             end
@@ -4155,7 +4155,7 @@ HubSetting = {}
                     CheckReqHop(Nasga.HumanoidRootPart.CFrame)
                 end
                 for i, v in pairs(Elites) do
-                    if RemoveLevelTitle(v) == RemoveLevelTitle(Nasga.Name) then
+                    if RemoveLevelName(v) == RemoveLevelName(Nasga.Name) then
                         KillingBoss = true
                         CreateGameNotify("Elite Boss", 30)
                     end
@@ -4388,14 +4388,14 @@ HubSetting = {}
             end
         end
         function GetMobSpawn(mob)
-            mob = RemoveLevelTitle(mob)
+            mob = RemoveLevelName(mob)
             ps, ps2 =
                 pcall(
                 function(v)
                     if not MobSpawnList[mob] then
                         if game.workspace.MobSpawns:FindFirstChild(mob) then
                             for i, v in pairs(game.workspace.MobSpawns:GetChildren()) do
-                                if RemoveLevelTitle(v.Name) == mob or v.Name == mob then
+                                if RemoveLevelName(v.Name) == mob or v.Name == mob then
                                     MobSpawnList[mob] = v
                                 end
                             end
@@ -4409,7 +4409,7 @@ HubSetting = {}
         end
         function GetListMobSpawn(a)
             for i, v in pairs(a) do
-                a[i] = RemoveLevelTitle(v)
+                a[i] = RemoveLevelName(v)
             end
             ReturnTB = {}
             returtbti = 0
@@ -4420,7 +4420,7 @@ HubSetting = {}
                     end
                     wait()
                     for i, v in pairs(game.Workspace.MobSpawns:GetChildren()) do
-                        if RemoveLevelTitle(v.Name) == Mobv then
+                        if RemoveLevelName(v.Name) == Mobv then
                             table.insert(MobSpawnList, v)
                             table.insert(ReturnTB, v)
                             returtbti = returtbti + 1
@@ -4428,7 +4428,7 @@ HubSetting = {}
                     end
                 else
                     for i, v in pairs(MobSpawnList) do
-                        if RemoveLevelTitle(i) == Mobv then
+                        if RemoveLevelName(i) == Mobv then
                             table.insert(ReturnTB, v)
                             returtbti = returtbti + 1
                         end
@@ -4446,7 +4446,7 @@ HubSetting = {}
             end
             CreateUiNotify(
                 {
-                    Title = tostring(v1),
+                    Name = tostring(v1),
                     Content = tostring(v2),
                     Duration = tonumber(v3)
                 }
@@ -4459,7 +4459,7 @@ HubSetting = {}
             })
         end
         function GetMobSpawnList(a)
-            a = RemoveLevelTitle(a)
+            a = RemoveLevelName(a)
             k = {}
             for i, v in pairs(game.Workspace.MobSpawns:GetChildren()) do
                 if v.Name == a then
@@ -5035,14 +5035,14 @@ HubSetting = {}
             for i, v in pairs(getnilinstances()) do
                 if
                     v:IsA("Model") and v:FindFirstChild("Head") and v.Head:FindFirstChild("QuestBBG") and
-                        v.Head.QuestBBG.Title.Text == "QUEST"
+                        v.Head.QuestBBG.Name.Text == "QUEST"
                  then
                     QuestPoses[v.Name] = v.Head.CFrame * CFrame.new(0, -2, 2)
                 end
             end
         
             for i, v in pairs(game.Workspace.NPCs:GetDescendants()) do
-                if v.Name == "QuestBBG" and v.Title.Text == "QUEST" then
+                if v.Name == "QuestBBG" and v.Name.Text == "QUEST" then
                     QuestPoses[v.Parent.Parent.Name] = v.Parent.Parent.Head.CFrame * CFrame.new(0, -2, 2)
                 end
             end
@@ -5353,12 +5353,12 @@ HubSetting = {}
         end
         local MBLVSKIP = {"Royal Squad [Lv. 525]", "Shanda [Lv. 475]"}
         for i, v in pairs(MBLVSKIP) do
-            MBLVSKIP[i] = RemoveLevelTitle(v)
+            MBLVSKIP[i] = RemoveLevelName(v)
         end
         function MobLevelSkip()
             for i, v in next, game.workspace.Enemies:GetChildren() do
                 if
-                    v:IsA("Model") and table.find(MBLVSKIP, RemoveLevelTitle(v.Name)) and v:FindFirstChild("HumanoidRootPart") and
+                    v:IsA("Model") and table.find(MBLVSKIP, RemoveLevelName(v.Name)) and v:FindFirstChild("HumanoidRootPart") and
                         v.Humanoid.Health > 0
                  then
                     return v.Name
@@ -5531,7 +5531,7 @@ HubSetting = {}
                 local function child(v)
                     if v.Name == "ErrorPrompt" then
                         if v.Visible then
-                            if v.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
+                            if v.NameFrame.ErrorName.Text == "Teleport Failed" then
                                 HopServer()
                                 v.Visible = false
                             end
@@ -5539,7 +5539,7 @@ HubSetting = {}
                         v:GetPropertyChangedSignal("Visible"):Connect(
                             function()
                                 if v.Visible then
-                                    if v.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
+                                    if v.NameFrame.ErrorName.Text == "Teleport Failed" then
                                         HopServer()
                                         v.Visible = false
                                     end
@@ -6231,7 +6231,7 @@ HubSetting = {}
                                 if CheckElite() then 
                                     if
                                     not string.find(
-                                        game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,
+                                        game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestName.Name.Text,
                                         CheckElite().Name:gsub(" %pLv. %d+%p", "")
                                     ) or
                                         not game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible
@@ -6346,7 +6346,7 @@ HubSetting = {}
                         repeat
                             if
                                 not string.find(
-                                    game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,
+                                    game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestName.Name.Text,
                                     CheckMob(Elites, true).Name:gsub(" %pLv. %d+%p", "")
                                 ) or
                                     not game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible
@@ -6740,11 +6740,11 @@ HubSetting = {}
                         if statusupgraderace == "Bartilo 0" then
                             if
                                 string.find(
-                                    game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,
+                                    game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestName.Name.Text,
                                     "Swan Pirates"
                                 ) and
                                     string.find(
-                                        game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,
+                                        game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestName.Name.Text,
                                         "50"
                                     ) and
                                     game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true
@@ -6752,7 +6752,7 @@ HubSetting = {}
                                 if IsSwanPirate() then
                                     for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
                                         if
-                                        RemoveLevelTitle(v.Name) == "Swan Pirate" and v:FindFirstChild("Humanoid") and
+                                        RemoveLevelName(v.Name) == "Swan Pirate" and v:FindFirstChild("Humanoid") and
                                                 v:FindFirstChild("HumanoidRootPart") and
                                                 v.Humanoid.Health > 0
                                          then
@@ -6934,7 +6934,7 @@ HubSetting = {}
                                     if IsSwanPirate() then
                                         for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
                                             if
-                                            RemoveLevelTitle(v.Name) == "Swan Pirate" and v:FindFirstChild("Humanoid") and
+                                            RemoveLevelName(v.Name) == "Swan Pirate" and v:FindFirstChild("Humanoid") and
                                                     v.Humanoid.Health > 0
                                              then
                                                 pcall(
@@ -7257,7 +7257,7 @@ HubSetting = {}
                     CountBoss = 0
                     if not getNearestSelectedBoss() then return end
                     Bosslon = {
-                        [RemoveLevelTitle(getNearestSelectedBoss().Name)] = getNearestSelectedBoss()
+                        [RemoveLevelName(getNearestSelectedBoss().Name)] = getNearestSelectedBoss()
                     }
                     for i, v in pairs(Bosslon) do
                         if CheckMob({i},true) and v then
@@ -7269,7 +7269,7 @@ HubSetting = {}
                                             conchomeci = GetInfoBossQuest(i)
                                             if
                                                 (not string.find(
-                                                    game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,
+                                                    game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestName.Name.Text,
                                                     i
                                                 ) and
                                                     game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible) or
@@ -7337,7 +7337,7 @@ HubSetting = {}
                             game.ReplicatedStorage.Remotes["CommF_"]:InvokeServer("PlayerHunter")
                             local namequest =
                                 string.gsub(
-                                game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,
+                                game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestName.Name.Text,
                                 "Defeat ",
                                 ""
                             )
@@ -7371,7 +7371,7 @@ HubSetting = {}
                             if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("Quest").Visible then
                                 local namequest =
                                     string.gsub(
-                                    game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,
+                                    game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestName.Name.Text,
                                     "Defeat ",
                                     ""
                                 )
@@ -7779,7 +7779,7 @@ HubSetting = {}
         do
             GeneralTab:AddSection("Sadness01")
             GeneralTab:NewButton({
-                Title = "Fly Boat",
+                Name = "Fly Boat",
                 Callback = function()
                     getgenv().BoatFloated = not getgenv().BoatFloated
                     if not GetLocalBoat() then return end 
@@ -7787,7 +7787,7 @@ HubSetting = {}
                 end
             })
             GeneralTab:NewButton({
-                Title = "Cancel Tween",
+                Name = "Cancel Tween",
                 Description = "Cancel the tween and remove noclip effects.",
                 Callback = function()
                     CancelTween()
@@ -7796,19 +7796,19 @@ HubSetting = {}
             GeneralTab:AddToggle(
                 "Same Y",
                 {
-                    Title = "Same Y Tween"
+                    Name = "Same Y Tween"
                 }
             )
             GeneralTab:AddToggle(
                 "Smart Bring",
                 {
-                    Title = "Smart Bring"
+                    Name = "Smart Bring"
                 }
             )
             GeneralTab:NewDropdown(
                 "Wolrd Selected",
                 {
-                    Title = "Choose World to teleport",
+                    Name = "Choose World to teleport",
                     Values = {
                         "Sea 1",
                         "Sea 2",
@@ -7821,17 +7821,17 @@ HubSetting = {}
                         end
                         DefaultTab:NewDialog(
                             {
-                                Title = "Are you sure?",
+                                Name = "Are you sure?",
                                 Content = "Are you Sure To Teleport " .. v .. "?",
                                 Buttons = {
                                     {
-                                        Title = "Confirm",
+                                        Name = "Confirm",
                                         Callback = function(v)
                                             TeleportWorld(Config["Wolrd Selected"])
                                         end
                                     },
                                     {
-                                        Title = "Cancel",
+                                        Name = "Cancel",
                                         Callback = function()
                                             print("Cancelled the dialog.")
                                         end
@@ -7852,7 +7852,7 @@ HubSetting = {}
             GeneralTab:NewDropdown(
                 "Mob Selected",
                 {
-                    Title = "Choose Mob",
+                    Name = "Choose Mob",
                     Values = mommb,
                     Callback = function(v)
                         Tweento(GetMobSpawn(v).CFrame * CFrame.new(0, 30, 0))
@@ -7862,7 +7862,7 @@ HubSetting = {}
             GeneralTab:NewDropdown(
                 "Stats Table",
                 {
-                    Title = "Choose Stats To Add",
+                    Name = "Choose Stats To Add",
                     Values = {
                         "Melee",
                         "Defense",
@@ -7876,11 +7876,11 @@ HubSetting = {}
             )
             
             SettingTab:AddSection("Informations")
-            ServerStats_Paragraph = ServerTab:NewParagraph({Title = "Server & Player Informations",Content = "MMB"})
+            ServerStats_Paragraph = ServerTab:NewParagraph({Name = "Server & Player Informations",Content = "MMB"})
             SettingTab:AddSection("Hop functions") 
             SettingTab:NewButton(
                 {
-                    Title = "Copy Job Id",
+                    Name = "Copy Job Id",
                     Description = "Copy current Job Id (Server Id).",
                     Callback = function() 
                         setclipboard(game.JobId)
@@ -7889,16 +7889,16 @@ HubSetting = {}
             )
             SettingTab:NewButton(
                 {
-                    Title = "Rejoin",
+                    Name = "Rejoin",
                     Description = "Rejoin the game",
                     Callback = function()
                         ServerTab:NewDialog(
                             {
-                                Title = "Are you sure?",
+                                Name = "Are you sure?",
                                 Content = "Are you sure to rejoin game?",
                                 Buttons = {
                                     {
-                                        Title = "Confirm",
+                                        Name = "Confirm",
                                         Callback = function()
                                             game:GetService("TeleportService"):TeleportToPlaceInstance(
                                                 game.PlaceId,
@@ -7908,7 +7908,7 @@ HubSetting = {}
                                         end
                                     },
                                     {
-                                        Title = "Cancel",
+                                        Name = "Cancel",
                                         Callback = function()
                                             print("Cancelled the dialog.")
                                         end
@@ -7921,16 +7921,16 @@ HubSetting = {}
             )
             SettingTab:NewButton(
                 {
-                    Title = "Hop Server",
+                    Name = "Hop Server",
                     Description = "Hop To Random Server",
                     Callback = function()
                         ServerTab:NewDialog(
                             {
-                                Title = "Are you sure?",
+                                Name = "Are you sure?",
                                 Content = "Are you sure to Hop Server?",
                                 Buttons = {
                                     {
-                                        Title = "Confirm",
+                                        Name = "Confirm",
                                         Callback = function()
                                             task.spawn(function()
                                                 pcall(function()
@@ -7940,7 +7940,7 @@ HubSetting = {}
                                         end
                                     },
                                     {
-                                        Title = "Cancel",
+                                        Name = "Cancel",
                                         Callback = function()
                                             print("Cancelled the dialog.")
                                         end
@@ -7952,7 +7952,7 @@ HubSetting = {}
                 }
             )
             SettingTab:NewInput("Inputed Job Id",{
-                Title = "Input Job Id",
+                Name = "Input Job Id",
                 Description = "Input a job id to join that job id.",
                 Callback = function(v)
                     CreateUiNotify({
@@ -7961,11 +7961,11 @@ HubSetting = {}
                 end
             })
             SettingTab:AddToggle("Hop Near",{
-                Title = "Hop Near",
+                Name = "Hop Near",
                 Description = "If a player reach the distance then it will hop.",
             })
             SettingTab:NewSlider("Hop Near Distance",{
-                Title = "Hop Near Distance",
+                Name = "Hop Near Distance",
                 Min = 1,
                 Max = 1500,
                 Rounding = 0,
@@ -7973,11 +7973,11 @@ HubSetting = {}
                 Description = "The Distance Value script will hop if there a player reach distance."
             })
             SettingTab:AddToggle("Hop Ping",{
-                Title = "Hop when ping reach X",
+                Name = "Hop when ping reach X",
                 Description = "If ping reach X value then it will hop.",
             })
             SettingTab:NewSlider("Hop Ping Value",{
-                Title = "Hop Ping Value",
+                Name = "Hop Ping Value",
                 Min = 200,
                 Max = 15000,
                 Rounding = 0,
@@ -7990,7 +7990,7 @@ HubSetting = {}
             FarmTab:NewDropdown(
                 "Fast Attack Delay",
                 {
-                    Title = "Fast Attack Delay",
+                    Name = "Fast Attack Delay",
                     Values = {
                         0.1,
                         0.2,
@@ -8001,27 +8001,27 @@ HubSetting = {}
             FarmTab:AddToggle(
                 "Fast Attack Aura",
                 {
-                    Title = "Attack Aura"
+                    Name = "Attack Aura"
                 }
             )
             FarmTab:AddSection("Default Farm")
             SelectWeapon_Dropdown =FarmTab:NewDropdown(
                 "Weapon Type",
                 {
-                    Title = "Choose Weapon Type",
+                    Name = "Choose Weapon Type",
                     Values = {"Melee", "Sword"}
                 }
             )
             FarmTab:NewParagraph(
                 {
-                    Title = "Farm Note",
+                    Name = "Farm Note",
                     Content = "If you choose 2 Option like Level and Cake Prince then when level max it will farm Cake Prince or smthing like that lol"
                 }
             )
             SelectTypeFarm_Dropdown = FarmTab:NewDropdown(
                 "Farm Type",
                 {
-                    Title = "Choose Method To Farm",
+                    Name = "Choose Method To Farm",
                     Multi = true,
                     Values = {
                         "Level",
@@ -8034,13 +8034,13 @@ HubSetting = {}
             Farm_Toggle = FarmTab:AddToggle(
                 "Farm Normal",
                 {
-                    Title = "Farm"
+                    Name = "Farm"
                 }
             )
             DoubleQuest_Toggle = FarmTab:AddToggle(
                 "Double Quest",
                 {
-                    Title = "Double Quest",
+                    Name = "Double Quest",
                     Description = "Double Quest | Recommend for Sea 2/3"
                 }
             )
@@ -8048,7 +8048,7 @@ HubSetting = {}
                 FarmTab:AddToggle(
                     "Kill Player Quest",
                     {
-                        Title = "Kill Player Quest",
+                        Name = "Kill Player Quest",
                         Description = "Claim Kill Player Quest For Super-High Exp"
                     }
                 )
@@ -8056,29 +8056,29 @@ HubSetting = {}
                 ClaimExtraQuest_Toggle = FarmTab:AddToggle(
                     "Claim Bone & Cake Prince Quest",
                     {
-                        Title = "Claim Bone & Cake Prince Quests"
+                        Name = "Claim Bone & Cake Prince Quests"
                     }
                 )
             end
             FarmTab:AddSection("Mastery Farms")
             FarmTab:NewDropdown("TypeMasteryFarm",{
-                Title = "Weapon to Farm mastery",
+                Name = "Weapon to Farm mastery",
                 Description = "Choose weapon to farm mastery.",
                 Values = {"Devil Fruit","Gun"}
             })
             FarmTab:NewSlider("%HealthSendSkill",{
-                Title = "% Health to send skills on mob",
+                Name = "% Health to send skills on mob",
                 Description = "% Health of mob that script start use skill on it.",
                 Min = 10,
                 Max = 100, 
                 Default = 50
             })
             FarmTab:AddToggle("Mastery Farm",{
-                Title = "Mastery Farm Option",
+                Name = "Mastery Farm Option",
                 Description = "Mastery farm for the most mob farm."
             })
             FarmTab:AddToggle("Only V4",{
-                Title = "Only When V4 Activited",
+                Name = "Only When V4 Activited",
                 Description = "This when enable with mastery farm will waits for v4 enabled and only send skills when v4 activited."
             })
             FarmTab:AddSection("Boss-Farm")
@@ -8086,7 +8086,7 @@ HubSetting = {}
                 FarmTab:NewDropdown(
                 "Selected Boss",
                 {
-                    Title = "Select Boss",
+                    Name = "Select Boss",
                     Values = getBossSeaHub(),
                     Multi = true
                 }
@@ -8094,75 +8094,75 @@ HubSetting = {}
             FarmTab:AddToggle(
                 "Get Boss Quest",
                 {
-                    Title = "Get Boss Quest"
+                    Name = "Get Boss Quest"
                 }
             )
             FarmTab:AddToggle(
                 "Boss Farm",
                 {
-                    Title = "Farm Bosses Selected"
+                    Name = "Farm Bosses Selected"
                 }
             )
             FarmTab:AddToggle(
                 "Hop Boss",
                 {
-                    Title = "Hop For Bosses"
+                    Name = "Hop For Bosses"
                 }
             )
             FarmTab:AddSection("Elite/Rip India/Yama/Tushita/Dough King Functions")
             FarmTab:AddToggle("Auto Elite",{
-                Title = "Auto Elite Hunter",
+                Name = "Auto Elite Hunter",
                 Description = "Auto Elite Hunter When It Spawned."
             })
             FarmTab:AddToggle("Auto Elite Hop",{
-                Title = "Elite Hunt Hop Option",
+                Name = "Elite Hunt Hop Option",
                 Description = "Enable this with auto elite hunter will hop when the elite despawn/doenst spawn in server."
             })
             FarmTab:AddToggle("Auto Rip Indra",{
-                Title = "Auto Rip Indra",
+                Name = "Auto Rip Indra",
                 Description = "Auto summon rip indra and kill that nigga when have god chalice and automatic enable haki buttons."
             })
             FarmTab:AddToggle("Auto Tushita",{
-                Title = "Auto Tushita",
+                Name = "Auto Tushita",
                 Description = "Auto do Tushita Puzzle and get Tushita.\nAuto Kill Rip India will ignore this."
             })
             FarmTab:AddToggle("Auto Tushita Hop",{
-                Title = "Auto Tushita Hop",
+                Name = "Auto Tushita Hop",
                 Description = "Ignore what u doing. Just hopping for rip india and do Tushita Puzzle."
             }) 
             FarmTab:AddToggle("Auto Yama",{
-                Title = "Yama",
+                Name = "Yama",
                 Description = "Auto unlock yama while check elite killed > 30."
             })
             FarmTab:AddToggle("Auto Dough King",{
-                Title = "Auto Dough King",
+                Name = "Auto Dough King",
                 Description = "Automatic do all what need to summon and kill Dough King.\nAlso this can be enabled with auto elite and elite hop."
             }) 
             FarmTab:AddToggle("Auto Dough King Hop",{
-                Title = "Auto Dough King Hop",
+                Name = "Auto Dough King Hop",
                 Description = "Auto Dough King Hop."
             })
             if SettingTab then 
                 SettingTab:NewButton({
-                    Title = "Reset Character",
+                    Name = "Reset Character",
                     Callback = function()
                         game.Players.LocalPlayer.Character.Humanoid.Health = 0 
                     end
                 })
                 SettingTab:AddSection("Mirage Puzzle")
                 SettingTab:AddToggle("Auto Mirage Puzzle",{
-                    Title = "Auto Mirage Puzzle",
+                    Name = "Auto Mirage Puzzle",
                     Description = "Will Automatic Do Mirage Puzzle (required requirements)."
                 })
                 SettingTab:NewButton({
-                    Title = "Tween To Mirage Island",
+                    Name = "Tween To Mirage Island",
                     Description = "Tween to Advanced Fruit Dealer On Mirage.",
                     Callback = function() 
                         TweenMirage()
                     end
                 })
                 SettingTab:NewButton({
-                    Title = "Tween To Blue Gear",
+                    Name = "Tween To Blue Gear",
                     Description = "Tween to Blue Gear (only spawned).",
                     Callback = function()
                         pcall(function()
@@ -8171,7 +8171,7 @@ HubSetting = {}
                     end 
                 })
                 SettingTab:NewButton({
-                    Title = "Tween To Highest Point",
+                    Name = "Tween To Highest Point",
                     Description = "Tween to Highest Point On Mirage Island.",
                     Callback = function()
                         pcall(function()
@@ -8181,40 +8181,40 @@ HubSetting = {}
                 })
                 SettingTab:AddSection("Temple of Time Puzzle")
                 TrialStage1_Toggle = SettingTab:AddToggle("Auto Trial Stage 1",{
-                    Title = "Auto Trial Stage 1",
+                    Name = "Auto Trial Stage 1",
                     Description = "Auto do Trial Stage 1 All Race."
                 })
                 AutoChooseGear_Toggle = SettingTab:AddToggle("Auto Choose Gear",{
-                    Title = "Auto Choose Gear",
+                    Name = "Auto Choose Gear",
                     Description = "Instant Choose Gear For Character",
                 })
                 SettingTab:NewButton({
-                    Title = "Teleport to Temple of Time",
+                    Name = "Teleport to Temple of Time",
                     Description = "Teleport your character to Temple of time.",
                     Callback = function()
                         TweenTemple()
                     end
                 })
                 SettingTab:NewButton({
-                    Title = "Tween to current race door",
+                    Name = "Tween to current race door",
                     Description = "Tween to current character race door.",
                     Callback=  function() 
                         TweentoCurrentRaceDoor()
                     end
                 })
                 SettingTab:AddToggle("Kill Trial Players",{
-                    Title = "Auto Kill Trial Players",
+                    Name = "Auto Kill Trial Players",
                     Description = "Auto Kill All Players In Trial Stage 2.",
                 })
             end
             SettingTab:AddSection("Race")
             SettingTab:AddToggle("Auto Upgrade Race",{
-                Title = "Auto Upgrade Race",
+                Name = "Auto Upgrade Race",
                 Description = "Auto Upgrade Your Race V1 -> V3.",
             })
             PlRTAB:AddSection("Local Player") 
             PlRTAB:NewButton({
-                Title = "Remove Fog",
+                Name = "Remove Fog",
                 Callback = function()
                     local c = game.Lighting
                     c.FogEnd = 100000
@@ -8226,11 +8226,11 @@ HubSetting = {}
                 end
             })
             AutoActiveRace_Toggle = PlRTAB:AddToggle("Auto Active Race",{
-                Title = "Auto Active Race V4 When Full Meter",
+                Name = "Auto Active Race V4 When Full Meter",
                 Description = "Automatic active race v4 in anytime."
             })
             PlRTAB:AddToggle("Mods Character",{
-                Title = "Mods Character",
+                Name = "Mods Character",
                 Description = "Mods specials ability on your character."
             })  
             Islands = GetAllIsland()
@@ -8246,7 +8246,7 @@ HubSetting = {}
             table.sort(RealNPC)
             table.sort(RealIsland)
             PlRTAB:NewDropdown("Selected NPC",{
-                Title = "Select NPC to tween",
+                Name = "Select NPC to tween",
                 Description = "Select a npc to script tween to.",
                 Values = RealNPC,
                 Callback = function(v)
@@ -8255,7 +8255,7 @@ HubSetting = {}
                 end
             }) 
             PlRTAB:NewDropdown("Selected Island",{
-                Title = "Select Island to tween",
+                Name = "Select Island to tween",
                 Description = "Select a Island to script tween to.",
                 Values = RealIsland,
                 Callback = function(v)
@@ -8266,38 +8266,38 @@ HubSetting = {}
             }) 
             PlRTAB:AddSection("ESP")
             PlRTAB:AddToggle("ESP Fruit",{
-                Title = "ESP Fruits",
+                Name = "ESP Fruits",
                 Description = "Add ESP on fruits.",
             })  
             PlRTAB:AddToggle("ESP Player",{
-                Title = "ESP Player",
+                Name = "ESP Player",
                 Description = "Add ESP on Players.",
             }) 
             if SeaBeastTab then 
                 SeaBeastTab:NewParagraph({
-                    Title = "Sea Beast Notes",
+                    Name = "Sea Beast Notes",
                     Content = "For Sea beast or Pirate boats, script always buy dragon claw and use weapon that stats > 1 to spam skills.\n\n\nSETTING SKILLS IN SETTING TAB"
                 })
                 SeaBeastTab:AddToggle("Auto Sea Beast",{
-                    Title = "Auto Sea Beast",
+                    Name = "Auto Sea Beast",
                     Description = "Killing Sea Beast if they spawned."
                 })
                 SeaBeastTab:AddToggle("Buy Boat",{
-                    Title = "Buy Boat And Wait",
+                    Name = "Buy Boat And Wait",
                     Description = "This option enable with auto sea beast will buy a boat then wait sea beast or pirate boat spawns."
                 })
                 if Sea3 then 
                     SeaBeastTab:AddSection("Rough Sea")
                     SeaBeastTab:AddToggle("Auto Sail",{
-                        Title = "Auto Sail",
+                        Name = "Auto Sail",
                         Description = "Auto buy and go on the boat then go to N place",
                     })
                     SeaBeastTab:AddToggle("Auto Ghost Ship",{
-                        Title = "Auto Ghost Ships",
+                        Name = "Auto Ghost Ships",
                         Description = "Auto Killing Ghost Ships."
                     })
                     SeaBeastTab:AddToggle("Auto Shark & Mobs",{
-                        Title = "Auto Kill Shark & Mobs On Sea",
+                        Name = "Auto Kill Shark & Mobs On Sea",
                         Description = "Auto Kill Shark & Mobs",
                     }) 
                 end
@@ -8306,7 +8306,7 @@ HubSetting = {}
                 SettingTab:AddSection("Item Puzzle")
                 if Sea2 or Sea3 then
                     SettingTab:AddToggle("Auto Soul Guitar",{
-                        Title = "Auto Soul Guitar",
+                        Name = "Auto Soul Guitar",
                         Description = "Auto do all things need to unlock soul guitar (req 5kf already)."
                     })            
                 elseif Sea1 then 
@@ -8314,29 +8314,29 @@ HubSetting = {}
                 end 
                 if Sea3 then 
                     SettingTab:AddToggle("Auto CDK",{
-                        Title = "Auto Cursed Dual Katana",
+                        Name = "Auto Cursed Dual Katana",
                         Description = "Auto do Cursed Dual Katana Puzzle to unlock."
                     }) 
                 end
             end
             if SettingTab then  
                 SettingTab:NewButton({
-                    Title = "Buy Gear",
+                    Name = "Buy Gear",
                     Description = "Buy Gear",
                     Callback = function()
                         BuyGear()
                     end
                 })
                 AutoBuyGear_Toggle = SettingTab:AddToggle("Auto Buy Gear",{
-                    Title = "Auto Buy Gear",
+                    Name = "Auto Buy Gear",
                     Description = "Auto check & buy gears."
                 })
                 SettingTab:AddToggle("Auto Roll Bone",{
-                    Title = "Auto Random Bone",
+                    Name = "Auto Random Bone",
                     Description = "Auto Random Suprises by using bone."
                 })
                 SettingTab:NewDropdown("Selected Buy Melee",{
-                    Title = "Select Melee to buy",
+                    Name = "Select Melee to buy",
                     Values = MeleeInGame,
                     Callback = function(v)
                         BuyMelee(v)
@@ -8344,7 +8344,7 @@ HubSetting = {}
                     Description = "Buying Melee by clicking to them."
                 })
                 SettingTab:NewButton({
-                    Title = "Buy ghoul race",
+                    Name = "Buy ghoul race",
                     Description = "Buy Ghoul Race required owned",
                     Callback = function() 
                         local args = {
@@ -8362,7 +8362,7 @@ HubSetting = {}
                     end
                 })
                 SettingTab:NewButton({
-                    Title = "Buy Cyborg Race",
+                    Name = "Buy Cyborg Race",
                     Description = "Buy cyborg race if owned already (cost 2500f)",
                     Callback = function() 
                         local args = {
@@ -8373,7 +8373,7 @@ HubSetting = {}
                     end
                 })
                 SettingTab:NewButton({
-                    Title = "Reroll Race",
+                    Name = "Reroll Race",
                     Description = "Reroll race by firing remotes (cost 1500f).",
                     Callback = function()  
                         local args = {
@@ -8385,7 +8385,7 @@ HubSetting = {}
                     end
                 }) 
                 SettingTab:NewButton({
-                    Title = "Buy Reset Stats",
+                    Name = "Buy Reset Stats",
                     Description = "Buy Reset Stats (cost 2500f).",
                     Callback = function() 
                         local args = {
@@ -8400,74 +8400,74 @@ HubSetting = {}
             if SettingTab then 
                 SettingTab:AddSection("Fruit-Farm")
                 SettingTab:AddToggle("Auto Find Fruit",{
-                    Title = "Auto Find Fruit",
+                    Name = "Auto Find Fruit",
                     Description = "Auto Find/Collect all fruits script can find in server."
                 })
                 SettingTab:AddToggle("Ignore Stored Fruit",{
-                    Title = "Ignore Stored Fruit",
+                    Name = "Ignore Stored Fruit",
                     Description = "Ignore fruit that you have stored in inventory."
                 })
                 SettingTab:AddToggle("Auto Store Fruit",{
-                    Title = "Auto Store Fruit",
+                    Name = "Auto Store Fruit",
                     Description = "Store all fruit that can storeable in chacracter."
                 })
                 SettingTab:AddToggle("Auto Random Fruit",{
-                    Title = "Auto Random Fruit",
+                    Name = "Auto Random Fruit",
                     Description = "Auto talk and random fruit to Blox Fruit Cousin Dealer."
                 })
                 SettingTab:AddToggle("Auto Get Fruit Below 1M To Raid",{
-                    Title = "Auto load fruit below 1m beli to raid",
+                    Name = "Auto load fruit below 1m beli to raid",
                 }) 
                 if Sea1 then 
                     SettingTab:AddSection("Raid-Farm is not available in current sea.")
                 else
                     SettingTab:AddSection("Raid-Farm")
                     SettingTab:AddToggle("Kill Aura",{
-                        Title = "Kill Aura",
+                        Name = "Kill Aura",
                         Description = "Auto kill (no reward) mobs that character can see."
                     })
                     SettingTab:AddToggle("Auto Next Island",{
-                        Title = "Auto Tween/Teleport Next Raid Island",
+                        Name = "Auto Tween/Teleport Next Raid Island",
                         Description = "Auto Tween/Teleport to next raid island while raiding."
                     })
                     SettingTab:NewButton({
-                        Title = "Tween to next raid island",
+                        Name = "Tween to next raid island",
                         Description = "Like name",
                         Callback = function() 
                             Tweento(getNextIsland().CFrame * CFrame.new(0, 60, 0))
                         end
                     })
                     SettingTab:AddToggle("Auto Awake",{
-                        Title = "Auto Awake",
+                        Name = "Auto Awake",
                         Description = "Auto awake skills of current fruit."
                     }) 
                     SettingTab:NewDropdown("Raid Selected",{
-                        Title = "Choose Raid Type",
+                        Name = "Choose Raid Type",
                         Description = "Choose a raid type. When enable auto raid will automatic buy chips and do raid.",
                         Values = RealRaid,
                         Default = "Flame"
                     }) 
                     SettingTab:AddToggle("Auto Raid",{
-                        Title = "Auto Raid",
+                        Name = "Auto Raid",
                         Description = "Auto buy chips and raid while enabled."
                     })
                 end
             end
             if SettingTab then 
                 SettingTab:AddToggle("HopOption",{
-                    Title = "Hop Option",
+                    Name = "Hop Option",
                     Description = "Allow hop for some functions."
                 }) 
                 SettingTab:AddToggle("HopLowOption",{
-                    Title = "Hop Low Option",
+                    Name = "Hop Low Option",
                     Description = "Allow hop low for some functions."
                 }) 
                 SettingTab:AddToggle("Panic Mode",{
-                    Title = "Panic Mode",
+                    Name = "Panic Mode",
                     Description = "Tween above mob while health below 30% and back to kill it when health >= 70%."
                 })
                 ChooseTeam_Dropdown =SettingTab:NewDropdown("Team",{ 
-                    Title = "Choose team",
+                    Name = "Choose team",
                     Description = "Choose team auto pick when game begin",
                     Values = {
                         "Pirates",
@@ -8476,7 +8476,7 @@ HubSetting = {}
                     Multi = false,
                 })
                 UseWeapon_Dropdown =SettingTab:NewDropdown("Use Weapon",{ 
-                    Title = "Choose weapon to use skills",
+                    Name = "Choose weapon to use skills",
                     Description = "Choose weapon to use skill on sea beast/pirate boat.",
                     Values = {
                         "Melee",
@@ -8487,7 +8487,7 @@ HubSetting = {}
                     Multi = true,
                 })
                 UseSkills_Dropdown = SettingTab:NewDropdown("Use Skills",{
-                    Title = "Choose Skill To Spam",
+                    Name = "Choose Skill To Spam",
                     Description = "Choose Skills to spam on sea beast/pirate boat.",
                     Values = {
                         "Z",
@@ -8499,7 +8499,7 @@ HubSetting = {}
                     Multi = true,
                 }) 
                 SettingTab:AddToggle("Auto Spam Skill",{
-                    Title = "Auto Spam skill ngu",
+                    Name = "Auto Spam skill ngu",
                 })
                 task.spawn(function()
                     while task.wait() do 
@@ -8516,7 +8516,7 @@ HubSetting = {}
                     "F"
                 }) do 
                     SettingTab:NewSlider("Hold Time "..tostring(v),{
-                        Title = "Skill "..tostring(v).." hold time",
+                        Name = "Skill "..tostring(v).." hold time",
                         Description = "Skill "..tostring(v).." hold time when use",
                         Min = 0,
                         Max = 15,
@@ -8538,7 +8538,7 @@ HubSetting = {}
                             end
                             ServerStats_Paragraph:Set(
                                 {
-                                    Title = "Server & Player Informations",
+                                    Name = "Server & Player Informations",
                                     Content = SV3
                                 }
                             )
@@ -8605,7 +8605,7 @@ HubSetting = {}
                         vc2 = ""
                         vc3 = GetBossTable()
                         for i, v in pairs(vc3) do
-                            vc3[i] = RemoveLevelTitle(v)
+                            vc3[i] = RemoveLevelName(v)
                         end
                         for i, v in pairs(getBossSeaHub()) do
                             if CheckBoss(v) then
@@ -8614,7 +8614,7 @@ HubSetting = {}
                                 vc2 = vc2 .. v .. ": ❌\n"
                             end
                         end
-                        Settings_Paragraph:Set({Title = MySea.." | " .. tostring(MMBStatus), Content = vc2})
+                        Settings_Paragraph:Set({Name = MySea.." | " .. tostring(MMBStatus), Content = vc2})
                     end
                 end
             )
