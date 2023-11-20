@@ -6119,6 +6119,7 @@ spawn(
                                     pcall(
                                         function()
                                             --Tweento(TpCFrame)
+                                              print("CC")
                                         end
                                     )
                                 else
@@ -6126,6 +6127,7 @@ spawn(
                                         function()
                                             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = TpCFrame
                                             --Tweento(TpCFrame)
+                                             print("CC")
                                         end
                                     )
                                 end
