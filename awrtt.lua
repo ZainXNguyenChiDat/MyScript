@@ -6118,8 +6118,9 @@ spawn(
                                  then
                                     pcall(
                                         function()
-                                            LockCFrame = CFrame.new(mmas.X, mmas.Y, mmas.Z)
+                                      
                                             Tweento(LockCFrame)
+                                             LockCFrame = CFrame.new(mmas.X, mmas.Y, mmas.Z)
                                         end
                                     )
                                 else
