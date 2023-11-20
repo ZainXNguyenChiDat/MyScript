@@ -7793,13 +7793,13 @@ HubSetting = {}
                     CancelTween()
                 end
             })
-            GeneralTab:NewToggle(
+            GeneralTab:AddToggle(
                 "Same Y",
                 {
                     Title = "Same Y Tween"
                 }
             )
-            GeneralTab:NewToggle(
+            GeneralTab:AddToggle(
                 "Smart Bring",
                 {
                     Title = "Smart Bring"
@@ -7960,7 +7960,7 @@ HubSetting = {}
                     })
                 end
             })
-            SettingTab:NewToggle("Hop Near",{
+            SettingTab:AddToggle("Hop Near",{
                 Title = "Hop Near",
                 Description = "If a player reach the distance then it will hop.",
             })
@@ -7972,7 +7972,7 @@ HubSetting = {}
                 Default = 500,
                 Description = "The Distance Value script will hop if there a player reach distance."
             })
-            SettingTab:NewToggle("Hop Ping",{
+            SettingTab:AddToggle("Hop Ping",{
                 Title = "Hop when ping reach X",
                 Description = "If ping reach X value then it will hop.",
             })
@@ -7998,7 +7998,7 @@ HubSetting = {}
                     }
                 }
             )
-            FarmTab:NewToggle(
+            FarmTab:AddToggle(
                 "Fast Attack Aura",
                 {
                     Title = "Attack Aura"
@@ -8031,13 +8031,13 @@ HubSetting = {}
                     }
                 }
             )
-            Farm_Toggle = FarmTab:NewToggle(
+            Farm_Toggle = FarmTab:AddToggle(
                 "Farm Normal",
                 {
                     Title = "Farm"
                 }
             )
-            DoubleQuest_Toggle = FarmTab:NewToggle(
+            DoubleQuest_Toggle = FarmTab:AddToggle(
                 "Double Quest",
                 {
                     Title = "Double Quest",
@@ -8045,7 +8045,7 @@ HubSetting = {}
                 }
             )
             if Sea1 then
-                FarmTab:NewToggle(
+                FarmTab:AddToggle(
                     "Kill Player Quest",
                     {
                         Title = "Kill Player Quest",
@@ -8053,7 +8053,7 @@ HubSetting = {}
                     }
                 )
             elseif Sea3 then
-                ClaimExtraQuest_Toggle = FarmTab:NewToggle(
+                ClaimExtraQuest_Toggle = FarmTab:AddToggle(
                     "Claim Bone & Cake Prince Quest",
                     {
                         Title = "Claim Bone & Cake Prince Quests"
@@ -8073,11 +8073,11 @@ HubSetting = {}
                 Max = 100, 
                 Default = 50
             })
-            FarmTab:NewToggle("Mastery Farm",{
+            FarmTab:AddToggle("Mastery Farm",{
                 Title = "Mastery Farm Option",
                 Description = "Mastery farm for the most mob farm."
             })
-            FarmTab:NewToggle("Only V4",{
+            FarmTab:AddToggle("Only V4",{
                 Title = "Only When V4 Activited",
                 Description = "This when enable with mastery farm will waits for v4 enabled and only send skills when v4 activited."
             })
@@ -8091,54 +8091,54 @@ HubSetting = {}
                     Multi = true
                 }
             )
-            FarmTab:NewToggle(
+            FarmTab:AddToggle(
                 "Get Boss Quest",
                 {
                     Title = "Get Boss Quest"
                 }
             )
-            FarmTab:NewToggle(
+            FarmTab:AddToggle(
                 "Boss Farm",
                 {
                     Title = "Farm Bosses Selected"
                 }
             )
-            FarmTab:NewToggle(
+            FarmTab:AddToggle(
                 "Hop Boss",
                 {
                     Title = "Hop For Bosses"
                 }
             )
             FarmTab:AddSection("Elite/Rip India/Yama/Tushita/Dough King Functions")
-            FarmTab:NewToggle("Auto Elite",{
+            FarmTab:AddToggle("Auto Elite",{
                 Title = "Auto Elite Hunter",
                 Description = "Auto Elite Hunter When It Spawned."
             })
-            FarmTab:NewToggle("Auto Elite Hop",{
+            FarmTab:AddToggle("Auto Elite Hop",{
                 Title = "Elite Hunt Hop Option",
                 Description = "Enable this with auto elite hunter will hop when the elite despawn/doenst spawn in server."
             })
-            FarmTab:NewToggle("Auto Rip Indra",{
+            FarmTab:AddToggle("Auto Rip Indra",{
                 Title = "Auto Rip Indra",
                 Description = "Auto summon rip indra and kill that nigga when have god chalice and automatic enable haki buttons."
             })
-            FarmTab:NewToggle("Auto Tushita",{
+            FarmTab:AddToggle("Auto Tushita",{
                 Title = "Auto Tushita",
                 Description = "Auto do Tushita Puzzle and get Tushita.\nAuto Kill Rip India will ignore this."
             })
-            FarmTab:NewToggle("Auto Tushita Hop",{
+            FarmTab:AddToggle("Auto Tushita Hop",{
                 Title = "Auto Tushita Hop",
                 Description = "Ignore what u doing. Just hopping for rip india and do Tushita Puzzle."
             }) 
-            FarmTab:NewToggle("Auto Yama",{
+            FarmTab:AddToggle("Auto Yama",{
                 Title = "Yama",
                 Description = "Auto unlock yama while check elite killed > 30."
             })
-            FarmTab:NewToggle("Auto Dough King",{
+            FarmTab:AddToggle("Auto Dough King",{
                 Title = "Auto Dough King",
                 Description = "Automatic do all what need to summon and kill Dough King.\nAlso this can be enabled with auto elite and elite hop."
             }) 
-            FarmTab:NewToggle("Auto Dough King Hop",{
+            FarmTab:AddToggle("Auto Dough King Hop",{
                 Title = "Auto Dough King Hop",
                 Description = "Auto Dough King Hop."
             })
@@ -8150,7 +8150,7 @@ HubSetting = {}
                     end
                 })
                 SettingTab:AddSection("Mirage Puzzle")
-                SettingTab:NewToggle("Auto Mirage Puzzle",{
+                SettingTab:AddToggle("Auto Mirage Puzzle",{
                     Title = "Auto Mirage Puzzle",
                     Description = "Will Automatic Do Mirage Puzzle (required requirements)."
                 })
@@ -8180,11 +8180,11 @@ HubSetting = {}
                     end
                 })
                 SettingTab:AddSection("Temple of Time Puzzle")
-                TrialStage1_Toggle = SettingTab:NewToggle("Auto Trial Stage 1",{
+                TrialStage1_Toggle = SettingTab:AddToggle("Auto Trial Stage 1",{
                     Title = "Auto Trial Stage 1",
                     Description = "Auto do Trial Stage 1 All Race."
                 })
-                AutoChooseGear_Toggle = SettingTab:NewToggle("Auto Choose Gear",{
+                AutoChooseGear_Toggle = SettingTab:AddToggle("Auto Choose Gear",{
                     Title = "Auto Choose Gear",
                     Description = "Instant Choose Gear For Character",
                 })
@@ -8202,13 +8202,13 @@ HubSetting = {}
                         TweentoCurrentRaceDoor()
                     end
                 })
-                SettingTab:NewToggle("Kill Trial Players",{
+                SettingTab:AddToggle("Kill Trial Players",{
                     Title = "Auto Kill Trial Players",
                     Description = "Auto Kill All Players In Trial Stage 2.",
                 })
             end
             SettingTab:AddSection("Race")
-            SettingTab:NewToggle("Auto Upgrade Race",{
+            SettingTab:AddToggle("Auto Upgrade Race",{
                 Title = "Auto Upgrade Race",
                 Description = "Auto Upgrade Your Race V1 -> V3.",
             })
@@ -8225,11 +8225,11 @@ HubSetting = {}
                     end
                 end
             })
-            AutoActiveRace_Toggle = PlRTAB:NewToggle("Auto Active Race",{
+            AutoActiveRace_Toggle = PlRTAB:AddToggle("Auto Active Race",{
                 Title = "Auto Active Race V4 When Full Meter",
                 Description = "Automatic active race v4 in anytime."
             })
-            PlRTAB:NewToggle("Mods Character",{
+            PlRTAB:AddToggle("Mods Character",{
                 Title = "Mods Character",
                 Description = "Mods specials ability on your character."
             })  
@@ -8265,11 +8265,11 @@ HubSetting = {}
                 end
             }) 
             PlRTAB:AddSection("ESP")
-            PlRTAB:NewToggle("ESP Fruit",{
+            PlRTAB:AddToggle("ESP Fruit",{
                 Title = "ESP Fruits",
                 Description = "Add ESP on fruits.",
             })  
-            PlRTAB:NewToggle("ESP Player",{
+            PlRTAB:AddToggle("ESP Player",{
                 Title = "ESP Player",
                 Description = "Add ESP on Players.",
             }) 
@@ -8278,25 +8278,25 @@ HubSetting = {}
                     Title = "Sea Beast Notes",
                     Content = "For Sea beast or Pirate boats, script always buy dragon claw and use weapon that stats > 1 to spam skills.\n\n\nSETTING SKILLS IN SETTING TAB"
                 })
-                SeaBeastTab:NewToggle("Auto Sea Beast",{
+                SeaBeastTab:AddToggle("Auto Sea Beast",{
                     Title = "Auto Sea Beast",
                     Description = "Killing Sea Beast if they spawned."
                 })
-                SeaBeastTab:NewToggle("Buy Boat",{
+                SeaBeastTab:AddToggle("Buy Boat",{
                     Title = "Buy Boat And Wait",
                     Description = "This option enable with auto sea beast will buy a boat then wait sea beast or pirate boat spawns."
                 })
                 if Sea3 then 
                     SeaBeastTab:AddSection("Rough Sea")
-                    SeaBeastTab:NewToggle("Auto Sail",{
+                    SeaBeastTab:AddToggle("Auto Sail",{
                         Title = "Auto Sail",
                         Description = "Auto buy and go on the boat then go to N place",
                     })
-                    SeaBeastTab:NewToggle("Auto Ghost Ship",{
+                    SeaBeastTab:AddToggle("Auto Ghost Ship",{
                         Title = "Auto Ghost Ships",
                         Description = "Auto Killing Ghost Ships."
                     })
-                    SeaBeastTab:NewToggle("Auto Shark & Mobs",{
+                    SeaBeastTab:AddToggle("Auto Shark & Mobs",{
                         Title = "Auto Kill Shark & Mobs On Sea",
                         Description = "Auto Kill Shark & Mobs",
                     }) 
@@ -8305,7 +8305,7 @@ HubSetting = {}
             if SettingTab then 
                 SettingTab:AddSection("Item Puzzle")
                 if Sea2 or Sea3 then
-                    SettingTab:NewToggle("Auto Soul Guitar",{
+                    SettingTab:AddToggle("Auto Soul Guitar",{
                         Title = "Auto Soul Guitar",
                         Description = "Auto do all things need to unlock soul guitar (req 5kf already)."
                     })            
@@ -8313,7 +8313,7 @@ HubSetting = {}
                     SettingTab:AddSection("Oops...")
                 end 
                 if Sea3 then 
-                    SettingTab:NewToggle("Auto CDK",{
+                    SettingTab:AddToggle("Auto CDK",{
                         Title = "Auto Cursed Dual Katana",
                         Description = "Auto do Cursed Dual Katana Puzzle to unlock."
                     }) 
@@ -8327,11 +8327,11 @@ HubSetting = {}
                         BuyGear()
                     end
                 })
-                AutoBuyGear_Toggle = SettingTab:NewToggle("Auto Buy Gear",{
+                AutoBuyGear_Toggle = SettingTab:AddToggle("Auto Buy Gear",{
                     Title = "Auto Buy Gear",
                     Description = "Auto check & buy gears."
                 })
-                SettingTab:NewToggle("Auto Roll Bone",{
+                SettingTab:AddToggle("Auto Roll Bone",{
                     Title = "Auto Random Bone",
                     Description = "Auto Random Suprises by using bone."
                 })
@@ -8399,34 +8399,34 @@ HubSetting = {}
             end
             if SettingTab then 
                 SettingTab:AddSection("Fruit-Farm")
-                SettingTab:NewToggle("Auto Find Fruit",{
+                SettingTab:AddToggle("Auto Find Fruit",{
                     Title = "Auto Find Fruit",
                     Description = "Auto Find/Collect all fruits script can find in server."
                 })
-                SettingTab:NewToggle("Ignore Stored Fruit",{
+                SettingTab:AddToggle("Ignore Stored Fruit",{
                     Title = "Ignore Stored Fruit",
                     Description = "Ignore fruit that you have stored in inventory."
                 })
-                SettingTab:NewToggle("Auto Store Fruit",{
+                SettingTab:AddToggle("Auto Store Fruit",{
                     Title = "Auto Store Fruit",
                     Description = "Store all fruit that can storeable in chacracter."
                 })
-                SettingTab:NewToggle("Auto Random Fruit",{
+                SettingTab:AddToggle("Auto Random Fruit",{
                     Title = "Auto Random Fruit",
                     Description = "Auto talk and random fruit to Blox Fruit Cousin Dealer."
                 })
-                SettingTab:NewToggle("Auto Get Fruit Below 1M To Raid",{
+                SettingTab:AddToggle("Auto Get Fruit Below 1M To Raid",{
                     Title = "Auto load fruit below 1m beli to raid",
                 }) 
                 if Sea1 then 
                     SettingTab:AddSection("Raid-Farm is not available in current sea.")
                 else
                     SettingTab:AddSection("Raid-Farm")
-                    SettingTab:NewToggle("Kill Aura",{
+                    SettingTab:AddToggle("Kill Aura",{
                         Title = "Kill Aura",
                         Description = "Auto kill (no reward) mobs that character can see."
                     })
-                    SettingTab:NewToggle("Auto Next Island",{
+                    SettingTab:AddToggle("Auto Next Island",{
                         Title = "Auto Tween/Teleport Next Raid Island",
                         Description = "Auto Tween/Teleport to next raid island while raiding."
                     })
@@ -8437,7 +8437,7 @@ HubSetting = {}
                             Tweento(getNextIsland().CFrame * CFrame.new(0, 60, 0))
                         end
                     })
-                    SettingTab:NewToggle("Auto Awake",{
+                    SettingTab:AddToggle("Auto Awake",{
                         Title = "Auto Awake",
                         Description = "Auto awake skills of current fruit."
                     }) 
@@ -8447,22 +8447,22 @@ HubSetting = {}
                         Values = RealRaid,
                         Default = "Flame"
                     }) 
-                    SettingTab:NewToggle("Auto Raid",{
+                    SettingTab:AddToggle("Auto Raid",{
                         Title = "Auto Raid",
                         Description = "Auto buy chips and raid while enabled."
                     })
                 end
             end
             if SettingTab then 
-                SettingTab:NewToggle("HopOption",{
+                SettingTab:AddToggle("HopOption",{
                     Title = "Hop Option",
                     Description = "Allow hop for some functions."
                 }) 
-                SettingTab:NewToggle("HopLowOption",{
+                SettingTab:AddToggle("HopLowOption",{
                     Title = "Hop Low Option",
                     Description = "Allow hop low for some functions."
                 }) 
-                SettingTab:NewToggle("Panic Mode",{
+                SettingTab:AddToggle("Panic Mode",{
                     Title = "Panic Mode",
                     Description = "Tween above mob while health below 30% and back to kill it when health >= 70%."
                 })
@@ -8498,7 +8498,7 @@ HubSetting = {}
                     },
                     Multi = true,
                 }) 
-                SettingTab:NewToggle("Auto Spam Skill",{
+                SettingTab:AddToggle("Auto Spam Skill",{
                     Title = "Auto Spam skill ngu",
                 })
                 task.spawn(function()
