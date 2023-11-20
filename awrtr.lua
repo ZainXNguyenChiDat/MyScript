@@ -6112,12 +6112,6 @@ spawn(
                     if AutoTp and TpCFrame then
                         pcall(
                             function()
-                                if
-                                    (TpCFrame.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >
-                                        300
- Tweento(LockCFrame)
-                                             LockCFrame = CFrame.new(mmas.X, mmas.Y, mmas.Z)
-                                 then
                                     pcall(
                                         function()
                                       
