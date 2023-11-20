@@ -6119,7 +6119,7 @@ spawn(
                                     pcall(
                                         function()
                                       
-                                            Tweento(TpCFrame)
+                                            Tweento(LockCFrame)
                                              LockCFrame = CFrame.new(mmas.X, mmas.Y, mmas.Z)
  
                                         end
@@ -6128,7 +6128,7 @@ spawn(
                                     pcall(
                                         function()
                                             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = LockCFrame
-                                            Tweento(TpCFrame)
+                                            Tweento(LockCFrame)
 
                                              LockCFrame = CFrame.new(mmas.X, mmas.Y, mmas.Z)
                                         end
