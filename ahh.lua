@@ -8490,7 +8490,7 @@ spawn(
                         game.Players.LocalPlayer.Character.Humanoid.Health = 0 
                     end
                 })
-                V4Tab:AddSection("Mirage Puzzle")
+                V4Tab:AddSection("Automatic V4")
                 V4Tab:NewToggle("Auto Mirage Puzzle",{
                     Title = "Auto Pull Lever",
                     Description = "Will Automatic Do Auto Pull Lever (required requirements)."
@@ -8808,14 +8808,14 @@ spawn(
                     Description = "Tween above mob while health below 30% and back to kill it when health >= 70%."
                 })
                 ChooseTeam_Dropdown =SettingTab:NewDropdown("Team",{ 
-                    Title = "Choose team",
-                    Description = "Choose team auto pick when game begin",
+                    Title = "Selects Team",
+                    Description = "Select team auto pick when game hop",
                     Values = {
                         "Pirates",
                         "Marines",
                     },
                     Multi = false,
-                    Value = 1
+                    Values = 1,
                 })
                 UseWeapon_Dropdown =SettingTab:NewDropdown("Use Weapon",{ 
                     Title = "Choose weapon to use skills",
