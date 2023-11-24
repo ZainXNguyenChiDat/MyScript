@@ -2243,6 +2243,17 @@ spawn(
                 Tweento(HighestPoint.CFrame * CFrame.new(0, 211.88, 0))
             end
         end 
+        function AutoKen()
+            spawn(
+                function()
+                            if not CheckKen() then
+                                SendKey("E", 0.5)
+                            end
+                        end
+                    )
+                end
+            end
+        end
         function CheckSkillMastery()
             if not Config["TypeMasteryFarm"] then
                 return
@@ -6472,6 +6483,9 @@ spawn(
         ALL_FUNC = {   
             ["Auto Soul Guitar"] = function()
                 AutoSoulGuitar()
+            end, 
+            ["Auto Haki Ken"] = function()
+                AutoKen()
             end,    
             ["Auto CDK"] = function()
                 AutoCDK()
@@ -7535,9 +7549,6 @@ spawn(
                     InstantChooseGear()
                 end
             end,
-            ["Auto Look Moon"] = function()
-                return MoveCamtoMoon()
-            end,
             ["Auto Sea Beast"] = function()
                 pcall(
                     function()
@@ -8533,10 +8544,6 @@ spawn(
                     Title = "Auto Choose Gear",
                     Description = "Instant Choose Gear For Character",
                 })
-                AutoLookMoon_Toggle = V4Tab:NewToggle("Auto Look Moon",{
-                    Title = "Auto Look Moon",
-                    Description = "Auto Look Moon For u.",
-                })
                 V4Tab:NewButton({
                     Title = "Teleport to Temple of Time",
                     Description = "Teleport your character to Temple of time.",
@@ -8807,6 +8814,10 @@ spawn(
                     Title = "Hop Option",
                     Description = "Allow hop for some functions."
                 }) 
+                DefaultTab:NewToggle("Auto Haki Ken",{
+                    Title = "Auto Ken",
+                    Description = ".",
+                })
                 SettingTab:NewToggle("HopLowOption",{
                     Title = "Hop Low Option",
                     Description = "Allow hop low for some functions."
@@ -8851,6 +8862,7 @@ spawn(
                 SettingTab:NewToggle("Auto Spam Skill",{
                     Title = "Auto Skill",
                 })
+                
                 task.spawn(function()
                     while task.wait() do 
                         if Config["Auto Spam Skill"] or autospamskill then 
