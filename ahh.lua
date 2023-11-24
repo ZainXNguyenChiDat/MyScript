@@ -8815,7 +8815,7 @@ spawn(
                         "Marines",
                     },
                     Multi = false,
-                    Values = "Marines",
+                    Value = "Marines",
                 })
                 UseWeapon_Dropdown =SettingTab:NewDropdown("Use Weapon",{ 
                     Title = "Choose weapon to use skills",
