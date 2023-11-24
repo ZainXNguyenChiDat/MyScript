@@ -2243,17 +2243,7 @@ spawn(
                 Tweento(HighestPoint.CFrame * CFrame.new(0, 211.88, 0))
             end
         end 
-        function AutoKen()
-            spawn(
-                function()
-                            if not CheckKen() then
-                                SendKey("E", 0.5)
-                            end
-                        end
-                    )
-                end
-            end
-        end
+
         function CheckSkillMastery()
             if not Config["TypeMasteryFarm"] then
                 return
@@ -6483,10 +6473,7 @@ spawn(
         ALL_FUNC = {   
             ["Auto Soul Guitar"] = function()
                 AutoSoulGuitar()
-            end, 
-            ["Auto Haki Ken"] = function()
-                AutoKen()
-            end,    
+            end,     
             ["Auto CDK"] = function()
                 AutoCDK()
             end, 
@@ -8813,11 +8800,7 @@ spawn(
                 SettingTab:NewToggle("HopOption",{
                     Title = "Hop Option",
                     Description = "Allow hop for some functions."
-                }) 
-                DefaultTab:NewToggle("Auto Haki Ken",{
-                    Title = "Auto Ken",
-                    Description = ".",
-                })
+                })       
                 SettingTab:NewToggle("HopLowOption",{
                     Title = "Hop Low Option",
                     Description = "Allow hop low for some functions."
