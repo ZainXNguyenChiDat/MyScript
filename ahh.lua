@@ -2243,17 +2243,6 @@ spawn(
                 Tweento(HighestPoint.CFrame * CFrame.new(0, 211.88, 0))
             end
         end 
-        function AutoKen()
-            spawn(
-                function()
-                            if not CheckKen() then
-                                SendKey("E", 0.5)
-                            end
-                        end
-                    )
-                end
-            end
-        end
         function CheckSkillMastery()
             if not Config["TypeMasteryFarm"] then
                 return
@@ -6381,8 +6370,7 @@ spawn(
             end,
             ["Auto Choose Gear"] = function()
                 return CanChoosePoint()
-            end, 
-                  
+            end,
             ["Auto Mirage Puzzle"] = function()
                 if not Sea3 then return end 
                 if CheckIsRaiding() then return end 
@@ -6483,9 +6471,6 @@ spawn(
         ALL_FUNC = {   
             ["Auto Soul Guitar"] = function()
                 AutoSoulGuitar()
-            end, 
-            ["Auto Haki Ken"] = function()
-                AutoKen()
             end,    
             ["Auto CDK"] = function()
                 AutoCDK()
@@ -8563,7 +8548,7 @@ spawn(
                     Description = "Auto Kill All Players In Trial Stage 2.",
                 })
             end
-            V4Tab:AddSection("Race")
+            --V4Tab:AddSection("Race")
             V4Tab:NewToggle("Auto Upgrade Race",{
                 Title = "Auto Upgrade Race",
                 Description = "Auto Upgrade Your Race V1 -> V3.",
@@ -8814,10 +8799,6 @@ spawn(
                     Title = "Hop Option",
                     Description = "Allow hop for some functions."
                 }) 
-                DefaultTab:NewToggle("Auto Haki Ken",{
-                    Title = "Auto Ken",
-                    Description = ".",
-                })
                 SettingTab:NewToggle("HopLowOption",{
                     Title = "Hop Low Option",
                     Description = "Allow hop low for some functions."
@@ -8862,7 +8843,6 @@ spawn(
                 SettingTab:NewToggle("Auto Spam Skill",{
                     Title = "Auto Skill",
                 })
-                
                 task.spawn(function()
                     while task.wait() do 
                         if Config["Auto Spam Skill"] or autospamskill then 
