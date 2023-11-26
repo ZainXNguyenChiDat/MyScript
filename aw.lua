@@ -1,10 +1,4 @@
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
-	game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
-end
-if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn") then
-	game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
-end
 
   local Window =
             Fluent:CreateWindow(
@@ -222,22 +216,23 @@ end
 
 ------------------
 DefaultTab:NewToggle("Auto Haki",{
-    Title = "Auto Buso",
-    Default _G.Settings.Configs["Auto Haki"],
+    Title = "Auto Buso",,
     Callback = function(value)
-        _G.Settings.Configs["Auto Haki"] = value
-    end, 
+        _G.Haki = value
+    end 
 })
 ---------------------
+
 spawn(function()
 	while wait() do
-if _G.Settings.Configs["Auto Haki"] then
+if _G.Haki then
 	if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
 	end
 end
 end
 end)
+
 ---------------------------------------
         Window:SelectTab(1)
         Fluent:Notify({
