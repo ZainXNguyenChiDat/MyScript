@@ -222,17 +222,7 @@ end
 ------------------
 DefaultTab:NewToggle("Auto Haki",{
     Title = "Auto Buso",
-    Callback = function()
-        AutoHaki()
-    end
 })
-spawn(function()
-	while wait() do 
-        if Config["Auto Haki"] or AutoHaki then 
-            AutoHaki()
-        end
-    end
-end)
 ---------------------------------------
         Window:SelectTab(1)
         Fluent:Notify({
