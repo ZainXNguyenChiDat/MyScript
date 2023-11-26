@@ -223,7 +223,7 @@ end
 DefaultTab:NewToggle("Auto Haki",{
     Title = "Auto Buso",
     Callback = function()
-        TweenTemple()
+        AutoHaki()
     end
 })
 spawn(function()
