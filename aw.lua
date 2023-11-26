@@ -226,8 +226,7 @@ DefaultTab:NewToggle("Auto Haki",{
     Default _G.Settings.Configs["Auto Haki"],
     Callback = function(value)
         _G.Settings.Configs["Auto Haki"] = value
-    end
-    
+    end, 
 })
 ---------------------
 spawn(function()
