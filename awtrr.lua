@@ -221,12 +221,10 @@ end
        
 
 ------------------
-DefaultTab:NewToggle(
-    "Smart Bring",
-    {
-        Title = "Bring [Smart]"
-    }
-)
+    DefaultTab:NewToggle("Auto Mirage Puzzle",{
+                    Title = "Auto Pull Lever",
+                    Description = "Will Automatic Do Auto Pull Lever (required requirements)."
+                })
 ---------------------
 
 
