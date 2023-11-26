@@ -223,9 +223,21 @@ end
 ------------------
 DefaultTab:NewToggle("Auto Haki",{
     Title = "Auto Buso",,
+    Callback = function(value)
+        _G.Haki = value
+    end 
 })
 ---------------------
 
+spawn(function()
+	while wait() do
+if _G.Haki then
+	if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+	end
+end
+end
+end)
 
 ---------------------------------------
         Window:SelectTab(1)
