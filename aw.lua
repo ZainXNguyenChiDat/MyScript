@@ -212,10 +212,17 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
             end
             return newmm
         end
-        DefaultTab = Window:NewTab({Title = "Default", Icon = "settings" })
+        DefaultTab = Window:NewTab({Title = "Settings", Icon = "settings" })
        
-
-
+---------------------------------
+["Auto Haki"] = function() 
+    if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+end,
+------------------
+DefaultTab:NewToggle("Auto Haki",{
+    Title = "Auto Buso",
+})
 
 ---------------------------------------
         Window:SelectTab(1)
