@@ -221,9 +221,12 @@ end
        
 
 ------------------
-DefaultTab:NewToggle("Auto Haki",{
-    Title = "Auto Buso",
-})
+DefaultTab:NewToggle(
+    "Smart Bring",
+    {
+        Title = "Bring [Smart]"
+    }
+)
 ---------------------
 
 
