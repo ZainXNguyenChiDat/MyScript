@@ -4,8 +4,8 @@
 local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Piwwy0909/Makima_Hub/main/ThemeEdit-obfuscated.lua"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/Piwwy0909/Makima_Hub/main/SaveManager-obfuscated.lua"))()
+local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 local Window = Library:CreateWindow({
     -- Set Center to true if you want the menu to appear in the center
@@ -18,13 +18,15 @@ local Window = Library:CreateWindow({
     AutoShow = true,
 })
 
+-- You do not have to set your tabs & groups up this way, just a prefrence.
 local Tabs = {
     -- Creates a new tab titled Main
     Main = Window:AddTab('Main'), 
     ['UI Settings'] = Window:AddTab('UI Settings'),
 }
 
-
+-- Groupbox and Tabbox inherit the same functions
+-- except Tabboxes you have to call the functions on a tab (Tabbox:AddTab(name))
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox('Groupbox')
 
 -- Tabboxes are a tiny bit different, but here's a basic example:
