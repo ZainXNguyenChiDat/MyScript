@@ -215,15 +215,24 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
         DefaultTab = Window:NewTab({Title = "Settings", Icon = "settings" })
        
 ---------------------------------
-["Auto Haki"] = function() 
+function AutoHaki()
     if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
 end
 ------------------
 DefaultTab:NewToggle("Auto Haki",{
     Title = "Auto Buso",
+    Callback = function()
+        TweenTemple()
+    end
 })
-
+spawn(function()
+	while wait() do 
+        if Config["Auto Haki"] or AutoHaki then 
+            AutoHaki()
+        end
+    end
+end)
 ---------------------------------------
         Window:SelectTab(1)
         Fluent:Notify({
