@@ -221,17 +221,7 @@ end
        
 
 ------------------
-if DefaultTab then 
-    DefaultTab:NewToggle("Auto Mirage Puzzle",{
-                    Title = "Auto Pull Lever",
-                    Description = "Will Automatic Do Auto Pull Lever (required requirements)."
-                })
-end
----------------------
 
-
-
----------------------------------------
         Window:SelectTab(1)
         Fluent:Notify({
             Title = "Sadnessdontsuy",
