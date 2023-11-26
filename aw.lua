@@ -4,7 +4,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
   local Window =
             Fluent:CreateWindow(
             {
-                Title = "NguyenChiDat [ Update 20 ]",
+                Title = "NguyenChiDat [Update 20]",
                 SubTitle = "Beta",
                 TabWidth = 160,
                 Size = UDim2.fromOffset(500, 390),
