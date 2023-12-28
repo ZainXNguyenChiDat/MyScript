@@ -582,10 +582,7 @@ spawn(
             end
             return Counter
         end 
-        function CakeQueenKill()
-            if CheckBoss("Cake Queen") then 
-                KillMobNotInWorkSpace("Cake Queen") 
-            end
+    
         function CountZombieInWorkspace()
             Counter = 0
             for i, v in pairs(game.workspace.Enemies:GetChildren()) do
@@ -8354,8 +8351,9 @@ spawn(
                 {
                     Title = "Auto Cake Queen"
                     callback = function()
-                        CakeQueenKill()
-                    end
+                        if CheckBoss("Cake Queen") then 
+                            KillMobNotInWorkSpace("Cake Queen")
+                        end
                 }
             )
             FarmTab:AddSection("Default Farm")
