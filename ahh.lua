@@ -6543,71 +6543,12 @@ spawn(
                 end
             end,
             ["Auto Dough King"] = function()
-                if CheckBoss("Dough King") then 
-                    KillMobNotInWorkSpace("Dough King")
-                else
-                    if CheckTool("Sweet Chalice") then 
-                        MobsCakePrince = {
-                            "Cookie Crafter [Lv. 2200]",
-                            "Cake Guard [Lv. 2225]",
-                            "Baking Staff [Lv. 2250]",
-                            "Head Baker [Lv. 2275]"
-                        }
-                        Target = CheckMob(MobsCakePrince)
-                        TargetSpawn = GetListMobSpawn(MobsCakePrince)
-                        if Target then
-                            KillMob(Target)
-                        elseif TargetSpawn then
-                            for i, v in pairs(TargetSpawn) do
-                                if not CheckMob(MobsCakePrince) then
-                                    Tweento(v.CFrame * CFrame.new(0, 15, 0))
-                                end
-                            end
-                        end
-                    else
-                        if CheckMaterialCount("Conjured Cocoa") > 10 then 
-                            if CheckTool("God's Chalice") then 
-                                game.ReplicatedStorage.Remotes.CommF_:InvokeServer("SweetChaliceNpc")
-                            else
-                                if CheckElite() then 
-                                    if
-                                    not string.find(
-                                        game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,
-                                        CheckElite().Name:gsub(" %pLv. %d+%p", "")
-                                    ) or
-                                        not game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible
-                                    then
-                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
-                                            "AbandonQuest"
-                                        )
-                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
-                                            "EliteHunter"
-                                        ) 
-                                    else
-                                        KillMobNotInWorkSpace(CheckElite())
-                                    end
+                if CheckBoss("Cursed Captain [Lv. 1325][Raid Boss]") then 
+                    KillMobNotInWorkSpace("Cursed Captain [Lv. 1325][Raid Boss]")
                                 elseif Config["Auto Dough King Hop"] then 
                                     HopServer(10,true) 
                                 end
                             end  
-                        else 
-                            CocoaMobs = {
-                                "Cocoa Warrior [Lv. 2300]",
-                                "Chocolate Bar Battler [Lv. 2325]"
-                            } 
-                            Target = CheckMob(CocoaMobs)
-                            TargetSpawn = GetListMobSpawn(CocoaMobs)
-                            if Target then
-                                KillMob(Target)
-                            elseif TargetSpawn then
-                                for i, v in pairs(TargetSpawn) do
-                                    if not CheckMob(CocoaMobs) then
-                                        Tweento(v.CFrame * CFrame.new(0, 15, 0))
-                                    end
-                                end
-                            end
-                        end
-                    end
                 end
             end,  
             ["Auto Yama"] = function() 
