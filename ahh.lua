@@ -273,7 +273,7 @@ spawn(
         local Window =
             Fluent:CreateWindow(
             {
-                Title = "NguyenChiDat [ Update 20 ]",
+                Title = "Sadnessdontsuy [ Update 20 ]",
                 SubTitle = "Beta",
                 TabWidth = 160,
                 Size = UDim2.fromOffset(Size11, Size22),
@@ -6543,12 +6543,71 @@ spawn(
                 end
             end,
             ["Auto Dough King"] = function()
-                if CheckBoss("Cursed Captain [Lv. 1325][Raid Boss]") then 
-                    KillMobNotInWorkSpace("Cursed Captain [Lv. 1325][Raid Boss]")
+                if CheckBoss("Dough King") then 
+                    KillMobNotInWorkSpace("Dough King")
+                else
+                    if CheckTool("Sweet Chalice") then 
+                        MobsCakePrince = {
+                            "Cookie Crafter [Lv. 2200]",
+                            "Cake Guard [Lv. 2225]",
+                            "Baking Staff [Lv. 2250]",
+                            "Head Baker [Lv. 2275]"
+                        }
+                        Target = CheckMob(MobsCakePrince)
+                        TargetSpawn = GetListMobSpawn(MobsCakePrince)
+                        if Target then
+                            KillMob(Target)
+                        elseif TargetSpawn then
+                            for i, v in pairs(TargetSpawn) do
+                                if not CheckMob(MobsCakePrince) then
+                                    Tweento(v.CFrame * CFrame.new(0, 15, 0))
+                                end
+                            end
+                        end
+                    else
+                        if CheckMaterialCount("Conjured Cocoa") > 10 then 
+                            if CheckTool("God's Chalice") then 
+                                game.ReplicatedStorage.Remotes.CommF_:InvokeServer("SweetChaliceNpc")
+                            else
+                                if CheckElite() then 
+                                    if
+                                    not string.find(
+                                        game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,
+                                        CheckElite().Name:gsub(" %pLv. %d+%p", "")
+                                    ) or
+                                        not game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible
+                                    then
+                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
+                                            "AbandonQuest"
+                                        )
+                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
+                                            "EliteHunter"
+                                        ) 
+                                    else
+                                        KillMobNotInWorkSpace(CheckElite())
+                                    end
                                 elseif Config["Auto Dough King Hop"] then 
                                     HopServer(10,true) 
                                 end
                             end  
+                        else 
+                            CocoaMobs = {
+                                "Cocoa Warrior [Lv. 2300]",
+                                "Chocolate Bar Battler [Lv. 2325]"
+                            } 
+                            Target = CheckMob(CocoaMobs)
+                            TargetSpawn = GetListMobSpawn(CocoaMobs)
+                            if Target then
+                                KillMob(Target)
+                            elseif TargetSpawn then
+                                for i, v in pairs(TargetSpawn) do
+                                    if not CheckMob(CocoaMobs) then
+                                        Tweento(v.CFrame * CFrame.new(0, 15, 0))
+                                    end
+                                end
+                            end
+                        end
+                    end
                 end
             end,  
             ["Auto Yama"] = function() 
@@ -8059,8 +8118,8 @@ spawn(
         
         -------- Creating functions element ------------
         do
-            DefaultTab:AddSection("I miss H")
-            SettingTab:NewButton({
+            DefaultTab:AddSection("Sadness01")
+            DefaultTab:NewButton({
                 Title = "Fly Boat",
                 Callback = function()
                     getgenv().BoatFloated = not getgenv().BoatFloated
@@ -8068,7 +8127,7 @@ spawn(
                     FlyBoat(GetLocalBoat(),getgenv().BoatFloated) 
                 end
             })
-            SettingTab:NewButton({
+            DefaultTab:NewButton({
                 Title = "Cancel Tween",
                 Description = "Cancel the tween and remove noclip effects.",
                 Callback = function()
@@ -8084,7 +8143,7 @@ spawn(
             DefaultTab:NewToggle(
                 "Smart Bring",
                 {
-                    Title = "Bring [Smart]"
+                    Title = "Smart Bring"
                 }
             )
             DefaultTab:NewDropdown(
@@ -8268,8 +8327,8 @@ spawn(
             })
         
         
-            --FarmTab:AddSection("Attack functions")
-            SettingTab:NewDropdown(
+            FarmTab:AddSection("Attack functions")
+            FarmTab:NewDropdown(
                 "Fast Attack Delay",
                 {
                     Title = "Fast Attack Delay",
@@ -8280,7 +8339,7 @@ spawn(
                     }
                 }
             )
-            SettingTab:NewToggle(
+            FarmTab:NewToggle(
                 "Fast Attack Aura",
                 {
                     Title = "Attack Aura"
@@ -8316,7 +8375,7 @@ spawn(
             Farm_Toggle = FarmTab:NewToggle(
                 "Farm Normal",
                 {
-                    Title = "Auto Farm"
+                    Title = "Farm"
                 }
             )
             DoubleQuest_Toggle = FarmTab:NewToggle(
@@ -8391,7 +8450,7 @@ spawn(
                     Title = "Hop For Bosses"
                 }
             )
-            FarmTab:AddSection("Mob Auto")
+            FarmTab:AddSection("Elite/Rip India/Yama/Tushita/Dough King Functions")
             FarmTab:NewToggle("Auto Elite",{
                 Title = "Auto Elite Hunter",
                 Description = "Auto Elite Hunter When It Spawned."
@@ -8404,15 +8463,15 @@ spawn(
                 Title = "Auto Rip Indra",
                 Description = "Auto summon rip indra and kill that nigga when have god chalice and automatic enable haki buttons."
             })
-            WeaponTab:NewToggle("Auto Tushita",{
+            FarmTab:NewToggle("Auto Tushita",{
                 Title = "Auto Tushita",
                 Description = "Auto do Tushita Puzzle and get Tushita.\nAuto Kill Rip India will ignore this."
             })
-            WeaponTab:NewToggle("Auto Tushita Hop",{
+            FarmTab:NewToggle("Auto Tushita Hop",{
                 Title = "Auto Tushita Hop",
                 Description = "Ignore what u doing. Just hopping for rip india and do Tushita Puzzle."
             }) 
-            WeaponTab:NewToggle("Auto Yama",{
+            FarmTab:NewToggle("Auto Yama",{
                 Title = "Yama",
                 Description = "Auto unlock yama while check elite killed > 30."
             })
@@ -8431,10 +8490,10 @@ spawn(
                         game.Players.LocalPlayer.Character.Humanoid.Health = 0 
                     end
                 })
-                V4Tab:AddSection("Automatic V4")
+                V4Tab:AddSection("Mirage Puzzle")
                 V4Tab:NewToggle("Auto Mirage Puzzle",{
-                    Title = "Auto Pull Lever",
-                    Description = "Will Automatic Do Auto Pull Lever (required requirements)."
+                    Title = "Auto Mirage Puzzle",
+                    Description = "Will Automatic Do Mirage Puzzle (required requirements)."
                 })
                 V4Tab:NewButton({
                     Title = "Tween To Mirage Island",
@@ -8463,7 +8522,7 @@ spawn(
                 })
                 V4Tab:AddSection("Temple of Time Puzzle")
                 TrialStage1_Toggle = V4Tab:NewToggle("Auto Trial Stage 1",{
-                    Title = "Auto Complete Trial",
+                    Title = "Auto Trial Stage 1",
                     Description = "Auto do Trial Stage 1 All Race."
                 })
                 AutoChooseGear_Toggle = V4Tab:NewToggle("Auto Choose Gear",{
@@ -8489,7 +8548,7 @@ spawn(
                     Description = "Auto Kill All Players In Trial Stage 2.",
                 })
             end
-            --V4Tab:AddSection("Race")
+            V4Tab:AddSection("Race")
             V4Tab:NewToggle("Auto Upgrade Race",{
                 Title = "Auto Upgrade Race",
                 Description = "Auto Upgrade Your Race V1 -> V3.",
@@ -8508,7 +8567,7 @@ spawn(
                 end
             })
             AutoActiveRace_Toggle = PlRTAB:NewToggle("Auto Active Race",{
-                Title = "Auto Active Race V4",
+                Title = "Auto Active Race V4 When Full Meter",
                 Description = "Automatic active race v4 in anytime."
             })
             PlRTAB:NewToggle("Mods Character",{
@@ -8585,7 +8644,7 @@ spawn(
                 end
             end  
             if WeaponTab then 
-                WeaponTab:AddSection("Item Automatics")
+                WeaponTab:AddSection("Item Puzzle")
                 if Sea2 or Sea3 then
                     WeaponTab:NewToggle("Auto Soul Guitar",{
                         Title = "Auto Soul Guitar",
@@ -8609,7 +8668,7 @@ spawn(
                         BuyGear()
                     end
                 })
-                AutoBuyGear_Toggle = V4Tab:NewToggle("Auto Buy Gear",{
+                AutoBuyGear_Toggle = ShopTab:NewToggle("Auto Buy Gear",{
                     Title = "Auto Buy Gear",
                     Description = "Auto check & buy gears."
                 })
@@ -8626,7 +8685,7 @@ spawn(
                     Description = "Buying Melee by clicking to them."
                 })
                 ShopTab:NewButton({
-                    Title = "Buy Ghoul race",
+                    Title = "Buy ghoul race",
                     Description = "Buy Ghoul Race required owned",
                     Callback = function() 
                         local args = {
@@ -8749,14 +8808,13 @@ spawn(
                     Description = "Tween above mob while health below 30% and back to kill it when health >= 70%."
                 })
                 ChooseTeam_Dropdown =SettingTab:NewDropdown("Team",{ 
-                    Title = "Selects Team",
-                    Description = "Select team auto pick when game hop",
+                    Title = "Choose team",
+                    Description = "Choose team auto pick when game begin",
                     Values = {
                         "Pirates",
                         "Marines",
                     },
                     Multi = false,
-                    Value = "Marines",
                 })
                 UseWeapon_Dropdown =SettingTab:NewDropdown("Use Weapon",{ 
                     Title = "Choose weapon to use skills",
@@ -8782,7 +8840,7 @@ spawn(
                     Multi = true,
                 }) 
                 SettingTab:NewToggle("Auto Spam Skill",{
-                    Title = "Auto Skill",
+                    Title = "Auto Spam skill ngu",
                 })
                 task.spawn(function()
                     while task.wait() do 
@@ -8812,7 +8870,7 @@ spawn(
                             haki1, haki2 = CheckHakiColor()
                             SV3 = "Player In Server: "..tostring(PlayersCount()).."/"..game.Players.MaxPlayers.."\n".."Server Time: " .. function8().."\nAcient One Status: " .. tostring(CheckAcientOneStatus())..
                             "\nCake Prince Status: " .. tostring(CheckCakePrinceStatus())..
-                            "\nPull Lever: " .. tostring(CheckGatCan())..
+                            "\nMirage Puzzle: " .. tostring(CheckGatCan())..
                             "\nMirage Island: " .. tostring(CheckMirageIslandStatus())..
                             "\nElite: "..CheckEliteStatus()..
                             "\nRace: " .. tostring(CheckRace())
