@@ -8964,7 +8964,7 @@ spawn(
         
         loadstring(game:HttpGet("https://raw.githubusercontent.com/memaybeohub/Function-Scripts/main/FastAttackLoader.lua"))()
         -- Final Load --
-        LoadedUiHub = true
+       
         Window:SelectTab(1)
         Fluent:Notify({
             Title = "Sadnessdontsuy",
