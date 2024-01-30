@@ -7342,7 +7342,6 @@ spawn(
                 game:GetService("VirtualInputManager"):SendKeyEvent(true, "Y", false, game)
                 wait(0.1)
                 game:GetService("VirtualInputManager"):SendKeyEvent(false, "Y", false, game)
-             end
             end
         end
     end
