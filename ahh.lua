@@ -29,7 +29,7 @@ local Window =
         TabWidth = 160,
         Size = UDim2.fromOffset(530, 350),
         Acrylic = true,
-        Theme = "Dark",
+        Theme = "Light",
         MinimizeKey = Enum.KeyCode.End
     }
 )
