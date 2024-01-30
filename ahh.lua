@@ -8520,16 +8520,7 @@ spawn(
                                         "StoreFruit",
                                         "Leopard-Leopard",
                                         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Leopard Fruit")
-                                    )
-                                     if
-                                    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Kitsune Fruit") or
-                                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit")
-                                 then
-                                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
-                                        "StoreFruit",
-                                        "Kitsune-Kitsune",
-                                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit")
-                                    )
+                                    )                             
                                 end
                             end
                         end
