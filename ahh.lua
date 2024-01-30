@@ -7324,7 +7324,7 @@ Options.ToggleWhite:SetValue(false)
 local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = " Enable Auto Active V4", Default = true})
 ToggleRemove:OnChanged(
     function(Value)
-        _G.ActiveV4 = Value
+        _G.ActiveRaceV4 = Value
     end
 )
 Options.ToggleRemove:SetValue(true)
@@ -7332,19 +7332,20 @@ Options.ToggleRemove:SetValue(true)
 spawn(
     function()
         while wait() do
-            if _G.ActiveV4 then
-                        if game.Players.LocalPlayer.Character.RaceTransformed.Value == false then
-                            AutoFarmAcient = true
-                            if AutoFarmAcient then
-                                game:GetService("VirtualInputManager"):SendKeyEvent(true, "Y", false, game)
-                                wait(0.1)
-                                game:GetService("VirtualInputManager"):SendKeyEvent(false, "Y", false, game)
-            else
-                
+            if _G.ActiveRaceV4 then
+                if
+                game.Players.LocalPlayer.Character:FindFirstChild("RaceEnergy") and
+                    game.Players.LocalPlayer.Character.RaceEnergy.Value >= 1 and
+                    not game.Players.LocalPlayer.Character.RaceTransformed.Value
+             then
+                local vim = game:service("VirtualInputManager")
+                game:GetService("VirtualInputManager"):SendKeyEvent(true, "Y", false, game)
+                wait(0.1)
+                game:GetService("VirtualInputManager"):SendKeyEvent(false, "Y", false, game)
+             end
             end
         end
     end
-end
 )
 
 local SKill = Tabs.Setting:AddSection("Skill Mastery")
