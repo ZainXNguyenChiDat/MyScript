@@ -4053,14 +4053,13 @@ do
     ToggleButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
     ToggleButton.Size = UDim2.new(0, 50, 0, 50)
     ToggleButton.Font = Enum.Font.SourceSans
-    ToggleButton.Text = "ON"
+    ToggleButton.Text = "OPEN"
     ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     ToggleButton.TextSize = 14.000
     ToggleButton.Draggable = true
     ToggleButton.MouseButton1Click:Connect(
         function()
             game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
-            ToggleButton.Text = "OFF"
         end
     )
     --------------------------------------------------------------------------------------------------------------------------------------------
@@ -7322,6 +7321,32 @@ ToggleWhite:OnChanged(
 )
 Options.ToggleWhite:SetValue(false)
 
+local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = " Enable Auto Active V4", Default = true})
+ToggleRemove:OnChanged(
+    function(Value)
+        _G.ActiveV4 = Value
+    end
+)
+Options.ToggleRemove:SetValue(true)
+
+spawn(
+    function()
+        while wait() do
+            if _G.ActiveV4 then
+                        if game.Players.LocalPlayer.Character.RaceTransformed.Value == false then
+                            AutoFarmAcient = true
+                            if AutoFarmAcient then
+                                game:GetService("VirtualInputManager"):SendKeyEvent(true, "Y", false, game)
+                                wait(0.1)
+                                game:GetService("VirtualInputManager"):SendKeyEvent(false, "Y", false, game)
+            else
+                
+            end
+        end
+    end
+end
+)
+
 local SKill = Tabs.Setting:AddSection("Skill Mastery")
 local ToggleZ = Tabs.Setting:AddToggle("ToggleZ", {Title = "Skill Z", Default = true})
 ToggleZ:OnChanged(
@@ -7965,7 +7990,7 @@ local DropdownIsland =
     Tabs.Teleport:AddDropdown(
     "DropdownIsland",
     {
-        Title = "Dropdown",
+        Title = "Chosee",
         Values = IslandList,
         Multi = false,
         Default = 1
