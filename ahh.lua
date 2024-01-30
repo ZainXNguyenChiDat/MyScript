@@ -5348,7 +5348,7 @@ end)
         Tabs.Main:AddDropdown(
         "DropdownBoss",
         {
-            Title = "Dropdown",
+            Title = "List",
             Values = tableBoss,
             Multi = false,
             Default = 1
@@ -5505,7 +5505,7 @@ end)
         Tabs.Main:AddDropdown(
         "DropdownMaterial",
         {
-            Title = "Dropdown",
+            Title = "List",
             Values = MaterialList,
             Multi = false,
             Default = 1
@@ -8520,7 +8520,17 @@ spawn(
                                         "StoreFruit",
                                         "Leopard-Leopard",
                                         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Leopard Fruit")
-                                    )                             
+                                    )     
+                                    if
+                                    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Kitsune Fruit") or
+                                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit")
+                                 then
+                                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
+                                        "StoreFruit",
+                                        "Kitsune-Kitsune",
+                                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit")
+                                    )     
+                                end                    
                                 end
                             end
                         end
