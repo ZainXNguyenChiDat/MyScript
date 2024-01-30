@@ -10,7 +10,7 @@ spawn(function()
     until game.Players.LocalPlayer and game.Players.LocalPlayer.Team ~= nil 
     wait(1.5)
     require(game.ReplicatedStorage.Notification).new("<Color=Red> Welcome To Sadnessdontsuy [ NguyenChiDat ] <Color=/>"):Display()
-    require(game.ReplicatedStorage.Notification).new("<Color=Yellow>Discord : Join AfxcaxiRoblox's Discord to Get the Latest Information <Color=/>"):Display()
+    require(game.ReplicatedStorage.Notification).new("<Color=Yellow>Discord: [ Update ] <Color=/>"):Display()
 end)
 ----------------------------------------------------------------------------------------------------------------------------------------------
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
@@ -29,21 +29,21 @@ local Window =
         TabWidth = 160,
         Size = UDim2.fromOffset(530, 350),
         Acrylic = true,
-        Theme = "Light",
+        Theme = "Dark",
         MinimizeKey = Enum.KeyCode.End
     }
 )
 local Tabs = {
-    Discord = Window:AddTab({Title = "H? So", Icon = ""}),
+    Discord = Window:AddTab({Title = "About", Icon = ""}),
     Main = Window:AddTab({Title = "Main", Icon = "moon"}),
-    Setting = Window:AddTab({Title = "C�i �?t", Icon = "settings"}),
-    Stats = Window:AddTab({Title = "Ch? S?", Icon = "plus-circle"}),
+    Setting = Window:AddTab({Title = "Settings", Icon = "settings"}),
+    Stats = Window:AddTab({Title = "Stats", Icon = "plus-circle"}),
     Player = Window:AddTab({Title = "Player", Icon = "baby"}),
-    Teleport = Window:AddTab({Title = "�?o", Icon = "map-pinned"}),
-    Fruit = Window:AddTab({Title = "Tr�i C�y", Icon = "cherry"}),
+    Teleport = Window:AddTab({Title = "Travel", Icon = "map-pinned"}),
+    Fruit = Window:AddTab({Title = "Fruit", Icon = "cherry"}),
     Raid = Window:AddTab({Title = "Raid", Icon = "swords"}),
-    Race = Window:AddTab({Title = "T?c V4", Icon = "hexagon"}),
-    Shop = Window:AddTab({Title = "C?a H�ng", Icon = "shopping-cart"}),
+    Race = Window:AddTab({Title = "Race V4", Icon = "hexagon"}),
+    Shop = Window:AddTab({Title = "Shop", Icon = "shopping-cart"}),
     Misc = Window:AddTab({Title = "Misc", Icon = "list-plus"}),
     --Hop = Window:AddTab({Title = "Hop", Icon = "wifi"})
 }
@@ -51,7 +51,7 @@ local Options = Fluent.Options
 do
     Tabs.Discord:AddButton(
         {
-            Title = "Meta Hub",
+            Title = "OK",
             Description = "",
             Callback = function()
                 Fluent:Notify(
@@ -4053,13 +4053,14 @@ do
     ToggleButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
     ToggleButton.Size = UDim2.new(0, 50, 0, 50)
     ToggleButton.Font = Enum.Font.SourceSans
-    ToggleButton.Text = "AfxcaxiRoblox"
+    ToggleButton.Text = "ON"
     ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     ToggleButton.TextSize = 14.000
     ToggleButton.Draggable = true
     ToggleButton.MouseButton1Click:Connect(
         function()
             game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
+            ToggleButton.Text = "OFF"
         end
     )
     --------------------------------------------------------------------------------------------------------------------------------------------
@@ -4075,7 +4076,7 @@ do
     --------------------------------------------------------------------------------------------------------------------------------------------
     --Create Tabs
     local Farming = Tabs.Main:AddSection("Farming")
-    local listfastattack = {"0.25", "0.17", "0.05"}
+    local listfastattack = {"0.25", "0.17", "0.05","0.00"}
 
     local DropdownDelayAttack =
         Tabs.Main:AddDropdown(
@@ -4095,6 +4096,8 @@ do
 		_G.Fast_Delay = 0.25
 	elseif _G.FastAttackFaiFao_Mode == "0.05" then
 		_G.Fast_Delay = 0.05
+    elseif _G.FastAttackFaiFao_Mode == "0.00" then
+		_G.Fast_Delay = 0.00
 	end
 end)
 
@@ -8113,7 +8116,7 @@ local DropdownFruit =
     Tabs.Fruit:AddDropdown(
     "DropdownFruit",
     {
-        Title = "Dropdown",
+        Title = "Sniper Fruit List",
         Values = Table_DevilFruitSniper,
         Multi = false,
         Default = 1
@@ -8518,6 +8521,15 @@ spawn(
                                         "Leopard-Leopard",
                                         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Leopard Fruit")
                                     )
+                                     if
+                                    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Kitsune Fruit") or
+                                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit")
+                                 then
+                                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
+                                        "StoreFruit",
+                                        "Kitsune-Kitsune",
+                                        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit")
+                                    )
                                 end
                             end
                         end
@@ -8529,7 +8541,7 @@ spawn(
     end
 )
 
-local ToggleRandomFruit = Tabs.Fruit:AddToggle("ToggleRandomFruit", {Title = "Random Fruit", Default = false})
+local ToggleRandomFruit = Tabs.Fruit:AddToggle("ToggleRandomFruit", {Title = "Auto Random Fruit", Default = false})
 ToggleRandomFruit:OnChanged(
     function(Value)
         _G.Random_Auto = Value
@@ -8574,7 +8586,7 @@ spawn(
 
 local Mastery = Tabs.Fruit:AddSection("Esp")
 
-local ToggleEspPlayer = Tabs.Fruit:AddToggle("ToggleEspPlayer", {Title = "Esp Player", Default = false})
+local ToggleEspPlayer = Tabs.Fruit:AddToggle("ToggleEspPlayer", {Title = "ESP Player", Default = false})
 
 ToggleEspPlayer:OnChanged(
     function(Value)
@@ -8584,7 +8596,7 @@ ToggleEspPlayer:OnChanged(
 )
 Options.ToggleEspPlayer:SetValue(false)
 
-local ToggleEspFruit = Tabs.Fruit:AddToggle("ToggleEspFruit", {Title = "Esp Devil Fruit", Default = false})
+local ToggleEspFruit = Tabs.Fruit:AddToggle("ToggleEspFruit", {Title = "ESP Devil Fruit", Default = false})
 
 ToggleEspFruit:OnChanged(
     function(Value)
@@ -8597,7 +8609,7 @@ ToggleEspFruit:OnChanged(
 )
 Options.ToggleEspFruit:SetValue(false)
 
-local ToggleEspIsland = Tabs.Fruit:AddToggle("ToggleEspIsland", {Title = "Esp Island", Default = false})
+local ToggleEspIsland = Tabs.Fruit:AddToggle("ToggleEspIsland", {Title = "ESP Island", Default = false})
 
 ToggleEspIsland:OnChanged(
     function(Value)
@@ -8610,7 +8622,7 @@ ToggleEspIsland:OnChanged(
 )
 Options.ToggleEspIsland:SetValue(false)
 
-local ToggleEspFlower = Tabs.Fruit:AddToggle("ToggleEspFlower", {Title = "Esp Flower", Default = false})
+local ToggleEspFlower = Tabs.Fruit:AddToggle("ToggleEspFlower", {Title = "ESP Flower", Default = false})
 
 ToggleEspFlower:OnChanged(
     function(Value)
@@ -8664,7 +8676,7 @@ local DropdownRaid =
     Tabs.Raid:AddDropdown(
     "DropdownRaid",
     {
-        Title = "Dropdown",
+        Title = "Chosee Raid.",
         Values = Chips,
         Multi = false,
         Default = 1
@@ -8847,7 +8859,7 @@ spawn(
     end
 )
 
-local ToggleGetFruit = Tabs.Raid:AddToggle("ToggleGetFruit", {Title = "Get Fruit Low Bely", Default = false})
+local ToggleGetFruit = Tabs.Raid:AddToggle("ToggleGetFruit", {Title = "Get Fruit In Store Low Bely.", Default = false})
 ToggleGetFruit:OnChanged(
     function(Value)
         _G.Autofruit = Value
@@ -9120,8 +9132,10 @@ Tabs.Race:AddButton(
         Title = "Timple Of Time",
         Description = "",
         Callback = function()
-            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
-                CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(
+                "requestEntrance",
+                Vector3.new(28282.5703125, 14896.8505859375, 105.1042709350586)
+            )
         end
     }
 )
@@ -9131,6 +9145,8 @@ Tabs.Race:AddButton(
         Title = "Lever Pull",
         Description = "",
         Callback = function()
+            CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
+
             Tween2(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
         end
     }
@@ -9150,7 +9166,7 @@ local Mastery = Tabs.Race:AddSection("Auto Race")
 
 Tabs.Race:AddButton(
     {
-        Title = "Race Door",
+        Title = "Teleport Race Door",
         Description = "",
         Callback = function()
             Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
@@ -9568,7 +9584,7 @@ spawn(
 --------------------------------------------------------------------------------------------------------------------------------------------
 --shop
 
-local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "Random Bone", Default = false})
+local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "Auto Random Bone", Default = false})
 ToggleRandomBone:OnChanged(
     function(Value)
         _G.AutoRandomBone = Value
@@ -9727,7 +9743,15 @@ Tabs.Shop:AddButton(
         end
     }
 )
-
+Tabs.Shop:AddButton(
+    {
+        Title = "Sanguine Art",
+        Description = "",
+        Callback = function()
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
+        end
+    }
+)
 local Mastery = Tabs.Shop:AddSection("Misc Items")
 
 Tabs.Shop:AddButton(
@@ -9747,6 +9771,39 @@ Tabs.Shop:AddButton(
         Callback = function()
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Reroll", "1")
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Reroll", "2")
+        end
+    }
+)
+Tabs.Shop:AddButton(
+    {
+        Title = "Buy Cyborg Race",
+        Description = "Buy cyborg race if owned already. [cost 2500f]",
+        Callback = function()
+            local args = {
+                [1] = "CyborgTrainer",
+                [2] = "Buy"
+            }
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        end
+    }
+)
+Tabs.Shop:AddButton(
+    {
+        Title = "Buy Ghoul Race",
+        Description = "Buy Ghoul Race required owned",
+        Callback = function()
+            local args = {
+                [1] = "Ectoplasm",
+                [2] = "BuyCheck",
+                [3] = 4
+            }
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+            local args = {
+                [1] = "Ectoplasm",
+                [2] = "Change",
+                [3] = 4
+            }
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
         end
     }
 )
