@@ -7321,13 +7321,13 @@ ToggleWhite:OnChanged(
 )
 Options.ToggleWhite:SetValue(false)
 
-local ToggleV4 = Tabs.Setting:AddToggle("ToggleV4", {Title = " Enable Auto Active V4", Default = true})
+local ToggleV4 = Tabs.Setting:AddToggle("ToggleV4", {Title = " Enable Auto Active V4", Default = false})
 ToggleV4:OnChanged(
     function(Value)
         _G.ActiveRaceV4 = Value
     end
 )
-Options.ToggleV4:SetValue(true)
+Options.ToggleV4:SetValue(false)
 
 spawn(
     function()
