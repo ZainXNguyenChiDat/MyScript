@@ -7330,16 +7330,17 @@ ToggleV3:OnChanged(
 )
 Options.ToggleV3:SetValue(false)
 
-spawn(
-    function()
-        while wait() do
+spawn(function()
+    while wait() do
+        pcall(function()
             if _G.ActiveRaceV3 then
-                game:GetService("VirtualInputManager"):SendKeyEvent(true, "T", false, game)
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"T",false,game)
+                wait(0.1)
+                game:GetService("VirtualInputManager"):SendKeyEvent(false,"T",false,game)
             end
-        end
+        end)
     end
- end
-)
+end)
 
 
 
