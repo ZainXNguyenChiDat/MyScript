@@ -3650,8 +3650,6 @@ do
                                 _G.SwanGlasses or
                                 AutoBartilo or
                                 AutoEvoRace or
-                                TypeModeFarm or
-                                TypeModeFarm1 or
                                 _G.Ectoplasm
                          then
                             if
@@ -4208,37 +4206,19 @@ end)
         end
     )
     
-    local DropdownFarm =
-        Tabs.Main:AddDropdown(
-        "DropdownFarm",
-        {
-            Title = "Select Farm Mode",
-            Values = {"Level", "Bone"},
-            Multi = false,
-            Default = 1
-        }
-    )
-
-    DropdownFarm:SetValue("Level")
-
-    DropdownFarm:OnChanged(
-        function(Value)
-            TypeFarm = Value
-        end
-    )
-
+    
 
     local ToggleLevel = Tabs.Main:AddToggle("ToggleLevel", {Title = "Auto Farm Level", Default = false})
     ToggleLevel:OnChanged(
         function(Value)
-            TypeModeFarm1 = Value
+            _G.AutoLevel = Value
         end
     )
     Options.ToggleLevel:SetValue(false)
     spawn(
         function()
             while task.wait() do
-                if TypeModeFarm1 and TypeFarm == "Level" then
+                if _G.AutoLevel then
                     pcall(
                         function()
                             CheckLevel()
@@ -4302,9 +4282,8 @@ end)
                                                 FarmPos = v.HumanoidRootPart.CFrame
                                                 MonFarm = v.Name
                                             until --Click
-                                            not TypeModeFarm1 or not TypeFarm == "Level" or not v.Parent or v.Humanoid.Health == 0 or
+                                            not _G.AutoLevel or not v.Parent or v.Humanoid.Health <= 0 or
                                                 not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or
-                                                TypeFarm == "Level"
                                                 game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
                                             bringmob = false
                                         end
@@ -5074,13 +5053,12 @@ end)
             end
         )
         Options.ToggleBone:SetValue(false)
-
         local BoneCFrame = CFrame.new(-9515.75, 174.8521728515625, 6079.40625)
         local BoneCFrame2 = CFrame.new(-9359.453125, 141.32679748535156, 5446.81982421875)
         spawn(
             function()
                 while wait() do
-                    if TypeModeFarm1 and TypeModeFarm == "Bone" then
+                    if _G.AutoBone then
                         pcall(
                             function()
                                 local QuestTitle =
@@ -5154,7 +5132,7 @@ end)
                                                             v.HumanoidRootPart.CanCollide = false
                                                             FarmPos = v.HumanoidRootPart.CFrame
                                                             MonFarm = v.Name
-                                                        until not TypeModeFarm1 or not TypeFarm == "Bone" or v.Humanoid.Health == 0 or not v.Parent or
+                                                        until not _G.AutoBone or v.Humanoid.Health <= 0 or not v.Parent or
                                                             game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible ==
                                                                 false
                                                     else
