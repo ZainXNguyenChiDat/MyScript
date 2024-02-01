@@ -4304,6 +4304,7 @@ end)
                                             until --Click
                                             not TypeModeFarm1 or not TypeFarm == "Level" or not v.Parent or v.Humanoid.Health == 0 or
                                                 not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or
+                                                TypeFarm == "Level"
                                                 game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
                                             bringmob = false
                                         end
