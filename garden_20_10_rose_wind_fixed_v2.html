@@ -1,0 +1,2103 @@
+
+
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gửi cậu — 20/10 ♡</title>
+
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+
+
+* { box-sizing: border-box; }
+
+
+
+:root {
+
+  --pink: #d16b94;
+
+  --leaf: #69a879;
+
+}
+
+
+
+body {
+
+margin: 0;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  font-family: 'Quicksand', 'Nunito', sans-serif;
+
+
+
+  background-image: url('background.jpg');
+
+  background-size: cover;
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+
+
+}
+
+
+
+.garden {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 100vh;
+
+  min-height: 500px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+}
+
+
+
+.intro {
+
+  position: absolute;
+
+  top: 6%;
+
+  z-index: 4;
+
+  text-align: center;
+
+  padding: 0 12px;
+
+  color: #bd6688;
+
+  transition: opacity .4s;
+
+}
+
+
+
+.eyebrow {
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 4px;
+
+}
+
+
+
+.intro h2 {
+
+  font-size: clamp(20px, 4vw, 28px);
+
+  margin: 12px 0;
+
+}
+
+
+
+.intro p {
+
+  color: #bd8ba0;
+
+  font-size: 14px;
+
+}
+
+
+
+/* TULIP TRUNG TÂM */
+
+.tulip-main {
+
+  width: clamp(270px, 55vw, 420px);
+
+  height: clamp(330px, 62vh, 480px);
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  animation: float 2.8s ease-in-out infinite;
+
+  filter: drop-shadow(0 15px 18px #e7a1bd33);
+
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+
+
+.tulip-main svg {
+
+  width: 100%;
+
+  height: 100%;
+
+  overflow: visible;
+
+}
+
+
+
+.tulip-petal {
+
+  transform-origin: 100px 120px;
+
+  transition: transform .6s ease;
+
+}
+
+
+
+.tulip-main:hover .tulip-petal {
+
+  transform: scale(1.06);
+
+}
+
+
+
+.tap-hint {
+
+  position: absolute;
+
+  top: 78%;
+
+  z-index: 5;
+
+  color: #bf6e8e;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  animation: pulse 1.6s infinite;
+
+  transition: opacity .3s;
+
+}
+
+
+
+/* KHU VƯỜN */
+
+.flower-garden {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+}
+
+
+
+.plant {
+
+  position: absolute;
+
+  bottom: -10px;
+
+  width: clamp(115px, 20vw, 220px);
+
+  height: clamp(210px, 38vh, 350px);
+
+  opacity: 0;
+
+  transform: translateY(90px) scale(.35);
+
+  transform-origin: bottom center;
+
+}
+
+
+
+.plant svg {
+
+  width: 100%;
+
+  height: 100%;
+
+  overflow: visible;
+
+}
+
+
+
+/* VỊ TRÍ 12 CÂY HOA */
+
+.plant-1  { left: -2%; bottom: -15px; }
+
+.plant-2  { left: 12%; bottom: -30px; }
+
+.plant-3  { right: -2%; bottom: -15px; }
+
+.plant-4  { right: 12%; bottom: -30px; }
+
+.plant-5  { left: 31%; bottom: -65px; width: 150px; height: 280px; }
+
+.plant-6  { right: 31%; bottom: -65px; width: 150px; height: 280px; }
+
+.plant-7  { left: 0; bottom: 28%; width: 145px; height: 265px; }
+
+.plant-8  { right: 0; bottom: 28%; width: 145px; height: 265px; }
+
+.plant-9  { left: 16%; bottom: 32%; width: 130px; height: 235px; }
+
+.plant-10 { right: 16%; bottom: 32%; width: 130px; height: 235px; }
+
+.plant-11 { left: 37%; bottom: -70px; width: 135px; height: 250px; }
+
+.plant-12 { right: 37%; bottom: -70px; width: 135px; height: 250px; }
+
+
+
+.garden.bloomed .plant {
+
+  animation: plantGrow 1.15s cubic-bezier(.16,1,.3,1) forwards;
+
+}
+
+
+
+.garden.bloomed .plant-2  { animation-delay: .06s; }
+
+.garden.bloomed .plant-3  { animation-delay: .12s; }
+
+.garden.bloomed .plant-4  { animation-delay: .18s; }
+
+.garden.bloomed .plant-5  { animation-delay: .24s; }
+
+.garden.bloomed .plant-6  { animation-delay: .30s; }
+
+.garden.bloomed .plant-7  { animation-delay: .12s; }
+
+.garden.bloomed .plant-8  { animation-delay: .20s; }
+
+.garden.bloomed .plant-9  { animation-delay: .28s; }
+
+.garden.bloomed .plant-10 { animation-delay: .36s; }
+
+.garden.bloomed .plant-11 { animation-delay: .42s; }
+
+.garden.bloomed .plant-12 { animation-delay: .48s; }
+
+
+
+.garden.bloomed .tulip-main {
+
+  animation: tulipOpen .8s ease forwards;
+
+}
+
+
+
+.garden.bloomed .intro,
+
+.garden.bloomed .tap-hint {
+
+  opacity: 0;
+
+  pointer-events: none;
+
+}
+
+
+
+
+/* HOA HỒNG GIẤY CUỘN + GIÓ THỔI MẠNH: chỉ tác động lên 12 cây hoa */
+.garden.bloomed .plant svg {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: strongWindSway 2.15s ease-in-out infinite alternate;
+  animation-delay: 1.25s;
+}
+.garden.bloomed .plant-2 svg,
+.garden.bloomed .plant-5 svg,
+.garden.bloomed .plant-8 svg,
+.garden.bloomed .plant-11 svg {
+  animation-duration: 1.75s;
+}
+.garden.bloomed .plant-3 svg,
+.garden.bloomed .plant-6 svg,
+.garden.bloomed .plant-9 svg,
+.garden.bloomed .plant-12 svg {
+  animation-delay: 1.4s;
+  animation-duration: 2.45s;
+}
+@keyframes strongWindSway {
+  0%   { transform: rotate(-7deg) translateX(-3px); }
+  25%  { transform: rotate(3deg) translateX(2px); }
+  55%  { transform: rotate(9deg) translateX(4px); }
+  78%  { transform: rotate(-2deg) translateX(-2px); }
+  100% { transform: rotate(-8deg) translateX(-4px); }
+}
+
+/* LẤP LÁNH */
+
+.sparkle {
+
+  position: absolute;
+
+  color: #e5a0bc;
+
+  font-size: clamp(20px, 4vw, 35px);
+
+  opacity: 0;
+
+}
+
+
+
+.sparkle-1 { left: 24%; top: 24%; }
+
+.sparkle-2 { right: 24%; top: 25%; }
+
+.sparkle-3 { left: 10%; top: 44%; }
+
+.sparkle-4 { right: 10%; top: 45%; }
+
+.sparkle-5 { left: 35%; top: 39%; }
+
+.sparkle-6 { right: 35%; top: 38%; }
+
+.sparkle-7 { left: 18%; top: 65%; }
+
+.sparkle-8 { right: 18%; top: 65%; }
+
+
+
+.garden.bloomed .sparkle {
+
+  animation: sparklePop .7s ease forwards;
+
+}
+
+
+
+.garden.bloomed .sparkle-2 { animation-delay: .1s; }
+
+.garden.bloomed .sparkle-3 { animation-delay: .2s; }
+
+.garden.bloomed .sparkle-4 { animation-delay: .3s; }
+
+.garden.bloomed .sparkle-5 { animation-delay: .4s; }
+
+.garden.bloomed .sparkle-6 { animation-delay: .5s; }
+
+.garden.bloomed .sparkle-7 { animation-delay: .6s; }
+
+.garden.bloomed .sparkle-8 { animation-delay: .7s; }
+
+
+
+/* NÚT ĐỌC LẠI */
+
+.replay {
+
+  position: fixed;
+
+  z-index: 8;
+
+  bottom: 22px;
+
+  left: 50%;
+
+  transform: translateX(-50%) translateY(15px);
+
+  border: 1px solid #f1c5d7;
+
+  border-radius: 30px;
+
+  padding: 12px 22px;
+
+  background: rgba(255,255,255,.96);
+
+  color: #bd6688;
+
+  font-family: inherit;
+
+  font-weight: 800;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+
+  box-shadow: 0 5px 22px #d58ba322;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: opacity .35s, transform .35s, background .2s;
+
+}
+
+
+
+.replay.visible {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateX(-50%) translateY(0);
+
+}
+
+
+
+.replay:hover { background: #fff0f6; }
+
+
+
+/* LỚP MỜ CỦA BỨC THƯ */
+
+.letter-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 10;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 18px;
+
+  background: rgba(255,235,244,0);
+
+  backdrop-filter: blur(0);
+
+  -webkit-backdrop-filter: blur(0);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: opacity .45s, background .45s,
+
+              backdrop-filter .5s, visibility .45s;
+
+}
+
+
+
+.letter-overlay.open {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  background: rgba(255,235,244,.48);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+}
+
+
+
+/* GIẤY THƯ */
+
+.letter-paper {
+
+  position: relative;
+
+  width: min(100%, 480px);
+
+  max-height: 84vh;
+
+  overflow-y: auto;
+
+  padding: 42px 30px 30px;
+
+  border: 1px solid #f3dbe5;
+
+  border-radius: 14px;
+
+  background: #fff;
+
+  color: #755c68;
+
+  box-shadow: 0 25px 80px #a75f7d35;
+
+  transform: translateY(40px) scale(.84) rotate(-2deg);
+
+  opacity: 0;
+
+  transition: transform .6s cubic-bezier(.18,.89,.32,1.2),
+
+              opacity .4s;
+
+}
+
+
+
+.letter-paper::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 10px;
+
+  border: 1px dashed #f0c5d7;
+
+  border-radius: 8px;
+
+  pointer-events: none;
+
+}
+
+
+
+.letter-overlay.open .letter-paper {
+
+  transform: translateY(0) scale(1) rotate(0);
+
+  opacity: 1;
+
+  transition-delay: .06s;
+
+}
+
+
+
+.letter-content {
+
+  position: relative;
+
+  z-index: 1;
+
+  text-align: center;
+
+}
+
+
+
+.letter-content small {
+
+  color: #cf83a1;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+}
+
+
+
+.letter-content h1 {
+
+  margin: 16px 0 22px;
+
+  color: #c55f87;
+
+  font-size: clamp(25px, 6vw, 34px);
+
+  line-height: 1.25;
+
+}
+
+
+
+.letter-content p {
+
+  font-size: 15px;
+
+  line-height: 1.85;
+
+  margin: 0 0 15px;
+
+}
+
+
+
+.hearts {
+
+  color: #e18baa;
+
+  font-size: 23px;
+
+  margin: 18px 0;
+
+  letter-spacing: 4px;
+
+}
+
+
+
+.signature {
+
+  margin-top: 20px;
+
+  color: #c55f87;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+}
+
+
+
+.credit {
+
+  margin-top: 13px;
+
+  color: #bd91a2;
+
+  font-size: 12px;
+
+}
+
+
+
+.sticker {
+
+  position: absolute;
+
+  z-index: 2;
+
+  font-size: 30px;
+
+}
+
+
+
+.sticker-top {
+
+  top: 12px;
+
+  right: 18px;
+
+  transform: rotate(12deg);
+
+}
+
+
+
+.sticker-bottom {
+
+  bottom: 10px;
+
+  left: 15px;
+
+  transform: rotate(-12deg);
+
+}
+
+
+
+.letter-close {
+
+  position: absolute;
+
+  z-index: 4;
+
+  right: 14px;
+
+  top: 14px;
+
+  width: 34px;
+
+  height: 34px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #fff0f5;
+
+  color: #bd6688;
+
+  font-size: 23px;
+
+  cursor: pointer;
+
+}
+
+
+
+/* ANIMATION */
+
+@keyframes float {
+
+  0%,100% { transform: translateY(0); }
+
+  50% { transform: translateY(-12px); }
+
+}
+
+
+
+@keyframes pulse {
+
+  0%,100% { opacity: .65; }
+
+  50% { opacity: 1; }
+
+}
+
+
+
+@keyframes plantGrow {
+
+  0% {
+
+    opacity: 0;
+
+    transform: translateY(90px) scale(.35);
+
+  }
+
+  70% {
+
+    opacity: 1;
+
+    transform: translateY(-5px) scale(1.06);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+
+  }
+
+}
+
+
+
+@keyframes sparklePop {
+
+  0% { opacity: 0; transform: scale(0) rotate(-30deg); }
+
+  70% { opacity: 1; transform: scale(1.3) rotate(10deg); }
+
+  100% { opacity: .9; transform: scale(1); }
+
+}
+
+
+
+@keyframes tulipOpen {
+
+  to { transform: scale(.78); }
+
+}
+
+
+
+/* ĐIỆN THOẠI */
+
+@media (max-width: 600px) {
+
+  .intro { top: 7%; }
+
+  .tulip-main { width: 280px; height: 350px; }
+
+  .tap-hint { top: 76%; }
+
+
+
+  .plant-1 { left: -30px; width: 140px; height: 240px; }
+
+  .plant-2 { left: 1%; width: 115px; height: 205px; }
+
+  .plant-3 { right: -30px; width: 140px; height: 240px; }
+
+  .plant-4 { right: 1%; width: 115px; height: 205px; }
+
+  .plant-5 { left: 20%; width: 105px; height: 195px; }
+
+  .plant-6 { right: 20%; width: 105px; height: 195px; }
+
+  .plant-7 { left: -38px; bottom: 30%; width: 110px; height: 200px; }
+
+  .plant-8 { right: -38px; bottom: 30%; width: 110px; height: 200px; }
+
+  .plant-9 { left: 3%; bottom: 38%; width: 90px; height: 165px; }
+
+  .plant-10 { right: 3%; bottom: 38%; width: 90px; height: 165px; }
+
+  .plant-11 { left: 33%; width: 90px; height: 170px; }
+
+  .plant-12 { right: 33%; width: 90px; height: 170px; }
+
+
+
+  .letter-paper {
+
+    padding: 42px 23px 28px;
+
+    max-height: 86vh;
+
+  }
+
+
+
+  .letter-content p {
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+  }
+
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  *, *::before, *::after {
+
+    animation-duration: .01ms !important;
+
+    transition-duration: .01ms !important;
+
+  }
+
+}
+
+
+
+.final-wish {
+
+  color: #b65e82;
+
+  background: linear-gradient(135deg, #fff3f7, #fffafd);
+
+  border: 1px solid #f6dce6;
+
+  border-radius: 12px;
+
+  padding: 16px 14px;
+
+  margin-top: 20px !important;
+
+}
+
+
+/* Paper roses + strong, natural gusts of wind */
+.plant {
+  transform-origin: 50% 100%;
+  will-change: transform;
+}
+.garden.bloomed .plant {
+  animation: plantGrow 1.15s cubic-bezier(.16,1,.3,1) forwards,
+             windSway 2.15s ease-in-out 1.15s infinite;
+}
+.garden.bloomed .plant-2, .garden.bloomed .plant-5,
+.garden.bloomed .plant-8, .garden.bloomed .plant-11 {
+  animation-duration: 1.15s, 1.65s;
+}
+.garden.bloomed .plant-3, .garden.bloomed .plant-6,
+.garden.bloomed .plant-9, .garden.bloomed .plant-12 {
+  animation-duration: 1.15s, 2.45s;
+}
+@keyframes windSway {
+  0%, 100% { transform: translateY(0) rotate(-2deg) scale(1); }
+  18% { transform: translateY(-2px) rotate(7deg) scale(1.01); }
+  42% { transform: translateY(1px) rotate(-8deg) scale(1); }
+  66% { transform: translateY(-3px) rotate(5deg) scale(1.015); }
+  84% { transform: translateY(0) rotate(-5deg) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .garden.bloomed .plant { animation: plantGrow 1.15s forwards; }
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<main class="garden" id="garden">
+
+
+
+  <div class="intro">
+
+    <div class="eyebrow">A LITTLE GIFT FOR YOU ♡</div>
+
+    <h2>Gửi cậu một điều dễ thương</h2>
+
+    <p>Chạm vào bông tulip nha 🌷</p>
+
+  </div>
+
+
+
+  <!-- TULIP LỚN Ở GIỮA -->
+
+  <button class="tulip-main" id="tulip"
+
+          aria-label="Chạm để nở hoa và mở thư">
+
+    <svg viewBox="0 0 200 260">
+
+      <path d="M100 245 Q98 170 102 105"
+
+            stroke="#68a879" stroke-width="9"
+
+            fill="none" stroke-linecap="round"/>
+
+      <path d="M100 205 Q35 140 38 195 Q60 230 100 215"
+
+            fill="#8dc99a"/>
+
+      <path d="M101 224 Q158 153 168 194 Q152 228 101 235"
+
+            fill="#74b98a"/>
+
+      <path class="tulip-petal"
+
+        d="M100 120 C50 92 52 42 72 15 C83 38 94 47 100 53 C112 31 128 17 136 8 C163 54 146 99 100 120Z"
+
+        fill="#f7a3c0"/>
+
+      <path class="tulip-petal"
+
+        d="M100 120 C77 89 80 48 100 53 C119 37 136 21 136 8 C141 60 129 95 100 120Z"
+
+        fill="#ffd2e1"/>
+
+      <path d="M100 120 Q93 76 100 53 Q117 84 100 120"
+
+            fill="#e77da2" opacity=".65"/>
+
+      <g fill="#fff" opacity=".9">
+
+        <path d="M35 70 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4Z"/>
+
+        <path d="M158 125 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3Z"/>
+
+      </g>
+
+    </svg>
+
+  </button>
+
+
+
+  <p class="tap-hint">♡ chạm nhẹ vào tulip ♡</p>
+
+
+
+  <div class="flower-garden" aria-hidden="true">
+
+
+
+    <!-- CÂY 1: HOA HỒNG -->
+
+    <div class="plant plant-1">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem1" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem1)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#ed8eae" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#f8c4d5" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#d96b91" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#f8c4d5" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#ed8eae" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#d96b91" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#ed8eae" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#f8c4d5" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#d96b91" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 2: HOA CÚC -->
+
+    <div class="plant plant-2">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem2" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem2)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#f3b39f" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#ffdbca" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#d98772" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#ffdbca" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#f3b39f" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#d98772" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#f3b39f" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#ffdbca" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#d98772" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 3: HOA TULIP -->
+
+    <div class="plant plant-3">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem3" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem3)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#b8d99b" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#e0f0c9" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#79b86f" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#e0f0c9" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#b8d99b" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#79b86f" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#b8d99b" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#e0f0c9" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#79b86f" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 4: HOA ANH ĐÀO -->
+
+    <div class="plant plant-4">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem4" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem4)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#8bc9e8" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#c5e8f8" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#4e9fc6" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#c5e8f8" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#8bc9e8" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#4e9fc6" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#8bc9e8" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#c5e8f8" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#4e9fc6" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 5: BỤI HOA HỒNG -->
+
+    <div class="plant plant-5">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem5" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem5)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#e98eac" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#f7c2d2" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#d45e87" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#f7c2d2" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#e98eac" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#d45e87" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#e98eac" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#f7c2d2" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#d45e87" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 6: HOA CÚC HỒNG -->
+
+    <div class="plant plant-6">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem6" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem6)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#f0a18e" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#ffd2bf" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#ce7567" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#ffd2bf" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#f0a18e" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#ce7567" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#f0a18e" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#ffd2bf" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#ce7567" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 7: HOA VÀNG BÊN TRÁI -->
+
+    <div class="plant plant-7">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem7" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem7)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#ed8eae" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#f8c4d5" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#d96b91" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#f8c4d5" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#ed8eae" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#d96b91" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#ed8eae" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#f8c4d5" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#d96b91" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 8: HOA ANH ĐÀO BÊN PHẢI -->
+
+    <div class="plant plant-8">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem8" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem8)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#f3b39f" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#ffdbca" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#d98772" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#ffdbca" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#f3b39f" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#d98772" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#f3b39f" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#ffdbca" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#d98772" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 9: TULIP NHỎ -->
+
+    <div class="plant plant-9">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem9" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem9)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#b8d99b" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#e0f0c9" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#79b86f" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#e0f0c9" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#b8d99b" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#79b86f" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#b8d99b" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#e0f0c9" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#79b86f" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 10: HOA HỒNG NHỎ -->
+
+    <div class="plant plant-10">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem10" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem10)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#8bc9e8" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#c5e8f8" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#4e9fc6" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#c5e8f8" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#8bc9e8" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#4e9fc6" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#8bc9e8" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#c5e8f8" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#4e9fc6" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 11: CÚC NHỎ -->
+
+    <div class="plant plant-11">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem11" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem11)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#e98eac" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#f7c2d2" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#d45e87" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#f7c2d2" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#e98eac" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#d45e87" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#e98eac" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#f7c2d2" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#d45e87" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <!-- CÂY 12: TULIP HỒNG -->
+
+    <div class="plant plant-12">
+
+      <svg viewBox="0 0 160 280" role="img" aria-hidden="true">
+      <defs>
+        <linearGradient id="stem12" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4f8d5c"/><stop offset=".5" stop-color="#8bc987"/><stop offset="1" stop-color="#4f8d5c"/>
+        </linearGradient>
+      </defs>
+      <path d="M80 280 Q74 204 81 103" stroke="url(#stem12)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+      <path d="M78 237 Q20 178 23 215 Q45 244 78 242 Q54 216 39 207Z" fill="#76b77d"/>
+      <path d="M81 211 Q139 159 140 194 Q121 226 81 224 Q111 199 126 188Z" fill="#8fc98b"/>
+      <path d="M80 174 Q39 139 37 160 Q54 187 80 182Z" fill="#6eae78"/>
+      <path d="M81 145 Q116 111 124 131 Q109 155 81 151Z" fill="#a0d39a"/>
+      
+        <g transform="translate(81 91)">
+          <circle r="25" fill="#f0a18e" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -20.50 C 18.00 -24.00, 25.75 -5.50, 16.50 4.50
+                   C 10.50 18.00, -5.50 18.75, -12.00 7.00
+                   C -18.75 -2.50, -8.75 -12.00, 0.75 -8.00
+                   C 7.00 -5.00, 4.50 3.00, -2.00 2.00"
+                fill="#ffd2bf" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.38" stroke-linecap="round"/>
+          <path d="M -13.75 -13.00 C -3.00 -23.50, 16.75 -14.50, 10.50 2.00
+                   C 5.00 13.25, -10.50 12.00, -6.50 -0.50
+                   C -3.00 -7.00, 4.00 -6.25, 3.00 0.75"
+                fill="none" stroke="#ce7567" stroke-width="1.88" stroke-linecap="round"/>
+          <path d="M -19.50 -1.25 C -18.00 -19.00, 1.25 -22.75, 13.75 -14.50"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.12" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(39 145)">
+          <circle r="15" fill="#ffd2bf" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -12.30 C 10.80 -14.40, 15.45 -3.30, 9.90 2.70
+                   C 6.30 10.80, -3.30 11.25, -7.20 4.20
+                   C -11.25 -1.50, -5.25 -7.20, 0.45 -4.80
+                   C 4.20 -3.00, 2.70 1.80, -1.20 1.20"
+                fill="#f0a18e" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -8.25 -7.80 C -1.80 -14.10, 10.05 -8.70, 6.30 1.20
+                   C 3.00 7.95, -6.30 7.20, -3.90 -0.30
+                   C -1.80 -4.20, 2.40 -3.75, 1.80 0.45"
+                fill="none" stroke="#ce7567" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -11.70 -0.75 C -10.80 -11.40, 0.75 -13.65, 8.25 -8.70"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      
+        <g transform="translate(124 128)">
+          <circle r="13" fill="#f0a18e" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.4"/>
+          <path d="M 0 -10.66 C 9.36 -12.48, 13.39 -2.86, 8.58 2.34
+                   C 5.46 9.36, -2.86 9.75, -6.24 3.64
+                   C -9.75 -1.30, -4.55 -6.24, 0.39 -4.16
+                   C 3.64 -2.60, 2.34 1.56, -1.04 1.04"
+                fill="#ffd2bf" stroke="#fff4f6" stroke-opacity=".75" stroke-width="1.00" stroke-linecap="round"/>
+          <path d="M -7.15 -6.76 C -1.56 -12.22, 8.71 -7.54, 5.46 1.04
+                   C 2.60 6.89, -5.46 6.24, -3.38 -0.26
+                   C -1.56 -3.64, 2.08 -3.25, 1.56 0.39"
+                fill="none" stroke="#ce7567" stroke-width="1.40" stroke-linecap="round"/>
+          <path d="M -10.14 -0.65 C -9.36 -9.88, 0.65 -11.83, 7.15 -7.54"
+                fill="none" stroke="#fff7f7" stroke-opacity=".7" stroke-width="1.00" stroke-linecap="round"/>
+        </g>
+      <path d="M65 108 Q72 100 76 106 M91 105 Q98 111 98 116" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    </div>
+
+
+
+    <span class="sparkle sparkle-1">✦</span>
+
+    <span class="sparkle sparkle-2">♡</span>
+
+    <span class="sparkle sparkle-3">✧</span>
+
+    <span class="sparkle sparkle-4">✦</span>
+
+    <span class="sparkle sparkle-5">✿</span>
+
+    <span class="sparkle sparkle-6">✧</span>
+
+    <span class="sparkle sparkle-7">♡</span>
+
+    <span class="sparkle sparkle-8">✦</span>
+
+
+
+  </div>
+
+</main>
+
+
+
+<!-- NÚT ĐỌC LẠI -->
+
+<button class="replay" id="replay">💌 Đọc lại bức thư</button>
+
+
+
+<!-- BỨC THƯ -->
+
+<div class="letter-overlay" id="letterOverlay"
+
+     role="dialog" aria-modal="true"
+
+     aria-labelledby="letterTitle">
+
+
+
+  <article class="letter-paper">
+
+    <button class="letter-close" id="closeLetter"
+
+            aria-label="Đóng thư">×</button>
+
+
+
+    <span class="sticker sticker-top">🌷✨</span>
+
+    <span class="sticker sticker-bottom">🧸💗</span>
+
+
+
+<div class="letter-content">
+
+  <small>A LITTLE LETTER FOR YOU</small>
+
+
+
+  <h1 id="letterTitle">Chúc mừng ngày 20/10 ♡</h1>
+
+
+
+  <p>
+
+    DEAR YOU - Nhân ngày 20/10, chúc tất cả những cô gái trên thế giới này
+
+    luôn được yêu thương theo cách dịu dàng nhất. 🌷
+
+  </p>
+
+
+
+  <p>
+
+    Mong rằng những cô gái dù đang vui vẻ hay mang trong lòng nhiều
+
+    tâm sự, dù đang sống những ngày rực rỡ hay chật vật với cuộc sống,
+
+    cũng sẽ luôn tìm được lý do để mỉm cười. Mong các cậu không cần
+
+    phải lúc nào cũng mạnh mẽ, không cần phải cố gắng làm hài lòng
+
+    tất cả mọi người, cũng chẳng cần phải trở nên hoàn hảo mới
+
+    xứng đáng được yêu thương.
+
+  </p>
+
+
+
+  <p>
+
+    Chúc các cậu có đủ bình yên để ngủ ngon mỗi tối, đủ dũng khí
+
+    để theo đuổi những điều mình mong muốn, đủ may mắn để gặp được
+
+    những người thật lòng trân trọng mình. Mong những tổn thương cũ
+
+    sẽ dần được chữa lành, những nỗ lực âm thầm sẽ có ngày được
+
+    đền đáp, và những giọt nước mắt sau này đều là vì hạnh phúc.
+
+  </p>
+
+
+
+  <p>
+
+    Và nếu hôm nay chưa có ai nói với cậu những lời dịu dàng,
+
+    thì mong cậu biết rằng: cậu vẫn luôn xứng đáng với những điều
+
+    tốt đẹp, ngay cả trong những ngày cậu chẳng thấy mình có
+
+    gì đặc biệt.
+
+  </p>
+
+
+
+  <div class="hearts">♡ ✿ ♡ ✿ ♡</div>
+
+
+
+  <p class="final-wish">
+
+    <strong>
+
+      Chúc những cô gái của thế giới này, không chỉ riêng ngày
+
+      20/10 mà cả những ngày bình thường nhất, đều được yêu thương,
+
+      được lắng nghe, được tôn trọng và được sống một cuộc đời
+
+      mà chính mình cũng cảm thấy hạnh phúc.
+
+    </strong>
+
+    🌷🤍
+
+  </p>
+
+
+
+  <div class="signature">Gửi đến tất cả những cô gái, thật nhiều thương mến ♡</div>
+
+  <div class="credit">cre: nguyenchidat ♡</div>
+
+</div>
+
+
+
+
+
+<script>
+
+const garden = document.getElementById("garden");
+
+const tulip = document.getElementById("tulip");
+
+const overlay = document.getElementById("letterOverlay");
+
+const closeLetter = document.getElementById("closeLetter");
+
+const replay = document.getElementById("replay");
+
+
+
+let hasBloomed = false;
+
+let openTimer;
+
+
+
+function openLetter() {
+
+  clearTimeout(openTimer);
+
+  overlay.classList.add("open");
+
+}
+
+
+
+function closeTheLetter() {
+
+  overlay.classList.remove("open");
+
+}
+
+
+
+tulip.addEventListener("click", () => {
+
+  if (hasBloomed) {
+
+    openLetter();
+
+    return;
+
+  }
+
+
+
+  hasBloomed = true;
+
+  garden.classList.add("bloomed");
+
+  replay.classList.add("visible");
+
+
+
+  // Cho vườn hoa nở rồi mới mở bức thư.
+
+  openTimer = setTimeout(openLetter, 1200);
+
+});
+
+
+
+replay.addEventListener("click", openLetter);
+
+closeLetter.addEventListener("click", closeTheLetter);
+
+
+
+overlay.addEventListener("click", (event) => {
+
+  if (event.target === overlay) closeTheLetter();
+
+});
+
+
+
+document.addEventListener("keydown", (event) => {
+
+  if (event.key === "Escape") closeTheLetter();
+
+});
+
+</script>
+
+
+
+</body>
+
+</html>
